@@ -1,0 +1,490 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+ Chuong 1. Co so ly thuyet ma.
+%+ Revised: 03-05-2008
+%+ Last revised: 10-05-2008
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{chapter}{0}
+\chapter{CƠ SỞ LÝ THUYẾT MÃ}
+
+Trong chương này, chỉ những khái niệm cơ bản liên quan được sử dụng trong luận án mới được đề cập. Nội dung kiến thức về đại số, ngôn ngữ và mã của các từ hữu hạn trình bày trong các mục,
+từ Mục 1.1 đến Mục 1.4, được tham khảo và trích dẫn từ các tài liệu [].
+%*************************************************************************
+%+ 1.1. Nua nhom va vi nhom
+%************************************************************************
+\section{Nửa nhóm và vị nhóm}
+
+Ta nhắc lại rằng một nửa nhóm S là một tập hợp được trang bị một phép toán hai ngôi kết hợp, nếu không nói gì thêm ta sẽ ký hiệu theo lỗi nhân. Một nửa nhóm con (t.ư. nhóm con) T của S là một tập con 
+của S cùng với phép toán cảm sinh là cho T trở thành nửa nhóm (t.ư. nhóm). Nửa nhóm S là một vị nhóm nếu S có đơn vị. Đơn vị của vị nhóm S là duy nhất và được ký hiệu là $1_S$.
+Một vị nhóm con của vị nhóm S là một nửa nhóm con có chứa đơn vị của S.
+
+
+\begin{example}\label{ex.1.1} 
+    $M={0,1}$ là vị nhóm nhân với phần tử đơn vị là 1.
+\end{example}
+\begin{example}\label{ex.1.2} 
+    Với vị nhóm $M$ bất kỳ, ta trang bị cấu trúc vị nhóm cho tập tất cả các tập con $\mathcal{P}(M)$ của M bằng cách định nghĩa, với $X, Y \subset M$
+    $$
+        XY = \{ xy | x \in X, y \in Y \}
+    $$
+    Phần tử đơn vị là {1}
+\end{example}
+\begin{example}\label{ex.1.3} 
+    Từ các vị nhóm $M, N$ ta có vị nhóm $M \times N$ là tích trực tiếp của $M$ và $N, M^{n}$ là tích trực tiếp của $n$ lần vị nhóm $M$.
+
+    Cho các nửa nhóm (vị nhóm) $S$ và $T$. Ánh xạ $\varphi : S \rightarrow T$ được gọi là một {\it đồng cấu nửa nhóm} (t.ư. {\it vị nhóm}) nếu với mọi $a, b \in S$,
+    $$
+    \varphi(ab) = \varphi(a)\varphi(b)
+    $$
+    (t.ư $\varphi(ab) = \varphi(a)\varphi(b)$ và $\varphi(1_S) = 1_T$ với $1_S$ là đơn vị của $S$, $1_T$ là đơn vị của $T$).
+
+    Đồng cấu $\varphi$ được gọi là {\it đơn cấu} (t.ư {\it toàn cấu, đẳng cấu}) nếu $\varphi$ là đơn ánh (t.ư. toàn ánh, song ánh). 
+    Một đồng cấu từ vị nhóm $S$ vào chính nó thì được gọi là một {\it tự đồng cấu}.
+\end{example}
+%+ Dinh nghia 1.1.1
+\begin{definition}\label{de.1.1.1} 
+Giả sử $C\subseteq R^n$ là một tập hợp khác rỗng.
+\begin{itemize}
+\item Tập $C$ gọi là tập lồi nếu với mọi $x,y\in C$ và mọi  $\lambda\in [0,1]$ ta có
+$$\lambda x+(1-\lambda)y\in C$$
+
+\item Giả sử $x^1,\dots, x^k$ là $k$ điểm của $C$ khi đó 
+\begin{equation}\label{eq.1.1.1}
+x  = \sum\limits_{i=1}^k\lambda_kx^k,\quad\text{với}\quad \lambda_k\geq 0,\sum\limits_{i=1}^k\lambda_k=1,\forall k =1,\ldots,k
+\end{equation}
+gọi là một tổ hợp lồi của hệ vector  $\{x^1,\ldots, x^k\}$.
+\end{itemize}
+\end{definition}
+Cho $M\subseteq R^n$, ta nói bao lồi của một tập hợp $M$ là giao của tất cả các tập lồi chứa $M$, được kí hiệu là $\text{conv}(M)$. Rõ ràng bao lồi của $M$ là tập lồi nhỏ nhất chứa $M$. Một tập $C$ là lồi khi và chỉ khi nó chứa mọi tổ hợp lồi hữu hạn các điểm của $C$.
+
+Một trong những tập lồi quan trọng (trong giải tích lồi, tối ưu (đặc biệt là quy hoạch tuyến tính)) là tập lồi đa diện. 
+Tập lồi $P$ được gọi là tập lồi đa diện nếu $C$ có dạng
+\begin{equation}\label{eq.1.1.2}
+P := \{x\in R^n\; |\; Ax \leq b\}
+\end{equation}
+trong đó $A=(a_{ij})_{m\times n}, b\in R^m$. Hay nói cách khác, $P$ là giao của hữu hạn các nửa không gian đóng.
+Trường hợp đặc biệt của tập lồi đa diện là đa diện chính tắc có dạng như sau:
+\begin{equation}\label{eq.1.1.3}
+P_0 := \set{x\in R^n\; |\; Ax = b, x\geq 0 }
+\end{equation}
+trong đó ma trận $A\in\R^{m\times n}, b\in\R^m$ và giả thiết $A$ có hạng đủ (tức là $\text{rank}A = m\leq n$).
+
+%+ Dinh nghia 1.1.2.
+\begin{definition}\label{de.1.1.2}\
+\begin{itemize}
+\item Tập $C$ được gọi là một nón nếu với mọi $x\in C$ và mọi $\lambda\geq 0$ ta có $\lambda x\in C$.
+\item Tập $C$ được gọi là nón lồi nếu $C$ vừa là nón vừa là tập lồi.
+\end{itemize}
+\end{definition}
+Bao nón lồi của tập $M$ là giao của tất cả các nón lồi chứa $M$, ký hiệu là $\text{conv}(M)$ và nó cũng là tập nón lồi nhỏ nhất chứa $C$. Nói $C$ gọi là nón lồi đa diện nếu $C$ vừa là nón vừa là tập lồi đa diện. Mỗi nón $C$ có một điểm $x=0$ gọi là gốc (mũi) của nón $C$. Tập $r:=\set{x\in C: x=x^0+\lambda d}$ gọi là một tia xuất phát từ $x^0$ theo hướng $d\neq 0$. Một nón $C$ sẽ chứa các tia xuất phát từ $x^0=0$.\\
+Cho một tập lồi đa diện $P=\set{x\in\R^n\;:\; Ax=b}$ với $\text{rank} A=m\leq n$. Khi đó tập $K:=\set{d\;|\; Ad \geq 0}$ là một nón lồi đa diện, gọi là nón lồi sinh ra bởi các hướng cực biên của $P$ (như định nghĩa dưới đây). 
+
+%+ Dinh nghia 1.1.2.
+\begin{definition}\label{de.1.1.2}\
+\begin{itemize}
+\item Điểm $x^0$ là điểm cực biên (hai đỉnh) của tập lồi đa diện $P$ nếu nó không là điểm trong của bất kỳ đoạn nào nối hai điểm khác nhau của $P$, tức là $\nexists x', x'' \in P$ và $x' \neq x''$ sao cho 
+$$
+x^0 = \alpha x'+(1-\alpha)x''
+$$
+với $\alpha$ nào đó thuộc $(0,1)$.
+\item Mỗi tập con $L$ của đa diện lồi $P$ gọi là một cạnh nếu với mọi $x,y\in P, \lambda\in (0,1)$ mà $\lambda x+(1-\lambda)y\in L$ thì $[x,y]\subseteq L$ và $L$ chứa trọn trong một đường thẳng. Một cạnh vô hạn gọi là một tia cực biên. Hướng của tia cực biên này gọi là hướng cực biên của $P$.
+\end{itemize}
+\end{definition}
+Chú ý rằng, tập lồi đa diện đóng, bị chặn thì không có hướng cực biên. Số đỉnh và số hướng cực biên của tập lồi đa diện $P$ là hữu hạn.
+
+%+ -------------------------------------------------------------------------------------------
+%+ 1.1.2. Mot so dinh ly quan trong.
+\subsection{Một số kết quả trong giải tích lồi}
+Phần này trình bày một số kết quả đã được đề cập trong giải tích lồi có liên quan đến khóa luận. Trước hết, cần nhắc lại một trong những định lý quan trọng là định lý biểu diễn tập lồi đa diện.
+%+ Dinh ly 1.1.1. (Ve bieu dien tap loi da dien)
+\begin{theorem}\label{th.1.1.1} 
+Cho $P$ là tập lồi đa diện trong $\R^n$ với tập đỉnh là $V:=\set{v^i: i=1\dots,p}$ và tập các hướng cực biên là $E:=\set{d^j: j=1\dots q}$. Khi đó mọi điểm $x\in P$ đều có thể biểu diễn dưới dạng:
+\begin{equation}\label{eq.1.1.2.1}
+x = \sum_{i=1}^p\lambda_iv^i + \sum_{j=1}^q\gamma_jd^j,
+\end{equation}
+trong đó $\sum_{i=1}^p\lambda_i = 1, \lambda_i\geq 0, i=1,\dots,p$ và $\gamma_j\geq 0, j=1,\dots, q$.
+\end{theorem}
+Hiển nhiên nếu $P$ là đa diện lồi bị chặn thì biểu diễn chỉ còn lại
+$$
+x = \sum_{i=1}^p \lambda_iv^i.
+$$
+Một tập lồi đa diện khác rỗng, không chứa trọn một đường thẳng thì luôn có điểm cực biên và số điểm cực biên là hữu hạn. Để kiểm tra một điểm $x^0$ có là điểm cực biên của tập lồi đa diện, ta có định lý sau.
+
+%+ Dinh ly 1.1.2. ( Xac dinh diem cuc bien (lam the nao kiem tra mot diem cua tap loi da dien P la diem cuc bien)).
+\begin{theorem}\label{th.1.1.2}
+Giả sử $P_0$ là một tập lồi đa diện chính tắc dạng
+\begin{equation}\label{eq.1.1.2.2}
+P_0 := \set{x\in R^n\; |\; Ax = b, x\geq 0 }
+\end{equation}
+trong đó ma trận $A\in\R^{m\times n}, b\in\R^m$ và giả thiết $A$ có hạng đủ (tức là $\text{rank}A = m\leq n$). Điểm $x^0$ là một điểm cực biên (đỉnh) của $P_0$ nếu và chỉ nếu tập các véc tơ cột $B:=\set{A_j: j\in J_+(x^0)}$ của ma trận $A$ là độc lập tuyến tính, trong đó
+\begin{equation}\label{eq.1.1.2.3}
+J_+(x^0):=\set{j\in\set{1,\dots, n}\;:\; x^0_j>0}.
+\end{equation}
+\end{theorem}
+
+%*************************************************************************
+%+ 1.2. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
+%**********************************************************
+\section{Bài toán quy hoạch tuyến tính gốc và đối ngẫu}
+
+%+ -------------------------------------------------------------------------------------------
+%+ 1.2.1. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
+\subsection{Bài toán quy hoạch tuyến tính gốc và đối ngẫu.}
+Bài toán quy hoạch tuyến tính (QHTT) tổng quát có thể được phát biểu dưới dạng:
+\begin{align}\label{eq.1.2.1}
+&\min (\max) \set{ f(x):=\sum_{j=1}^n c_jx_j } \\
+&\text{thỏa mãn: } D:= \begin{cases}
+\sum_{j=1}^na_{ij}x_j = b_i,\quad i=1\dots, m_1,\\
+\sum_{j=1}^na_{ij}x_j \leq b_i,\quad i=m_1+1\dots, m_2,\\
+\sum_{j=1}^na_{ij}x_j \geq b_i,\quad i=m_2+1\dots, m,\\
+l_j\leq x_j\leq u_j,\quad j=1,\dots, n.
+\end{cases}\notag
+\end{align}
+trong đó $x_j$ gọi là các biến, $c_j$ gọi là thành phần của véc tơ hệ số hàm mục tiêu (hàm giá), $a_{ij}$ gọi là hệ số ràng buộc, $b_i$ gọi là hệ số vế phải, $l_j < u_j$ làn lượt gọi là các cận dưới và cận trên (giới hạn dưới và trên) của biến $x_j$ ($i=1,\dots, m, j=1,\dots, n$).
+
+Để nghiên cứu tính chất và các phương pháp giải bài toán quy hoạch tuyến tính \eqref{eq.1.2.1} người ta thường chuyển bài toán này về một trong hai dạng chính tắc và chuẩn tắc. Trong khóa luận này chỉ để cập đến bài toán quy hoạch tuyến tính dạng chính tắc như sau:
+\begin{align}\label{eq.1.2.2}
+&\min \set{ f(x):= c^Tx} \notag\\
+&\text{thỏa mãn: } D_p := \begin{cases}
+Ax=b\\
+x\geq 0.
+\end{cases}
+\end{align}
+
+trong đó $x=(x_1,\dots, x_n)^T$ gọi là các biến cần tối ưu, $c=(c_1,\dots, c_n)^T$ là véc tơ hàm mục tiêu, ma trận $A=(a_{ij})_{m\times n}$ là ma trận hệ số ràng buộc và $b=(b_1,\dots, b_m)^T$ gọi là véc tơ vế phải. Như thông thường, hàm $f$ gọi là hàm mục tiêu, tập $D_p$ gọi là tập ràng buộc. Ma trận $A$ được giả thiết là có hạng đủ, $\text{rank}A = m\leq n$ và bài toán \eqref{eq.1.2.2} gọi là bài toán QHTT gốc, ký hiệu là (P).
+
+Một điểm $x\in D_p$ gọi là một điểm (hay phương án) chấp nhận được. Điểm $x^{*}\in D_p$ gọi là nghiệm (hay phương án tối ưu) của bài toán \eqref{eq.1.2.2} nếu $f(x^{*})\leq f(x)$ với mọi $x\in D_p$. Vì $D_p$ là tập lồi đa diện, nên $x\in D_p$ là đỉnh của $D_p$ thì $x$ gọi là phương án cực biên (phương án cơ sở). Nếu $x^{*}$ là điểm cực biên (đỉnh) của $D_p$ và tối ưu thì $x^{*}$ gọi là phương án cực biên tối ưu.
+
+Cho một phương án cơ sở (hay một đỉnh) $x$, ký hiệu $J_{+}(x) := \set{j\in\set{1,\dots, n}: x_j > 0}$ gọi là tập chỉ số cơ sở của $x$. Nếu $|J_+(x)|=m$ thì $x$ gọi là phương án không suy biến, còn nếu $|J_+(x)| < m$ thì $x$ gọi là phương án suy biến. Theo định lý \ref{th.1.1.2} thì tập hợp các véc tơ
+\begin{align}\label{eq.1.2.2a}
+B_+(x) := \set{A_j,\;|; j\in J_+(x)}
+\end{align}
+gồm các véc tơ cột của $A$ sẽ là một hệ độc lập tuyến tính. Nếu $r:=|J_+(x)| < m$ thì ta bổ sung thêm $m-r$ véc tơ còn lại của $A$ vào $B_+(x)$ sao cho ta thu được hệ gồm $m$ véc tơ cột của $A$ độc lập tuyến tính, ký hiệu là $B(x)$. Hệ véc tơ $B(x)$ gọi là hệ véc tơ cơ sở (hay gọi tắt là cơ sở) của phương án cực biên $x$. Thông thường để ngắn gọi, người ta thường gọi $J(x)$ là tập chỉ số cơ sở thay cho gọi cơ sở $B(x)$.
+
+Lập hàm Lagrange cho bài toán QHTT gốc (P) như sau: 
+\begin{align}\label{eq.1.2.3}
+L(x, y, s) := c^Tx + y^T(b-Ax) + s^Tx
+\end{align}
+trong đó $y$ và $s\geq 0$ là các nhân tử Lagrange. Khi đó bài toán đối ngẫu (dạng Lagrange) của bài toán gốc (P) sẽ có dạng (sẽ ký hiệu là (D)):
+\begin{align}\label{eq.1.2.4}
+&\max\set{g(y,s) := b^Ty } \notag\\
+&\text{thỏa mãn: }D_d:=\begin{cases}
+A^Ty + s = c\\
+s\geq 0.
+\end{cases}
+\end{align}
+Biến $s$ gọi là biến bù, $g$ gọi là hàm mục tiêu đối ngẫu và $D_d$ gọi là miền ràng buộc đối ngẫu. Hiển nhiên $D_d$ cũng là tập lồi đa diện và bài toán \eqref{eq.1.2.4} cũng là bài toán QHTT.
+
+Với mọi bộ ba $(x, y, s)$ sao cho $x\in D_p$ và $(y, s)\in D_d$ ta đặt
+\begin{align}\label{eq.1.2.3}
+\tau(x,y, s) := f(x) - g(y, s) = s^Tx,
+\end{align}
+gọi là khoảng trống đối ngẫu. Theo định lý đối ngẫu yếu thì $\tau(x,y,s)\geq 0$, và nếu $\tau(x,y,s)=0$ thì $(x,y,s)$ sẽ là nghiệm của cặp bài toán gốc đối ngẫu (P)-(D). 
+Còn theo định lý đối ngẫu mạnh thì nếu $x^{*}$ là nghiệm tối ưu của bài toán gốc (P) thì sẽ tồn tại nghiệm tối ưu $(y^{*},s^{*})$ của bài toán đối ngẫu (D) sao cho $\tau^{*}=\tau(x^{*}, y^{*}, s^{*}) = 0$ và ngược lại.
+
+%+ -------------------------------------------------------------------------------------------
+%+ 1.2.2. Phuong phap don hinh giai bai toan quy hoach tuyen tinh.
+\subsection{Phương pháp đơn hình giải bài toán QHTT.}
+Một trong những phương pháp nổi tiếng và hiệu quả là phương pháp đơn hình, được G. B. Dantzig phát minh ra năm 1947. Phần này sẽ trình bày tóm tắt lại tư tưởng cơ bản và nội dung của phương pháp đơn hình mà sẽ sử dụng chính trong khóa luận.
+
+Trước hết ta chỉ ra một tính chất quan trọng của bài toán quy hoạch tuyến tính là nghiệm sẽ nằm ở điểm cực biên.
+%+ Bo de 1.2.1.
+\begin{lemma}\label{le.1.2.1}
+Giả sử bài toán QHTT gốc \eqref{eq.1.2.2} có nghiệm tối ưu thì nó sẽ có nghiệm tối ưu $x^{*}$ nằm ở đỉnh.
+\end{lemma}
+
+Do tính chất đặc biệt của bài toán QHTT nên thuật toán đơn hình đã tận dụng rất hiệu quả các tính chất này để tạo ra một thuật toán rất hiệu quả. 
+Đặc biệt là các tính chất:
+\begin{itemize}
+\item Miền ràng buộc của bài toán QHTT là một tập lồi đa diện với số điểm cực biên là hữu hạn.
+\item Nếu bài toán QHTT có nghiệm tối ưu thì sẽ có nghiệm tối ưu nằm ở đỉnh.
+\end{itemize}
+Ý tưởng của thuật toán đơn hình mô tả như sau:
+\begin{itemize}
+\item[]{\it Bước 1: } Xuất phát từ một đỉnh $x^0$ của miền ràng buộc.
+\item[]{\it Bước 2: } Nếu $x^0$ là nghiệm tối ưu, dừng thuật toán. Nếu không chuyển sang Bước 3.
+\item[]{\it Bước 3: } Từ $x^0$ tìm cách di chuyển đến đỉnh kề tiếp theo của miền ràng buộc tốt hơn đỉnh $x^0$ (theo nghĩa giá trị hàm mục tiêu nhỏ hơn).
+\item[]{\it Bước 4: } Lặp lại Bước 2, 3 với $x^0$ thay bằng $x^1$.
+\end{itemize}
+Do số đỉnh của miền ràng buộc là hữu hạn, nên nếu bài toán có nghiệm, sau hữu hạn bước ta sẽ tìm được đỉnh tối ưu.
+Có nhiều vấn đề cần giải quyết trong phương pháp đơn hình, bao gồm:
+\begin{itemize}
+\item Tìm đỉnh xuất phát, vấn đề này thường được giải quyết dựa vào phương pháp hai pha hoặc đánh thuế (hai phương pháp này cũng cho biết miền ràng buộc có rỗng hay không).
+\item Kiểm tra bài toán có nghiệm hay vô nghiệm (có bị chặn dưới hay không).
+\item Kiểm tra đỉnh $x^0$ có là tối ưu hay không?
+\item Từ đỉnh $x^0$ làm thế nào di chuyển đến đỉnh $x^1$ tốt hơn $x^0$?
+\end{itemize}
+
+Với ý tưởng như trên, thuật toán đơn hình được mô tả như sau:
+
+\noindent{\bf Thuật toán đơn hình.}
+\begin{itemize}
+\item {\bf Đầu vào: } Ma trận $A=(a_{ij})_{m\times n}$, véc tơ $b$, véc tơ $c$. Phương án cơ sở $x^0$ và cơ sở tương ứng $J(x^0)$. 
+\item {\bf Đầu ra: } Phương án cơ sở tối ưu $x^{*}$ và giá trị mục tiêu tối ưu $f(x^{*})$ hoặc chỉ ra bài toán không có nghiệm tối ưu (tức là hàm mục tiêu không bị chặn dưới).
+\item {\bf Thuật toán:}
+\begin{itemize}
+\item[]{\bf Bước khởi tạo:} 
+\begin{enumerate}
+\item Tìm một phương án cơ sở xuất phát $x^0$ ứng với cơ sở xuất phát $J_0:=B(x^0)$.
+\item Tính các hệ số khai triển $Z=(z_{jk})$ và các ước lượng $\Delta_k$ theo các công thức tương ứng sau
+$$
+\begin{cases}
+A_k = \sum_{j\in J_0}z_{jk}A_j\quad \forall j=\overline{1, n}\\
+\Delta_k = \sum_{j\in J_0}z_{jk}c_j - c_k\quad \forall k\notin J_0\\
+\Delta_k = 0\quad \forall k\in J_0
+\end{cases}
+$$
+\end{enumerate}
+
+\item[]{\bf Bước 1: } {\it Kiểm tra tiêu chuẩn tối ưu.}
+\begin{enumerate}
+\item Nếu $\Delta_k\leq 0$ với mọi $k\notin J_0$ thì $x^0$ là phương án tối ưu. Kết thúc thuật toán.
+\item Nếu $\exists\Delta_k > 0$, chuyển sang bước 2.
+\end{enumerate}
+
+\item[]{\bf Bước 2: }{\it Kiểm tra tính bị chặn của hàm mục tiêu}.\\
+Với mỗi $k\notin J_0$ mà $\Delta_k > 0$  ta kiểm tra các hệ số khai triển $Z_k = (z_{jk})$.\\
+\begin{enumerate}
+\item Nếu có một $\Delta_k>0$ mà tất cả các hệ số khai triển $z_{jk}\leq 0,\;(\forall j\in J_0)$ thì kết luận hàm mục tiêu không bị chặn dưới. Bài toán không có phương án hữu hạn. Kết thúc thuật toán.\\
+\item Nếu với mọi $k\notin J_0$ mà tồn tại ít nhất một hệ số $z_{jk}>0$ thì tiến hành tìm phương án mới $x^1$ tốt hơn $x^0$ bằng cách chuyển sang bước 3.
+\end{enumerate}
+\item[]{\bf Bước 3: }{\it Tìm phương án mới}
+\begin{enumerate}
+\item Chọn véc tơ $A_s$ đưa vào cơ sở: Có thể bất kỳ $s\notin J^)$ sao cho $\Delta_s>0$. Thông thường chọn $s$ sao cho $\Delta_s$ lớn nhất
+$$
+\Delta_s = \max\set{\Delta_k > 0\;|\; k\notin J_0}
+$$
+\item Chọn véc tơ $A_r$ đưa ra khỏi cơ sở theo quy tắc:
+$$
+\theta := \dfrac{x^0_{r}}{z_{rs}} = \min\set{\dfrac{x^0_j}{z_{js}}\;|\; z_{js} > 0}
+$$
+\item Tính phương án mới $x^1$ và giá trị hàm mục tiêu mới theo công thức:
+\begin{align*}
+&x^1=\begin{cases}
+0\quad\text{với}\quad k\notin J_0, k\neq s\\
+\frac{x^0_r}{z_{rs}}\quad\text{với}\quad k = s\\
+x^0_j - \frac{x^0_r}{z_{rs}}z_{js} \quad\text{với}\quad j\in J_0
+\end{cases}\\
+&f(x^1) = f(x^0) - \frac{x^0_r}{z_{rs}}\Delta_s
+\end{align*}
+\end{enumerate}
+\item[]{\bf Bước 4:} Tính các hệ số khai triển và ước lượng mới theo công thức
+\begin{align*}
+&z_{jk}^1 = \begin{cases}
+\frac{z_{rk}}{z_{rs}}\quad \text{nếu}\quad j=s\\
+z_{jk} - \frac{z_{rk}}{z_{rs}}z_{js}\quad \text{nếu}\quad j\in J_0, j=r\\
+\end{cases}\\
+&\Delta^1_k = \Delta_k - \frac{z_{rk}}{z_rs}\Delta_s
+\end{align*}
+\item[]{\bf Bước 5:} Quay về bước 1 với phương án cơ sở mới $x^1$ và cơ sở mới $J_1:=J(x^1)$.
+\end{itemize}
+\end{itemize}
+Để thuật tiện cho việc "thực hành" thuật toán đơn hình giải bài toán QHTT dạng chuẩn tắc. Ta sử dụng một bảng gọi là {\bf Bảng đơn hình} gồm $n+3$ cột và $m+3$ hàng như sau:
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+ \hline
+Cơ sở&$c_J$&Phương án&$1$&$2$&$\cdots$&$k$ & $\cdots$ & $n$ \\ 
+$J$&& $x_J$&  $c_1$& $c_2$& $\cdots$& $c_k$& $\cdots$ & $c_n$ \\ \hline
+$J_1$     & $c_{j_1}$  & $x_{j_1}$   &  $z_{j_11}$  & $z_{j_12}$  & $\cdots$    & $z_{j_13}$  & $\cdots$ & $z_{j_1n}$\\
+$J_2$     & $c_{j_2}$  & $x_{j_2}$   &  $z_{j_21}$  & $z_{j_22}$  & $\cdots$    & $z_{j_23}$  & $\cdots$ & $z_{j_2n}$\\
+$\vdots$ & $\vdots$   & $\vdots$   &$\vdots$       & $\vdots$     &$\vdots$    &$\vdots$      & $\vdots$ & $\vdots$\\
+$J_m$    & $c_{j_m}$ & $x_{j_m}$ &$z_{j_m1}$   & $z_{j_m2}$  & $\cdots$   & $z_{j_m3}$ & $\cdots$ & $z_{j_mn}$\\ \hline
+              &                & $f(x)$       & $\Delta_1$   & $\Delta_2$  & $\cdots$   & $\Delta_k$  & $\cdots$ & $\Delta_n$ \\ \hline
+\end{tabular}
+\end{center}
+Lưu ý phần bảng dành cho các hệ số khai triển $z_{jk}$:
+\begin{itemize}
+\item Các cột ứng với các $j\in J_0$ sẽ là các véc tơ đơn vị với hệ số $1$ nằm trên dòng với chỉ số $j$.
+\item Với $k\notin J_0$ thì cột $k$ của bàng đơn hình là hệ số khai triển của $A_k$ của ma trận $A$ theo cơ sở $J_0$. Ta ký hiệu cột này là $Z_k$ nghĩa là $A_k = B_{J_0}Z_k$ hay $Z_k =(B_{J_0})^{-1}A_k$, ở đây $B_{J_0}$ là ma trận cơ sở ($B_{J_0}=\set{A_j\;|\;j\in J_0}$. 
+
+Đặc biệt khi ta chọn được một ma trận $B_{J_0}$ có dạng ma trận đơn vị thì hệ số khai triển trên các cột $j$ với $j\in J_0$ sẽ chính là cột véc tơ đơn vị $z^{jk} = e_j$, còn các hệ số khai triển trên các cột $k\notin J_0$ chính là $z_{jk} = A_k$.
+\item Dòng ước lượng là dòng cuối cùng của bảng và được tính bởi$\Delta_k = c^T_{J_0}Z_k -c_k$ và $\Delta_j=0, (\forall j\in J_0)$.
+\item Giá trị hàm mục tiêu chính là $f(x) = c^T_{J_0}x_{J^)}$.
+\end{itemize}
+
+Thuật toán nêu trên gọi là thuật toán đơn hình gốc, ngoài ra người ta còn xây dựng các thuật toán đơn hình khác như: thuật toán đơn hình đối ngẫu, thuật toán đơn hình gốc đối ngẫu. Một số phiên bản khác của thuật toán đơn hình cũng được đề cập trong các tài liệu về QHTT.
+
+Một trong những chi tiết quan trọng trong phương pháp đơn hình là: {\it Từ nghiệm $x^{*}$ của bài toán gốc (P), ta có xây dựng lại được nghiệm đối ngẫu hay không?}. Phương pháp đơn hình gốc - đối ngẫu sẽ cho phép thu được bộ ba nghiệm $(x^{*}, y^{*}, s^{*})$ cho cặp bài toán gốc, đối ngẫu. Trên thực tế, ta có thể xuất phát từ nghiệm của bài toán gốc (P) là $x^{*}$ với cơ sở $A_{J^{*}}$, ta có thể thu được nghiệm của bài toán đối ngẫu (D) như sau:
+\begin{itemize}
+\item Giả sử $x^{*}$ là nghiệm của bài toán gốc (P) ứng với cơ sở tối ưu $A_{J^{*}}$. Khi đó ta có:
+$$
+x_{J^{*}}^{*} = A_{J^{*}}^{-1}b,
+$$
+với $x_{J^{*}}^{*} = (x^{*}_j)_{j\in J^{*}}$ và $(x^{*}_j)_{j\in J^{*}} = (0)$.
+\item Khi đó $A_{J^{*}}$ cũng sẽ là cơ sở đối ngẫu của bài toán đối ngẫu (D) và nghiệm đối ngẫu $(y^{*}, s^{*})$ được tính theo công thức:
+$$
+y^{*} = (A_{J^{*}}^{-1})^Tc_{J^{*}}, \quad s^{*} = c - A^Ty^{*},
+$$
+trong đó $c_{J^{*}} = (c_j)_{j\in J^{*}}$.
+\item Khi đó khoảng trống đối ngẫu sẽ là: $\tau^{*} = (x^{*})^Ts^{*} = 0$. Theo định lý về độ lệch bù thì nếu $x^{*}_j>0$ thì $s^{*}_j=0$, do đó dễ thấy $s^{*}_{J^{*}} = 0$.
+\end{itemize}
+
+Trong thực tế, bài toán QHTT thường không phải là bài toán dạng chuẩn tắc với véc tơ vế phải $b$ không âm, nên ta không thể có ngay được phương án xuất phát $x^0$ để thực hiện phương pháp đơn hình. Do vậy người ta thường sử dụng một trong hai phương pháp: Phương pháp đơn hình hai pha và phương pháp đánh thuế. Trong khóa luận này sẽ sử dụng phương pháp đơn hình hai pha với nội dung được tóm tắt như sau:
+
+Trước hết, đối với bài toán gốc (P), không mất tính tổng quát ta có thể xem các $b_i\geq 0$ với mọi $i=\overline{1,m}$ . Nếu trái lại ta nhân hai vế của ràng buộc thứ $i$ với $-1$. Ta lập bài toán phụ sau
+\begin{align}\label{eq.1.2.5}
+&\min\set{f_a(u) := \sum_{j=1}^mu_{n+j}}\\
+&\text{thoả mãn}\; D_a := \begin{cases}
+\sum_{j=1}^na_{ij}x_j + u_{n+i} = b_i,\quad (i=\overline{1,m})\\
+x_j\geq 0,\quad (j=\overline{1,n})\\
+u_{n+i}\geq 0,\quad (i=\overline{1,m})
+\end{cases}\notag
+\end{align}
+Các biến $u_{n+i}$ với $(i=\overline{1,m})$ gọi là các biến giả. 
+
+Nếu ta ký hiệu $e = (1,1,\dots,1)^T$ là véc tơ gồm $m$ thành phần là $1$, $u=(u_{n+1},u_{n+2},\dots, u_{n+m})^T$ và $E$ là ma trận đơn vị cấp $m$ thì ta có thể viết bài toán trên dưới dạng
+\begin{align}\label{eq.1.2.6}
+&\min\set{f_a(u) := e^Tu}\\
+&\text{thoả mãn}\; D_a := \begin{cases}
+Ax + Eu = b\\
+x\geq 0, u\geq 0
+\end{cases}\notag
+\end{align}
+Khi đó, quan hệ giữa hai bài toán \eqref{eq.1.2.5} và \eqref{eq.1.2.6} được chỉ ra như sau:
+\begin{itemize}
+\item Bài toán \eqref{eq.1.2.6} có một phương án cơ sở xuất phát là $(x,u)^T:=(0, b)^T$.
+\item Bài toán \eqref{eq.1.2.2} có phương án chấp nhận được khi và chỉ khi bài toán phụ \eqref{eq.1.2.6} có phương án tối ưu $(\overline{x},\overline{u})^T$ với tất cả các biến giả $\overline{u}_{n+i}=0,\; (i=\overline{1,m}$.
+\end{itemize}
+Do đó phương pháp đơn hình hai pha được thực hiện như sau:
+\begin{itemize}
+\item[]{\it Pha 1: } Lập bài toán phụ cho bài toán (P), giải bài toán phụ bằng phương pháp đơn hình. Nếu bài toán phụ vô nghiệm hoặc có nghiệm không là nghiệm chấp nhận của bài toán (P), dừng thuật toán. Ngược lại, chuyển sang pha 2.
+\item[]{\it Pha 2: } Sử dụng thuật toán đơn hình giải bài toán (P) với phương án xuất phát thu được từ pha 1.
+\end{itemize}
+
+%*******************************************************************
+%+ 1.3. Luu tru va xu ly ma tran kich thuoc lon.
+%******************************************************************
+\section{Bài toán QHTT kích thước lớn}
+%+ -------------------------------------------------------------------------------------------
+%+ 1.2.1. Ma tran thua va van de luu tru.
+\subsection{Ma trận thưa và vấn đề lưu trữ ma trận thưa kích thước lớn}.
+Các bài toán QHTT trong thực tế ứng dụng thường có kích thước lớn. Bài toán QHTT có thể xuất hiện từ các lĩnh vực ứng dụng trực tiếp như: giao thông vận tải, xây dựng kế hoạch sản xuất, chế biến, quản lý nhân lực... Ngoài ra bài toán QHTT có thể xuất hiện trong các phương pháp toán học và tin học như một bài toán phụ, chẳng hạn xuất hiện trong các phương pháp tuyến tính hóa của quy hoạch phi tuyến, trong các phương pháp nhánh và cận... Các bài toán xuất hiện như thế thường có kích thước lớn, thậm chí là rất lớn. Tuy nhiên có một thuận lợi ở đây là ma trận ràng buộc $A$ của các bài toán này thường có cấu trúc đặc biệt và thưa. Các ma trận thưa dạng đặc biệt như ma trận đường chéo, ma trận vết, ma trận tam giác, ma trận khối, chéo khối... Việc xử lý các ma trận này đòi hỏi phải có các kỹ thuật riêng, vì nếu xử lý như thông thường sẽ gây ra lãng phí bộ nhớ máy tính và tăng thời gian tính toán, thậm chí là không khả thi trên thực tế. Chẳng hạn, với ma trận thực ($6$ byte) $A$ có kích thước $m\times n$ với $m=10^6$ và $n=10^8$ thì nếu lưu trữ như thông thường ta cần tới $Q=6\times 6\times m\times n=6\times 10^{14}byte \approx 558793 Gb$. Trong khi đó ma trận $A$ có thể chỉ có cỡ $m+n$ phần tử khác không chẳng hạn, thì ta chỉ cần $6\times (m+n) \approx 578 Mb$. Do đó để xử lý các bài toán kích thước lớn, người ta phải sử dụng kỹ thuật nén ma trận. Thông thường các ma trận có số phần tử lớn hơn $10^6$ có thể xem là ma trận kích thước lớn.
+
+%+ Dinh nghia 1.2.1
+\begin{definition}
+Ma trận thưa là dạng ma trận có chứa nhiều phần tử bằng 0.
+\end{definition}
+Bao nhiêu phần tử $0$ gọi là nhiều và được coi là ma trận thưa. Để định lượng, đối với ma trận $A=(a_{ij})_{m\times n}$, ta gọi
+$$
+d = \dfrac{nz}{m\times n}\times 100,
+$$
+trong đó $nz$ là số phần tử khác không của ma trân $A$. Số $d$ gọi là mật độ của ma trận $A$. Thông thường, người ta có thể xem các ma trận có mật độ dưới $50$ là các ma trận thưa. Trên thực tế, các bài toán ứng dụng thường có ma trận mà mật độ $d<50$ (tức là có tới $50 \% $ phần tử bằng $0$. 
+
+Như vậy để lưu trữ ma trận thưa, người ta chỉ lưu các phần tử khác không, số ô nhớ cần để lưu trữ chỉ cần khoảng $nz$ phần tử. Tùy vào cấu trúc của ma trận, người ta lựa chọn các cách lưu trữ, nén ma trận khác nhau. Đối với ma trận thưa bất kỳ có ba cách lưu trữ cơ bản như sau: 
+\begin{enumerate}
+\item Nén theo hàng,
+\item Nén theo cột,
+\item Nén theo khối (block).
+\end{enumerate}
+
+\noindent{\bf 1. Nén theo hàng. } Để nén theo hàng, người ta sử dụng cấu trúc dữ liệu gồm 3 thành phần {\bf (val, col\_ind, row\_ptr)}. Trong đó {\bf val} dùng để lưu trữ giá trị của các phần tử khác không, {\bf col\_ind} lưu trữ chỉ số cột còn {\bf row\_ptr} là con trỏ chỉ hàng.\\
+
+\noindent{\bf 2. Nén theo cột. } Để nén theo cột, người ta sử dụng cấu trúc dữ liệu gồm 3 thành phần {\bf (val, row\_ind, col\_ptr)}. Trong đó {\bf val} dùng để lưu trữ giá trị của các phần tử khác không, {\bf row\_ind} lưu trữ chỉ số hàng còn {\bf col\_ptr} là con trỏ chỉ cột.\\
+
+\noindent{\bf 3. Nén theo khối. } Đối với các ma trận có các khối dạng đặt biệt, chẳng hạn như dãi theo hàng hoặc theo cột, thì người ta sửa đổi hai Để nén theo hàng, người ta sử dụng cấu trúc dữ liệu gồm 3 thành phần {\bf (val, col\_ind, row\_ptr)}. Trong đó {\bf val} dùng để lưu trữ giá trị của phương pháp 1 và 2 để nén các dạng ma trận này. Thay vì {\bf val} chứa một phần tử thì nó có thể chứa một khối.
+
+Phương pháp lưu trữ nén theo hàng và cột mô tả chi tiết như sau:
+
+\noindent\textbf{Lưu trữ ma trận bởi mảng}\\
+Ta lưu trữ các ma trận bằng 3 mảng một chiều :
+\begin{enumerate}
+\item mảng val() : lưu trữ các giá trị khác 0 của ma trận.
+\item mảng col() : lưu trữ chỉ số cột của các giá trị tương ứng.
+\item mảng row() : lưu trữ chỉ số hàng của các giá trị tương ứng. 
+\end{enumerate}
+Minh họa ta xét ma trận:
+$$ A = \left(\begin{matrix} 1&&2&&0&&0&&3\\4&&5&&6&&0&&0\\0&&7&&8&&0&&9\\0&&0&&0&&10&&0\\11&&0&&0&&0&&12\end{matrix} \right)$$
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline val()&1&2&3&4&5&6&7&8&9&10&11&12\\
+\hline row()&0&0&0&1&1&1&2&2&2&3&4&4\\
+\hline col()&0&1&4&0&1&2 &1&2&4&3&0&4\\
+\hline
+\end{tabular}
+\end{center}
+\textbf{a. Nén ma trận theo hàng}\\
+Từ cách lưu trữ ma trận trên ta nhận thấy ở mảng row() có nhiều phần tử giống nhau và chỉ hơn kém nhau một đơn vị từ đó ta có cách nén làm giảm kích cỡ của mảng row() bằng cách chỉ lưu các giá trị thay đổi ở mảng row() và lưu vào một mảng row-ptr() với chú ý các giá trị ở mảng row() đã được sắp tăng dần thành các khối giá trị các khối này hơn kém nhau 1 đơn vị .Bằng cách giữ nguyên hai mảng val() và col() tạo ra một mảng mới row-ptr() có kích cỡ nhỏ hơn mảng row() ban đầu ta được một kiểu lưu trữ mới.\\
+Minh họa bởi ma trân A :\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline row-ptr()&0&3&6&9&10&12&&&&&&\\
+\hline val()&1&2&3&4&5&6&7&8&9&10&11&12\\
+\hline col()&0&1&4&0&1&2 &1&2&4&3&0&4\\
+\hline
+\end{tabular}
+\end{center}
+\textbf{b. Nén ma trận theo cột}\\
+Tương tự vớ phương pháp nén ma trận theo hàng ta thao tác với mảng col() giữ lại mảng val() và mảng row() tạo ra một mảng mới từ mảng col() là col-ptr() ta có một cách lưu trữ ma trận khác
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline col-ptr()&0&3&6&8&9&12&&&&&&\\
+\hline val()&1&4&11&2&5&7&6&8&10&3&9&12\\
+\hline col()&0&1&4&0&1&2 &1&2&3&0&2&4\\
+\hline
+\end{tabular}
+\end{center}
+
+%+ -------------------------------------------------------------------------------------------
+%+ Bai toan QHTT kich thuoc lơn co cau truc
+\subsection{Bài toán quy hoạch kích thước lớn và có cấu trúc. }
+Bài toán QHTT kích thước lớn là một trong những thách thức đối với những người làm ứng dụng và xử lý tính toán. Tuy nhiên hiện nay có rất nhiều phương pháp để xử lý các bài toán dạng này, chẳng hạn như: phương pháp đối ngẫu, phương pháp giảm số chiều, phương pháp phân rã. Một trong những phương pháp hiệu quả và tiện lợi nhất là phương pháp phân rã (decomposition method). Đối với một số bài toán có cấu trúc dạng đặc biệt, việc sử dụng phương pháp phân rã giúp ta chuyển các bài toán kích thước lớn về các bài toán kích thước nhỏ hơn. Trên thực tế, cấu trúc của các bài toán rất khác nhau, tùy thuộc vào bản chất của bài toán hoặc tùy thuộc vào cách chuyển về mô hình QHTT. Khóa luận này chỉ đề cập đến một số mô hình cụ thể dưới đây:
+
+%+ Mo hinh cheo khoi.
+\noindent{\bf a. Mô hình chéo khối. } Trường hợp đơn giản nhất đề cập ở đây là trường hợp cấu trúc khối có dạng như sau:
+\begin{equation}\label{PT01}
+ \begin{array}{lllll}
+\min\Big\{&f(x) := \sum_{j = 1}^{n_1} c_j x_j &+ \sum_{j = n_1 + 1}^{n} c_j x_j & = z \Big\}\\
+&\sum_{j = 1}^{n_1} A_{ij} x_j& & = b_i, & i = 1, \ldots, m_1\\
+&&\sum_{j = n_1 + 1}^{n} A_{ij} x_j & = b_i, & i = m_1 + 1, \ldots, m\\
+&x_j \geq 0, &j = 1, \ldots, n.\\
+\end{array}.
+\end{equation}
+Không có liên quan nào giữa hai khối ma trận trong bài toán quy hoạch tuyến tính ~\ref{PT01} vì vậy ta có thể giải bài toán ~\ref{PT01} bằng cách giải hai bài toán quy hoạch tuyến tính riêng biệt.
+
+Giả sử có thể chia bài toán ban đầu thành $k$ khối các khối này độc lập với nhau thì độ phức tạp của bài toán sẽ giảm đi $\frac{1}{k^2}$ so với bài toán ban đầu. 
+
+\noindent{\bf b. Mô hình chéo khối không hoàn toàn. }
+Hệ khối góc(block - algular system) ~\ref{PT02} là một dạng của~\ref{PT01}, nó có $k$ khối độc lập và một tập các ràng buộc liên quan. Tuy nhiên có một dãi ràng buộc liên quan trên cùng.
+\begin{equation}\label{PT02}
+ \begin{array}{llllll}
+\min\set{ &(c^0)^T x^0 &+ (c^1)^T x^1 +& \cdots &+ (c^k)^T x^k &= z }\\
+& A^0 x^0 & + A^1 x^1 +& \cdots &+ A^k x^k & = b\\
+&&F^1 x^1 & & &= f^1\\
+&&&\cdots\\
+&& & & F^k x^k &= f^k\\
+&x^i \geq 0, &i = 0, 1, 2, \ldots, k.
+\end{array} .
+\end{equation}
+Một ứng dụng của hệ khối góc ví dụ một công ty với $K$ nhà máy độc lập, $k = 1, 2,\ldots,K$. Mỗi nhà máy có một số ràng buộc mà ràng buộc này độc lập với cá ràng buộc của các nhà máy khác. Nhưng các nhà máy này có chung ngân quỹ và chung một hàm mục tiêu. Trong ~\ref{PT02}, $x^k$ là véc tơ thể hiện mức chi phí của nhà máy thứ $k$. $x^0$ thể hiện mức chi phí của cơ quan điều hành, nó không thể hiện hoạt động của nhà máy cụ thể nào. Phương trình đầu tiên là hàm mục tiêu, dòng thứ hai là $m$ ràng buộc biểu diễn sự chia sẻ tài nguyên chung của các nhà máy, dòng thứ ba gồm $m_1$ ràng buộc chỉ liên quan đến nhà máy thứ nhất, dòng cuối cùng là $m_k$ ràng buộc chỉ liên quan đến nhà máy thứ $k$. Cách làm phổ biến của các nhà kinh tế là ban đầu gán bất kì giá cho các tài nguyên và tối ưu hóa hoạt động của các nhà máy tùy theo giá của các tài nguyên nó sử dụng khi hoạt động. Tổng nhu cầu về tài nguyên mà cơ quan điều hành và các nhà máy sử dụng bằng b . Với các tài nguyên đang có vấn đề trở thành tìm một thuật toán để điều chỉnh chi phí một cách hợp lý.Trong phần này chúng ta sẽ trình bày bằng cách nào để làm được điều này thông qua một số hữu hạn bước lặp của phép phân rã Dantzig Wolfe.
+
+\noindent{\bf c. Mô hình bậc thang. }
+Trên thực tế phép phân tích còn được sử dụng xử lý hệ bậc thang (staircase) khác với hệ ~\ref{PT02} ,ở hệ bậc thang các bước trước phải sử dụng cùng một số tài nguyên vào hoặc ra của bước sau. Ví dụ hệ ~\ref{PT03} là hệ bậc thang với 4 bước:
+\begin{equation}\label{PT03}
+ \begin{array}{llllll}
+\min\set{ (c^0)^Tx^0 &+ (c^1)^Tx^1 &+ (c^2)^Tx^2 &+ (c^3)^Tx^3 &+ (c^4)^T x^4 &= z} \\
+&\mbox{ }A^{11} x^1 & & & & = b^1\\
+&\mbox{  }A^{21} x^1 &+A^{22} x^2 & & & = b^2\\
+&&\mbox{  }A^{32} x^2 &+A^{33} x^3 & & = b^3\\
+&& &\mbox{  }A^{43} x^3 &+A^{44} x^4 & = b^4\\
+&x^k \geq 0, &k = 1, \ldots, 4.
+\end{array}.
+\end{equation}
+Hệ bậc thang thường sử dụng trong quá trình xuyên thời gian mà các hoạt động của mỗi giai đoạn trực tiếp ảnh hưởng hoặc bị ảnh hưởng bởi giai đoạn trước và sau nó mà không bị ảnh hưởng bởi các giai đoạn khác. Hệ thống đó xuất hiện trong sản xuất mà sản phẩm ở mỗi giai đoạn bị ảnh hưởng bởi giai đoạn trước và nó thì ảnh hưởng tới giai đoạn sau.
+
+Trong một số bài toán các khối ma trận con $A^{ii}$ dọc đường chéo chính hoặc đường chéo phụ thường có thể giống nhau. Nếu điều đó xảy ra thì sẽ có rất nhiều tiện lợi.
+
+\noindent{\bf d. Mô hình tam giác. }
+Một dạng phổ biến khác của hệ này mà có thể xử lý bằng phương pháp phân rã Dantzig Wolfe là hệ khối tam giác dưới  (lower block triangular).
+\begin{equation}\label{PT04}
+ \begin{array}{llllll}
+\min \set{(c^0)^Tx^0 &+ (c^1)^Tx^1 &+ (c^2)^Tx^2 &+ (c^3)^Tx^3 &+ (c^4)^T x^4 &= z} \\
+&\mbox{ }A^{11} x^1 & & & & = b^1\\
+&\mbox{  }A^{21} x^1 &+A^{22} x^2 & & & = b^2\\
+&\mbox{  }A^{31} x^1 &+A^{32} x^2 &+A^{33} x^3 & & = b^3\\
+&\mbox{  }A^{41} x^1 &+A^{42} x^2 &+A^{43} x^3 &+A^{44} x^4 & = b^4\\
+&x^k \geq 0, & k = 1, \ldots, 4.
+\end{array} .
+\end{equation}
+Ngoài những mô hình cụ thể trên, ta có thể xét các mô hình khác như: dạng đường chéo, ma trận các đường chéo, ma trận hình sao, ma trận dải...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+ Ket thuc Chuong 1.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

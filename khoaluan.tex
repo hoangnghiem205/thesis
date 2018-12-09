@@ -1,0 +1,84 @@
+\documentclass[12pt, a4paper, reqno, oneside]{book}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{graphics}
+%\input setbmp
+\usepackage[unicode]{hyperref}
+\usepackage{titledot}
+\titlename{Chương}
+%+ Can le van ban
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.25in}
+\renewcommand{\baselinestretch}{1.5}
+
+%+ Dinh nghia mot so ky hieu toan hoc.
+\def\B{\mathscr B}
+\def\one{\mathbf 1}
+\def\R{{\mathbb R}}
+\def\LL{{\mathbb L}}
+\newcommand\abs[1]{|#1|}
+\newcommand\set[1]{\{#1\}}
+\newcommand\norm[1]{||#1||}
+\DeclareMathOperator{\vrai}{vrai}
+\DeclareMathOperator{\const}{const}
+\newcommand{\eoproof}{\hfill $\square$}
+\newcommand{\spro}[1]{\left<#1\right>}
+\newcommand{\argmin}{\arg\min}
+
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\theoremstyle{remark}
+\newtheorem{lemma}{\bf Bổ đề}[section]
+\newtheorem{theorem}{\bf Định lý}[section]
+\newtheorem{proposition}{\bf Mệnh đề}[section]
+\newtheorem{corollary}{\bf Hệ quả}[section]
+\newtheorem{definition}{\bf Định nghĩa}[section]
+\newtheorem{remark}{\bf Chú ý}[section]
+\newtheorem{example}{\it Ví dụ}[chapter]
+
+%+ Bat dau tai lieu tai day.
+\begin{document}
+%+ ====================================================
+\makeatletter
+\renewcommand{\ps@myheadings}{
+\renewcommand{\@oddhead}{\textsf{Luận văn Thạc sỹ - ngành toán ứng dụng}\hfil\textrm{\thepage}}
+\renewcommand{\@oddfoot}{\textsf{Nghiêm Minh Hoàng, CA160035, Toán ứng dụng.}\hfil}
+}
+\makeatother 
+
+%+ Page style
+\newpage
+\input bialuanan
+
+\pagestyle{plain}
+\input loicamon
+
+\tableofcontents
+\newpage
+\input loimodau
+
+\newpage
+\input {chuong1}
+
+\newpage
+\input {chuong2}
+
+\newpage
+\input {chuong3}
+
+\newpage
+\input {Phuluc}
+
+%\newpage
+\input {Ketluan}
+
+\newpage
+\input {Tailieuthamkhao}
+
+\end{document}
