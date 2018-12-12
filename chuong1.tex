@@ -7,7 +7,8 @@
 \chapter{CƠ SỞ LÝ THUYẾT MÃ}
 
 Trong chương này, chỉ những khái niệm cơ bản liên quan được sử dụng trong luận án mới được đề cập. Nội dung kiến thức về đại số, ngôn ngữ và mã của các từ hữu hạn trình bày trong các mục,
-từ Mục 1.1 đến Mục 1.4, được tham khảo và trích dẫn từ các tài liệu [].
+từ Mục \hyperlink{page.6}{\textcolor{blue}{1.1}} đến Mục \hyperlink{page.16}{\textcolor{blue}{1.4}}, được tham khảo và trích dẫn từ các tài liệu [\textcolor{red}{4; 5; 6; 7; 9; 13; 16; 18; 21; 27; 28}].. Bên cạnh đó, luân án còn giới thiệu một số lớp mã dựa trên các hình thức tích mới, hiệu quả của các lớp mã này trong các chương tiếp theo. Nội dung kiến thức về mã luân phiên và mã của các từ định biên trong trình bày trong Mục \textcolor{blue}{1.5} là một hướng nghiên cứu mới trong lý thuyết mã, được đề xuất gần đây trong các công trình [\textcolor{red}{14; 15; 23; 32; 33; 34; 35}]. Kiến thức về ngôn ngữ và mã của các từ vô hạn xem như một sự mở rộng các khái niệm trong lý thuyết mã truyền thống trường hợp vô hạn được tổng hợp từ các tài liệu [\textcolor{red}{3; 10; 11; 13; 19; 20; 24; 29; 31}], là nội dung của mục \textcolor{blue}{1.6}.
+Trong luận án tập các số tự nhiên được ký hiệu là \begin{math}\mathbb{N}\end{math}. Lực lượng của 1 tập hợp $X$ được ký hiện là Card($X$). Các bảng chữ đều được giả thiết là hữu hạn nếu không nói gì khác.
 %*************************************************************************
 %+ 1.1. Nua nhom va vi nhom
 %************************************************************************
@@ -18,18 +19,17 @@ của S cùng với phép toán cảm sinh là cho T trở thành nửa nhóm (t
 Một vị nhóm con của vị nhóm S là một nửa nhóm con có chứa đơn vị của S.
 
 
-\begin{example}\label{ex.1.1} 
-    $M={0,1}$ là vị nhóm nhân với phần tử đơn vị là 1.
-\end{example}
-\begin{example}\label{ex.1.2} 
-    Với vị nhóm $M$ bất kỳ, ta trang bị cấu trúc vị nhóm cho tập tất cả các tập con $\mathcal{P}(M)$ của M bằng cách định nghĩa, với $X, Y \subset M$
+\textit{Ví dụ 1.1.} $M = \{0,1\}$ là vị nhóm nhân với phần tử đơn vị là 1.
+
+\textit{Ví dụ 1.2.}
+    Với vị nhóm $M$ bất kỳ, ta trang bị cấu trúc vị nhóm cho tập tất cả các tập con $\mathcal{P}(M)$ của M bằng cách định nghĩa, với $X, Y \subset M$,
     $$
         XY = \{ xy | x \in X, y \in Y \}
     $$
-    Phần tử đơn vị là {1}
-\end{example}
-\begin{example}\label{ex.1.3} 
-    Từ các vị nhóm $M, N$ ta có vị nhóm $M \times N$ là tích trực tiếp của $M$ và $N, M^{n}$ là tích trực tiếp của $n$ lần vị nhóm $M$.
+    Phần tử đơn vị là $\{1\}$.
+1.1 Nửa nhóm và vị nhóm
+\textit{Ví dụ 1.3.} 
+    Từ các vị nhóm $M, N$ ta có vị nhóm $M \times N$ là tích trực tiếp của $M$ và $N, M^{(n)}$ là tích trực tiếp của $n$ lần vị nhóm $M$.
 
     Cho các nửa nhóm (vị nhóm) $S$ và $T$. Ánh xạ $\varphi : S \rightarrow T$ được gọi là một {\it đồng cấu nửa nhóm} (t.ư. {\it vị nhóm}) nếu với mọi $a, b \in S$,
     $$
@@ -39,7 +39,19 @@ Một vị nhóm con của vị nhóm S là một nửa nhóm con có chứa đ�
 
     Đồng cấu $\varphi$ được gọi là {\it đơn cấu} (t.ư {\it toàn cấu, đẳng cấu}) nếu $\varphi$ là đơn ánh (t.ư. toàn ánh, song ánh). 
     Một đồng cấu từ vị nhóm $S$ vào chính nó thì được gọi là một {\it tự đồng cấu}.
-\end{example}
+    Một {\it tương đẳng} trên một vị nhóm $M$ là một quan hệ tương đương ${\theta}$ trên $M$ sao cho với mọi $m,m' \in M, u,v \in M$
+    $$
+    m \equiv m'mod\theta \Rightarrow umv \equiv um'vmod\theta 
+    $$
+    Nếu $\varphi : M \to N$ là một đồng cấu vị nhóm thì {\it quan hệ} ({\it hạt nhân}) $\equiv_\varphi$ trên $\theta$, cho bởi $m \equiv_\varphi m'mod\theta {\Leftrightarrow}$ $\varphi(m) = \varphi(m')$ là một tương đẳng trên $M$. Ngược lại nếu $\theta$ là một tương đẳng trên vị nhóm $M$, tập thương $M/\theta$ với phép toán $[x]_\theta[y]_\theta = [xy]_\theta$, ở đó $[x]_\theta$ kí hiệu tương đương theo $\theta$ chưa $x$, là một {\it vị nhóm thương} của $M$ với tương đẳng $\theta$ và ta có {\it đồng cấu tự nhiên} $\theta^\aleph : M \to M/\theta$ cho bởi $\theta^\aleph(m) = [m]_\theta$ với mọi $m \in M$.
+    Cho $M$ là một vị nhóm. Với $x, y \in M$, ta có: 
+    \center{    
+        $x^{-1}y = \{z \in M | x.z = y\} $ và $ xy^{-1} = \{z \in M | x= z.y \}.$
+    }\\
+    Với $S, T \subseteq M$, ta định nghĩa các phép cắt trái, phải của $S$ bởi $T$
+    $
+    T^{-1}S = \{u \in M \exists \in T : t.u \in S \}$ và $ST^{-1} = \{ u \in M \exists \in T : u.t \in S \}
+    $
 %+ Dinh nghia 1.1.1
 \begin{definition}\label{de.1.1.1} 
 Giả sử $C\subseteq R^n$ là một tập hợp khác rỗng.
