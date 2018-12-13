@@ -8,7 +8,7 @@
 
 Trong chương này, chỉ những khái niệm cơ bản liên quan được sử dụng trong luận án mới được đề cập. Nội dung kiến thức về đại số, ngôn ngữ và mã của các từ hữu hạn trình bày trong các mục,
 từ Mục \hyperlink{page.6}{\textcolor{blue}{1.1}} đến Mục \hyperlink{page.16}{\textcolor{blue}{1.4}}, được tham khảo và trích dẫn từ các tài liệu [\textcolor{red}{4; 5; 6; 7; 9; 13; 16; 18; 21; 27; 28}].. Bên cạnh đó, luân án còn giới thiệu một số lớp mã dựa trên các hình thức tích mới, hiệu quả của các lớp mã này trong các chương tiếp theo. Nội dung kiến thức về mã luân phiên và mã của các từ định biên trong trình bày trong Mục \textcolor{blue}{1.5} là một hướng nghiên cứu mới trong lý thuyết mã, được đề xuất gần đây trong các công trình [\textcolor{red}{14; 15; 23; 32; 33; 34; 35}]. Kiến thức về ngôn ngữ và mã của các từ vô hạn xem như một sự mở rộng các khái niệm trong lý thuyết mã truyền thống trường hợp vô hạn được tổng hợp từ các tài liệu [\textcolor{red}{3; 10; 11; 13; 19; 20; 24; 29; 31}], là nội dung của mục \textcolor{blue}{1.6}.
-Trong luận án tập các số tự nhiên được ký hiệu là \begin{math}\mathbb{N}\end{math}. Lực lượng của 1 tập hợp $X$ được ký hiện là Card($X$). Các bảng chữ đều được giả thiết là hữu hạn nếu không nói gì khác.
+Trong luận án tập các số tự nhiên được ký hiệu là $\mathbb{N}$. Lực lượng của 1 tập hợp $X$ được ký hiện là Card($X$). Các bảng chữ đều được giả thiết là hữu hạn nếu không nói gì khác.
 %*************************************************************************
 %+ 1.1. Nua nhom va vi nhom
 %************************************************************************
@@ -43,15 +43,29 @@ Một vị nhóm con của vị nhóm S là một nửa nhóm con có chứa đ�
     $$
     m \equiv m'mod\theta \Rightarrow umv \equiv um'vmod\theta 
     $$
-    Nếu $\varphi : M \to N$ là một đồng cấu vị nhóm thì {\it quan hệ} ({\it hạt nhân}) $\equiv_\varphi$ trên $\theta$, cho bởi $m \equiv_\varphi m'mod\theta {\Leftrightarrow}$ $\varphi(m) = \varphi(m')$ là một tương đẳng trên $M$. Ngược lại nếu $\theta$ là một tương đẳng trên vị nhóm $M$, tập thương $M/\theta$ với phép toán $[x]_\theta[y]_\theta = [xy]_\theta$, ở đó $[x]_\theta$ kí hiệu tương đương theo $\theta$ chưa $x$, là một {\it vị nhóm thương} của $M$ với tương đẳng $\theta$ và ta có {\it đồng cấu tự nhiên} $\theta^\aleph : M \to M/\theta$ cho bởi $\theta^\aleph(m) = [m]_\theta$ với mọi $m \in M$.
+    \hspace{10mm} Nếu $\varphi : M \to N$ là một đồng cấu vị nhóm thì {\it quan hệ} ({\it hạt nhân}) $\equiv_\varphi$ trên $\theta$, cho bởi $m \equiv_\varphi m'mod\theta {\Leftrightarrow}$ $\varphi(m) = \varphi(m')$ là một tương đẳng trên $M$. Ngược lại nếu $\theta$ là một tương đẳng trên vị nhóm $M$, tập thương $M/\theta$ với phép toán $[x]_\theta[y]_\theta = [xy]_\theta$, ở đó $[x]_\theta$ kí hiệu tương đương theo $\theta$ chưa $x$, là một {\it vị nhóm thương} của $M$ với tương đẳng $\theta$ và ta có {\it đồng cấu tự nhiên} $\theta^\aleph : M \to M/\theta$ cho bởi $\theta^\aleph(m) = [m]_\theta$ với mọi $m \in M$.\\
     Cho $M$ là một vị nhóm. Với $x, y \in M$, ta có: 
     \center{    
         $x^{-1}y = \{z \in M | x.z = y\} $ và $ xy^{-1} = \{z \in M | x= z.y \}.$
     }\\
-    Với $S, T \subseteq M$, ta định nghĩa các phép cắt trái, phải của $S$ bởi $T$
+    \begin{flushleft}
+    \hspace{10mm} Với $S, T \subseteq M$, ta định nghĩa các phép cắt trái, phải của $S$ bởi $T$
+    \end{flushleft}
     $
     T^{-1}S = \{u \in M \exists \in T : t.u \in S \}$ và $ST^{-1} = \{ u \in M \exists \in T : u.t \in S \}
     $
+    \begin{flushleft}
+    \hspace{10mm}Ta có tính chất cơ bản sau
+    \end{flushleft}
+\begin{flushleft}
+    \textbf{Tính chất 1.1}  Cho $M$ là một vị nhóm , $P,K \subseteq M, P = K^*$ và $m \in M$. Khi đó $P^{-1}(m^{-1})K = (m.P)^{-1}K$.\\
+    {\it Chứng minh.} Chứng minh $P^{-1}(m^{-1})K \subseteq (m.P)^{-1}K$. Ta có\\
+    \hspace{10mm} $\omega \in P^{-1}(m^{-1})K \Leftrightarrow (\exists p \in P, k \in K : \omega = p^{-1}( m^{-1}k ) \Leftrightarrow k = m.p.\omega).$ \\
+    Vi vậy $\omega = (m.p^{-1}k \in (m.P)^{-1}K.$ \\
+    \hspace{10mm}Chứng minh $P^{-1}(m^{-1})K \subseteq P^{-1}( m^{-1}K )$. Ta có \\
+    \hspace{20mm} $\omega \in ( m.P )^{-1}K \Leftrightarrow ( \exists p \in P , k \in K : \omega = ( m.p )^{-1}k \Leftrightarrow k = m.p.\omega ).$ \\
+    Vì vậy $\omega = p^{-1}( m^{-1}k ) \in P^{-1}( m^{-1}K )$
+\end{flushleft}
 %+ Dinh nghia 1.1.1
 \begin{definition}\label{de.1.1.1} 
 Giả sử $C\subseteq R^n$ là một tập hợp khác rỗng.
@@ -105,7 +119,9 @@ Chú ý rằng, tập lồi đa diện đóng, bị chặn thì không có hư�
 
 %+ -------------------------------------------------------------------------------------------
 %+ 1.1.2. Mot so dinh ly quan trong.
+\begin{flushleft}
 \subsection{Một số kết quả trong giải tích lồi}
+\end{flushleft}
 Phần này trình bày một số kết quả đã được đề cập trong giải tích lồi có liên quan đến khóa luận. Trước hết, cần nhắc lại một trong những định lý quan trọng là định lý biểu diễn tập lồi đa diện.
 %+ Dinh ly 1.1.1. (Ve bieu dien tap loi da dien)
 \begin{theorem}\label{th.1.1.1} 
@@ -132,6 +148,39 @@ trong đó ma trận $A\in\R^{m\times n}, b\in\R^m$ và giả thiết $A$ có h�
 J_+(x^0):=\set{j\in\set{1,\dots, n}\;:\; x^0_j>0}.
 \end{equation}
 \end{theorem}
+
+%%%%%%%%%%%
+% 1.2 Từ và ngôn ngữ 
+%%%%%%%%%%
+\begin{flushleft}
+    \section{Từ và ngôn ngữ}
+\end{flushleft}
+\begin{flushleft}
+Cho $A$ là một \textit{bảng chữ} . Một từ $\omega$ trên bảng chữ $A$ là một dãy hữu hạn các phần tử của $A$
+$$
+    \omega = (a_1, a_2, a_3, ... , a_n), a_i \in A
+$$
+\hspace{10mm}Tập tất cả các từ trên bảng chữ $A$ được ký hiệu là $A^*$ và được trang bị phép nhân (tích) ghép có tính chất kết hợp 
+$$
+(a_1, a_2, ... , a_n)(b_1, b_2, ... , b_n) = (a_1, a_2, ... , a_n,b_1, b_2, ... , b_n).
+$$
+Vì vậy để thuận lợi ta viết 
+$$
+    \omega = a_1a_2...a_n
+$$
+thay cho $\omega = ( a_1, a_2, ... , a_n )$. Một phần tử $a \in A$ được gọi là một \textit{chữ cái. Từ rỗng} được ký hiệu là $\varepsilon$ đóng vai trò là phần tử đơn vị trong phép nhân ghép. Do đó, tập $A^*$ có cấu trúc vị nhóm và $A^*$ được gọi là vị nhóm tự do trên $A$. Tập tất cả các từ khác rỗng trên $A$ được ký hiệu là $A^+$ . Ta có $A^+$ . Ta có $A^+ = A^* - \{{\varepsilon}\}$ 
+\hspace{10mm}Độ dài $|\omega|$ của từ $\omega = a_1a_2...a_n$ với $a_i \in A$ là $n.$ Quy ước $|\varepsilon|$ = 0. Ánh xạ $\omega \to |\omega|$ là một đồng cấu từ $A^*$ đến vị nhóm cộng $\mathbb{N}$. Với $n \ge 0$, ta ký hiệu 
+$$
+    A^{<n} = \{ \omega \in A | |\omega| \le n - 1 \}
+$$
+và 
+$$
+    A^{<n} = \{ \omega \in A | |\omega| \le n \}
+$$
+Đặt biệt $A^{<0} = \theta $ và $A^{<0} = \{ \varepsilon \}$. \\
+\hspace{10mm}Một từ $\omega \in A^*$ là một \textit{khúc con} của một từ $ x \in A^*$ nếu tồn tại $u, v \in A^*$ sao cho $x = u\omega v$ 
+\end{flushleft}. Quan hệ \textit{"là một khúc con của"} là quan hệ thứ tự bộ phận trên $A^*$. Một khúc con $\omega$ của 
+$x$ là \textit{khúc con thật sự} nếu $\omega \ne x$. Một từ $\omega \in A^*$ là một \textit{khúc đầu} (t.ư. \textit{khúc đuôi}) của một từ $\omega \in A^*$ nếu tồn tại một từ $u \in A^*$ sao cho $x = \omega u$ (t.ư. $x = u\omega$). Quan hệ \textit{"là một khúc con của"} (t.ư. \textit{"là một khúc đuôi của"} ) cũng là một quan hệ thứ tự bộ phận trên $A^*$. Ta viết $\omega \le_p x$ (t.ư. $\omega \le_s x$) khi $\omega$ là một khúc đầu (t.ư. khúc cuối) của $x$ và $\omega <_p x$ (t.ư. $\omege <_{s} x$ ) khi $\omega \le_{p}$ và $\omega \ne x$
 
 %*************************************************************************
 %+ 1.2. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
