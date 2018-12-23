@@ -177,16 +177,146 @@ và
 $$
     A^{<n} = \{ \omega \in A | |\omega| \le n \}
 $$
-Đặt biệt $A^{<0} = \theta $ và $A^{<0} = \{ \varepsilon \}$. \\
-\hspace{10mm}Một từ $\omega \in A^*$ là một \textit{khúc con} của một từ $ x \in A^*$ nếu tồn tại $u, v \in A^*$ sao cho $x = u\omega v$ 
-\end{flushleft}. Quan hệ \textit{"là một khúc con của"} là quan hệ thứ tự bộ phận trên $A^*$. Một khúc con $\omega$ của 
-$x$ là \textit{khúc con thật sự} nếu $\omega \ne x$. Một từ $\omega \in A^*$ là một \textit{khúc đầu} (t.ư. \textit{khúc đuôi}) của một từ $\omega \in A^*$ nếu tồn tại một từ $u \in A^*$ sao cho $x = \omega u$ (t.ư. $x = u\omega$). Quan hệ \textit{"là một khúc con của"} (t.ư. \textit{"là một khúc đuôi của"} ) cũng là một quan hệ thứ tự bộ phận trên $A^*$. Ta viết $\omega \le_p x$ (t.ư. $\omega \le_s x$) khi $\omega$ là một khúc đầu (t.ư. khúc cuối) của $x$ và $\omega <_p x$ (t.ư. $\omege <_{s} x$ ) khi $\omega \le_{p}$ và $\omega \ne x$
+Đặc biệt $A^{<0} = \theta $ và $A^{<0} = \{ \varepsilon \}$. \\
+\hspace{10mm}Một từ $\omega \in A^*$ là một \textit{khúc con} của một từ $ x \in A^*$ nếu tồn tại $u, v \in A^*$ sao cho $x = u\omega v$ Quan hệ \textit{"là một khúc con của"} là quan hệ thứ tự bộ phận trên $A^*$. Một khúc con $\omega$ của $x$ là \textit{khúc con thật sự} nếu $\omega \ne x$. Một từ $\omega \in A^*$ là một \textit{khúc đầu} (t.ư. \textit{khúc đuôi}) của một từ $\omega \in A^*$ nếu tồn tại một từ $u \in A^*$ sao cho $x = \omega u$ (t.ư. $x = u\omega$). Quan hệ \textit{"là một khúc con của"} (t.ư. \textit{"là một khúc đuôi của"} ) cũng là một quan hệ thứ tự bộ phận trên $A^*$. Ta viết $\omega \le_p x$ (t.ư. $\omega \le_s x$) khi $\omega$ là một khúc đầu (t.ư. khúc cuối) của $x$ và $\omega <_p x$ (t.ư. $\omega <_{s} x$ ) khi $\omega \le_{p}$ và $\omega \ne x$ ( t.ư $\omega \le_s x$ và $\omega \ne x$ ). Thứ tự này có tính chất cơ bản sau đây. Nếu có từ x,
 
+\end{flushleft}
+$\omega \le_p x, \omega' \le_p x, ($ t.ư $ \omega \le_s x, \omega' \le_s x ),$
+\begin{flushleft}
+thì $\omega$ và $\omega'$ so sánh được với nhau, tức là
+\end{flushleft}
+$\omega \le_p \omega'$ hoặc $\omega' \le_p \omega $ (t.ư $\omega \le_s \omega'$ hoặc $\omega' \le_s \omega $)
+\begin{flushleft}
+    1.2 Từ và ngôn ngữ\\
+    \hspace{10mm} Tập con $X$ của $A^*$ được gọi là tập $prefix$ nếu không có từ nào của $X$ là khúc đầu thực sự của một từ khác trong $X$ .
+    \hspace{10mm} Hai từ $x, y \in A^*$ được gọi là \textit{liên hợp} nếu tồn tại các từ $u, v$ sao cho $x = uv$, $y = vu$. Xem hình \hyperlink{page.12}{\textcolor{blue}{1.1}}. Khi đó ta cũng gọi $v$ là một $overlap$ của $x$ và $y$
+    
+\end{flushleft}
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{1_1.png}
+\caption{\textbf{Hình 1.1} \textit{Một overlap của hai từ liên hợp x và y}}
+\end{figure}
+\begin{flushleft}
+Một tập con của $A^*$ được gọi là một \textit{ngôn ngữ} trên $A$.
+Với một ngôn ngữ $X$ thuộc $A^*$, ta kí hiệp $X^*$ vị nhóm con sinh bởi $X$,
+\end{flushleft}
+$X^* = \{ x_1x_2...x_n | n \ge 0, x_i \in X\}$
+\begin{flushleft}
+Tương tự, ta kí hiệu $X^+$ nửa nhóm con sinh bởi $X$,
+\end{flushleft}
+$X^+ = \{ x_1x_2...x_n | n \ge 1, x_i \in X\}$
+\begin{flushleft}
+Ta có
+\end{flushleft}
+$$
+\begin{cases}
+    X^* - \{ \theta \} & \textit{nếu } \theta \not\in X, \\
+    X^* & \textit{nếu } \theta \not\in X, \\
+\end{cases}
+$$
+\begin{flushleft}
+\hspace{10mm}Một \textit{phân tích} của một từ $\omega \in A^*$ theo các từ của $X$ cho bởi đẳng thức $\omega = x_1x_2...x_n, x_i \in X, i \ge 1$. Khi đó, ta cũng nói $\omega$ có một $X$-\textit{phân tích}. Theo định nghĩa, mỗi từ $\omega \in X^*$ có ít nhất một $X$-\textit{phân tích}. Để dễ hình dung, ta thường biểu diễn một $X$-\textit{phân tích} $\omega = x_1x_2...x_n, x_i \in X, i \ge 1$ bằng hình sau: \\
+\end{flushleft}
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{1_2.png}
+\caption{\textbf{Hình 1.2} \textit{Một X - phân tích từ} $\omega$}
+\end{figure}
+\begin{flushleft}
+hspace{10mm}Cho $X, Y \subseteq A^*$ là các ngôn ngữ. \textit{Tích} của $X$ và $Y$, \textit{thương trái, thương phải} của $X$ bởi $Y$ là các ngôn ngữ được định nghĩa ở mục trước với vị nhóm $M = A^*$. với $\omega, v \in M$, ta sẽ viết $uv$ thay cho $u.v$. Khi đó:
+\end{flushleft}
+$XY = \{ xy|x \in X , y \in Y\}$,\\
+$Y^{-1}X = \{ \omega \in A^* | y\omega \in X , y \in Y\}$,\\
+$XY^{-1} = \{ \omega \in A^* | y\omega \in X , y \in Y\}$
+\begin{flushleft}
+Ký hiêu $u^{-1}X, Xu^{-1}$ được sử dụng khi tập $Y$ chỉ có một phần tử $Y = \{ u \}$.
+\end{flushleft}
 %*************************************************************************
-%+ 1.2. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
+%+ 1.3. Otomat và ngôn ngữ chính quy 
+%**********************************************************
+\begin{flushleft}
+\section{Otomat và ngôn ngữ chính quy}
+Cho A là một bảng chữ, một \textit{otomat} trên A là một bộ $\mathcal{A}$ = $(\mathcal{Q},A, \mathcal{F})$ gồm một tập hữu hạn các trạng thái Q và các tập $\mathcal{F} \subseteq Q \times A \times Q$, mỗi cung có dạng \textit{p,a,q} với \textit{p} là đỉnh đầu, $q$ là đỉnh cuối và $a$ là nhãn của cung. Ta còn biểu diễn một Otomat với \textit{tập trạng thái khởi đầu} $I \subseteq Q$ và \textit{tập trạng thái kết thúc} $T \subseteq Q$ bởi $( Q, A, \mathcal{F}, I, T )$ hoặc ngắn gọn $(Q, I, T)$ khi $A$ và $\mathcal{F}$ cố định.
+\end{flushleft}
+\hspace{10mm}Otomat $\mathcal{A}$ = $(Q, A, \mathcal{F})$ là \textit{hữu hạn} nếu tập trạng thái $Q$ hữu hạn.\\
+\hspace{10mm}Một \textit{đường đi} trong otomat $A$ là một dãy $c$ = $(f_1, f_2, ... ,f_n)$ các cung liền nhau \\
+$f_i$ = $(q_i, a_i, q_{i+1})$,  $1 \le i \le n.$
+\begin{flushleft}
+    \hspace{10mm}Số $n$ được gọi là \textit{độ dài} của đường đi $c$. Từ $w$ = $a_1a_2...a_n$ là \textit{nhãn} của đường đi $c$. Trạng thái $q_1$ là \textit{điểm đầu} và trạng thái $q_{n+1}$ là \textit{điểm cuối} của $c$. Để thuận tiện khi tham chiếu đến đường đi $c$, ta sử dụng ký hiệu
+\end{flushleft}
+$c$ : $q_1$ $\xrightarrow{w} q_{n+1}.$
+\begin{flushleft}
+    Quy ước, với mỗi trạng thái $q \in Q$ , có một đường đi độ dài 0, nhãn $\varepsilon$, từ $q$ đến $q$. 
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Một đường đi $c : i \to t$ là \textit{đường đi thành công} nếu $i \in I$ và $t \in T$. Ngôn ngữ \textit{đoán nhận được} bởi $\mathcal{A}$ ký hiệu là $L(\mathcal{A})$, được định nghĩa là tập các nhãn của các đường đi thành công. $L(\mathcal{A})$ = $\{ w \in A^* $ | $ \exists c : i \xrightarrow{w} t, i \in I, t\in T \}$.
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Một Otomat $\mathcal{A}$ = $(Q, I, T)$ là \textit{đơn định} nếu $Card(I)=1$ và nếu  
+\end{flushleft}
+$(p,a,q),(p,a,r) \in \mathcal{F} \Rightarrow q = r$.
+\begin{flushleft}
+\hspace{10mm}Vì vậy, với mỗi $P \in Q$ và $a \in A$ có nhiều nhất một trạng thái $q \in Q$ sao cho $p \xrightarrow{a} q$. Với $p \in Q$ và $a \in A$, ta định nghia 
+\end{flushleft}
+$p.a$ = $\begin{cases}
+    q \text{  nếu  } (p,a,q ) \in \mathcal{F},\\
+    \emptyset \text{  nếu  } (p,a,q) \not\in \mathcal{F}.\\ 
+\end{cases}$
+\begin{flushleft}
+    Hàm bộ phận
+\end{flushleft}
+$Q \times A \to Q$
+\begin{flushleft}
+định nghĩa như trên được mở rộng cho từ bằng cách đặt, với mọi $q \in Q$,
+\end{flushleft}
+$p.\varepsilon$ = $P$,
+\begin{flushleft}
+và, với $w \in A^*$ và $a \in A$, 
+\end{flushleft}
+$p.wa$ = $(p.w).a$
+\begin{flushleft}
+Hàm định nghĩa như trên được gọi là \textit{hàm chuyển} của $\mathcal{A}$. Khi đó, với $I$ = $\{ i \}$ ta có
+\end{flushleft}
+$L(\mathcal{A})$ = $\{ w \in A^* \text{ | } i.w \in T \}$.
+\begin{flushleft}
+\hspace{10mm}Cho $X \subseteq A^*$ là một ngôn ngữ chính quy. Ta định nghĩa một otomat hữu hạn đặc biệt $\mathcal{A}(X)$ = $(Q, i, T)$ như sau. Các trạng thái của $\mathcal{A(X)}$ là các tập khác rỗng 
+\end{flushleft}
+$u^{-1}X$
+\begin{flushleft}
+Với $u \in A^*$. Trạng thái khởi đầu là $X$ = $\varepsilon^{-1} X$, và các trạng thái kết thúc có chứa từ rỗng. Hàm chuyển cho một trạng thái $Y$ = $u^{-1} X$ và một chữ cái $a \in A$ được cho bởi  
+\end{flushleft}
+$Y \xrightarrow{a} a^{-1} Y$.
+\begin{flushleft}
+Đây là một hàm bộ phận và ta có 
+\end{flushleft}
+$L(\mathcal{A(X)})$ = X.
+\begin{flushleft}
+\hspace{10mm}Ta biết rằng theo \hyperlink{page.78}{\textcolor{red}{5}}, otomat $\mathcal{A} (X)$ được gọi là \textit{otomat tối tiểu} của X theo nghĩa đơn định, có số trạng thái ít nhất mà đoán nhận X. 
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Cho $\mathcal{A}$ = $(Q, i, T)$ là một Otomat đơn định. Ta xét tập $\mathcal{F}$ của các hàm bộ phận từ $Q$ đến Q. Các hàm này được viết về phía bên phải: nếu $q \in Q$ và $m \in \mathcal{F}$ khi đó ảnh của $q$ bởi $m$ được ký hiệu là $qm$. Hàm hợp được định nghĩa bởi 
+\end{flushleft}
+$q (mn) = (qm) n $
+\begin{flushleft}
+\hspace{10mm}Vì vậy $\mathcal{F}$ có cấu trúc vị nhóm 
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Xét $\phi$ là một ánh xạ cho tương ứng mỗi từ $w \in A^*$ một hàm bộ phận từ $Q$ đến $Q$ định nghĩa bởi 
+\end{flushleft}
+$q \phi (w) $ = $q.w.$
+\begin{flushleft}
+    \hspace{10mm}Khi đó, ánh xạ $\phi$ là một đồng cấu từ $A^*$ đến vị nhóm $\mathcal{F}$, và vị nhóm $\phi (A^*) $ của $\mathcal{F}$ được gọi là \textit{vị nhóm các phép chuyển dịch} của otomat $\mathcal{A}$.\\
+    \hspace{10mm}Một đồng cấu $\phi$ từ $A^*$ đến một vị nhóm $M$ được gọi là thoả mãn ngôn ngữ $X \subseteq A^*$ nếu tồn tại $B \subseteq M$, $B$ = $\phi(X)$ sao cho 
+\end{flushleft}
+$\phi^{-1}(B)$ = $X$.
+\begin{flushleft}
+    \hspace{10mm}Khi đó, ta cũng nói $X$ \textit{thoả bởi} $M$ và $X$ cho bởi một bộ ba $(\phi, M, B)$.
+    \hspace{10mm}Cho $X, Y \subseteq A^*$ là các ngôn ngữ. Ta thiết lập bổ đề kỹ thuật sau đây về tính thoả được làm cơ sở xây dựng các thuật toán trên vị nhóm trong các chương trình tiếp theo.
+\end{flushleft}
+%*************************************************************************
+%+ 1.3. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
+
 %**********************************************************
 \section{Bài toán quy hoạch tuyến tính gốc và đối ngẫu}
-
 %+ -------------------------------------------------------------------------------------------
 %+ 1.2.1. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
 \subsection{Bài toán quy hoạch tuyến tính gốc và đối ngẫu.}
