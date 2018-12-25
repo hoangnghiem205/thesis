@@ -300,17 +300,74 @@ $q (mn) = (qm) n $
 \hspace{10mm}Vì vậy $\mathcal{F}$ có cấu trúc vị nhóm 
 \end{flushleft}
 \begin{flushleft}
-\hspace{10mm}Xét $\phi$ là một ánh xạ cho tương ứng mỗi từ $w \in A^*$ một hàm bộ phận từ $Q$ đến $Q$ định nghĩa bởi 
+\hspace{10mm}Xét $\varphi$ là một ánh xạ cho tương ứng mỗi từ $w \in A^*$ một hàm bộ phận từ $Q$ đến $Q$ định nghĩa bởi 
 \end{flushleft}
-$q \phi (w) $ = $q.w.$
+$q \varphi (w) $ = $q.w.$
 \begin{flushleft}
-    \hspace{10mm}Khi đó, ánh xạ $\phi$ là một đồng cấu từ $A^*$ đến vị nhóm $\mathcal{F}$, và vị nhóm $\phi (A^*) $ của $\mathcal{F}$ được gọi là \textit{vị nhóm các phép chuyển dịch} của otomat $\mathcal{A}$.\\
-    \hspace{10mm}Một đồng cấu $\phi$ từ $A^*$ đến một vị nhóm $M$ được gọi là thoả mãn ngôn ngữ $X \subseteq A^*$ nếu tồn tại $B \subseteq M$, $B$ = $\phi(X)$ sao cho 
+    \hspace{10mm}Khi đó, ánh xạ $\varphi$ là một đồng cấu từ $A^*$ đến vị nhóm $\mathcal{F}$, và vị nhóm $\varphi (A^*) $ của $\mathcal{F}$ được gọi là \textit{vị nhóm các phép chuyển dịch} của otomat $\mathcal{A}$.\\
+    \hspace{10mm}Một đồng cấu $\varphi$ từ $A^*$ đến một vị nhóm $M$ được gọi là thoả mãn ngôn ngữ $X \subseteq A^*$ nếu tồn tại $B \subseteq M$, $B$ = $\varphi(X)$ sao cho 
 \end{flushleft}
-$\phi^{-1}(B)$ = $X$.
+$\varphi^{-1}(B)$ = $X$.
 \begin{flushleft}
-    \hspace{10mm}Khi đó, ta cũng nói $X$ \textit{thoả bởi} $M$ và $X$ cho bởi một bộ ba $(\phi, M, B)$.
+    \hspace{10mm}Khi đó, ta cũng nói $X$ \textit{thoả bởi} $M$ và $X$ cho bởi một bộ ba $(\varphi, M, B)$.
     \hspace{10mm}Cho $X, Y \subseteq A^*$ là các ngôn ngữ. Ta thiết lập bổ đề kỹ thuật sau đây về tính thoả được làm cơ sở xây dựng các thuật toán trên vị nhóm trong các chương trình tiếp theo.
+\end{flushleft}
+\begin{flushleft}
+\textbf{Bổ đề 1.1} \hspace{10mm} \textit{Giả sử h:} $A^* \to M$ \textit{là một toàn cấu vị nhóm thoả X và Y và gỉa sử} $X$ = $h^{-1}(K)$, $Y$ = $h^{-1}(L)$, $h(X^+)$ = $T$ \textit{với} $K, L, T \subseteq M$. Khi đó
+\end{flushleft}
+$X \cup Y$ = $h^{-1}(L \cup L)$, $X \cap Y$ = $h^{-1}(K \cap L)$, $X - Y$ = $h^{-1}(K - L)$,\\
+$X^{-1}Y$ = $h^{-1}(K^{-1}L)$, $XY^{-1}$ = $h^{-1}(KL^{-1})$, $(X^+)^{-1}Y$ = $h^{-1}T^{-1}L$,\\
+$Y(X^+)^{-1}$ = $h^{-1}(LT^{-1})$.
+\begin{flushleft}
+\textit{Chứng minh}. Giả sử $X$ = $h^{-1}(K)$, $Y$ = $h^{-1}(L)$, $K, L, \subseteq P$, ta chứng mình $X \cup Y$ = $h^{-1}(K \cup L)$. \\
+\hspace{10mm}Trước hết, ta chứng minh $X \cup Y \subseteq h^{-1}(K \cup L)$. Thật vậy, với mọi $w \in X \cup Y$, ta có $h(w) \in K$ hoặc $h(w) \in L$. Vậy $X \cup Y \subseteq h^{-1}(K \cup L)$. \\
+\hspace{10mm}Ngược lại, ta chứng minh $h^{-1}(K \cup L) \subseteq X \cup Y$. Thật vâtj, với mọi $w \in h^{-1}(K \cup L)$, ta có $h(w) \in K \cup L$. Nghĩa là $w \in X \cup Y$. Vậy $h^{-1}(K \cup L) \subseteq X \cup Y$. \\
+\hspace{10mm}Ta chứng minh tương tự cho các quan hệ $X \cap Y$ = $h^{-1}(K \cap L)$, $X - Y$ = $h^{-1}(K - L)$, $X^{-1}Y = h^{-1}(K - L)$, $X^{-1}Y$ = $h^{-1}(K^{-1}L)$ và $XY^{-1}$ = $h^{-1}(KL^{-1})$. \\
+\hspace{10mm}Từ giả thiết $h(X^+)$ =$T$ và $X = h^{-1}(K)$ ta có $K^+$ = $T$. Để chứng minh $(X^+)^{-1}Y$ = $h^{-1}(T^{-1}L)$, ta chứng minh $(X^+)^{-1}Y \subseteq h^{-1}(T^{-1}L) \subseteq (X^+)^{-1}Y$.
+\hspace{10mm}Trước hết, ta chứng minh $(X^+)^{-1}Y$ = $h^{-1}(T^{-1}L)$. Thật vậy, với mọi $w \in (X^+)^{-1}Y$, tồn tại $x_1, x_2, ..., x_n \in X, y \in Y$ sao cho $x_1x_2...x_nw = y$. Từ đó suy ra $h(x_1).h(x_2)...h(x_n) = h(y) \in L$. Hơn nữa, từ $h(x_i) \in K$ suy ra $h(w) \in (K^+)^{-1}L$. Vậy $w \in h^{-1}(T^{-1}L)$. \\
+\end{flushleft}
+Ngược lại ta chứng minh $h^{-1}(T^{-1}L) \subseteq (X^+)^{-1}$. Đặt $w \in h^{-1}(T^{-1}L)$, ta có \\
+$h(w) \in T^{-1}L$ = $(K^+)^{-1}L \Leftrightarrow \exists \alpha \in K^+ : \alpha.h(w) \in L$. 
+\begin{flushleft}
+Từ $\alpha \in K^+$ suy ra $\alpha$ = $\alpha_1\alpha_2...\alpha_p, \alpha_i \in K, i = 1,...,o$. Từ giả thiết h là toàn cấu và $X = h^{-1}(K)$ suy ra tồn tại $x_i \in X, i = 1,...,p$ sao cho $\alpha_i$ = $h(x_i)$. Ta có $\alpha = h(x1x_2...x_p)$, khi đó $\alpha.h(w)$ = $h(x_1x_2...x_pw)$. Từ đó suy ra $x_1x_2...x_pw \in h^{-1}(L)$ = $Y$ và ta có $ư \in (X^+)^{-1}Y$. \\
+\hspace{10mm}Chứng minh $Y(X^+)^{-1}$ = $h^{-1}(LT^{-1})$ tương tự.\\
+Vậy chứng minh được hoàn thành.\\
+\hspace{10mm}Cho $X \subseteq A^*$ là một ngôn ngữ. Với $w \in A^*$, ta định nghĩa \textit{tập ngữ cảnh}
+\end{flushleft}
+Context($w$) = $\{ (u,v) \in A^* \times A^* | uwv \in X \}$.
+\begin{flushleft}
+\hspace{10mm}\textit{Tương đẳng cú pháp} của $X$ là một quan hệ tương đương $\equiv_X$ trên $A^*$ được định nghĩa bởi 
+\end{flushleft}
+$w \equiv_x w' \Leftrightarrow Context(w) = Context(w')$.
+\begin{flushleft}
+\hspace{10mm}Tập thương của $A^*/ \equiv_x được gọi là$ \textit{Vị nhóm cú pháp} của $X$. Ta ký hiệu vị nhóm cú pháp của $X$ là $M_x$ và kí hiệu $\varphi_x$ là đồng cấu chính tắc từ $A^*$ đến $M_x$, gọi là \textit{đồng cấu cú pháp} của X.\\
+\hspace{10mm}Cho $X \subseteq A^*$ là một ngôn ngữ, ta có các kết quả sau đây về tính thoả thuận theo $\varphi_x$, mối liên hệ giữa vị nhóm cú pháp của $X$ và otomat tối tiểu của $\mathcal{A}(X)$ \\
+\textbf{Mệnh đề 1.1} (\hyperlink{page.80}{\textcolor{red}{5}})  Cho $X \subseteq A^*$ \textit{là một ngôn ngữ và cho} $\varphi : A^* \to M$ \textit{là một toàn cấu vị nhóm. Nếu $\varphi$ thoả mãn X thì tồn tại một đồng cấu $\psi$ từ M đến vị nhóm cú pháp $M_x$ sao cho $\varphi_x = \psi \circ \varphi$}. \\
+\textbf{Mệnh đề 1.2} (\hyperlink{page.80}{\textcolor{red}{5}})  Cho $X \subseteq A^*$ \textit{là một ngôn ngữ. Vị nhóm cú pháp của X đẳng cấu với vị nhóm các phép chuyển dịch của otomat tối tiểu $\mathcal{A}(X)$}.\\
+\hspace{10mm}Lớp các \textit{ngôn ngữ chính quy} trên $A^*$(trên $A^+$) được ký hiệu là $RecA^*(RecA^+)$. Ta biết rằng $RecA^*$ là lớp các ngôn ngữ sinh bởi các ngôn ngữ {$a$}, với $a$ là một chữ cái thuộc A, các phép toán Boole($\cup, \cap, - $), phép nhân và phép lặp *, và cũng là lớp các ngôn ngữ đoán nhận được bởi otomat hữu hạn, $RecA^+$ = $\{ L \in RecA^* | L \subseteq A^+ \}$. \\
+Ta có\\
+\textbf{Mệnh đề 1.3} (\hyperlink{page.80}{\textcolor{red}{5}})  \textit{Lớp các ngôn ngữ chính quy trên $A^*$ đóng đối với phép toán Boole: phép hợp ($\cup$), phép giao ($\cap$), phép lấy phần bù ($-$)}.\\
+\hspace{10mm}Định lý sau đây đặc trưng các tính chất của otomat hữu hạn \\
+\textbf{Định lý 1.1} (\hyperlink{page.80}{\textcolor{red}{5}})  Cho $X \subseteq A^*$ \textit{là một ngôn ngữ. Các mệnh đề sau đây tương đương}\\
+\hspace{10mm}\textit{(i)    X là chính quy}.\\
+\hspace{10mm}\textit{(ii)    X là đoán nhận bởi một otomat hữu hạn (hoặc X là đoán nhận được)}.\\
+\hspace{10mm}\textit{(iii)    Otomat tối tiểu $\mathcal{A}(X)$ là hữu hạn}.\\
+\hspace{10mm}\textit{(i$v$)    Họ các tập}.\\
+\end{flushleft}
+$u^-1X$,
+\begin{flushleft}
+\hspace{20mm} với $u \in A^*$, là hữu hạn.\\
+\hspace{10mm}\textit{($v$)    Vị nhóm cú phép $M_x$ là hữu hạn}.\\
+\hspace{10mm}\textit{($vi$)   X thoả bởi một đồng cấu từ $A^*$ đến một vị nhóm hữu hạn M}.\\
+\textit{Nhận xét 1.1}   Giả sử $X \subseteq A^+ $thoả bởi một đồng cấu vị nhóm $\varphi : A^* \to M$ từ $A^*$ đến một vị nhóm hữu hạn M. Nếu X là ngôn ngữ chính quy, ta có thể chọn M là vị nhóm các phép chuyển dịch của otomat tối tiểu đoán nhận X, hoặc vị nhóm cú pháp $M_x$ hữu hạn của X. Ta gọi $m = Card(M_x)$ \textit{là chỉ số tương đẳng cú pháp} của X, hay đơn giản, \textit{m là chỉ số} của X, hoặc X có chỉ số $m$.\\
+\hspace{10mm}Từ bổ đề \hyperlink{page.17}{\textcolor{blue}{1.1}} và Mệnh đề \hyperlink{page.17}{\textcolor{blue}{1.3}}, ta có \\
+\textbf{Hệ quả 1.1} Cho $X, Y \subseteq A^*$ \textit{là các ngôn ngữ chính quy, P là một vị nhóm hữu hạn và $h : A^* \to P$ là một toàn cấu vị nhóm. Nếu $X$ và $Y$ cùng thoả bởi h, thì h thoả tất cả các ngôn ngữ $L \in \mathcal{A}(X, Y)$, với $\mathcal{A}(X, Y)$ là tập tất cả các ngôn ngữ sinh ra bởi X, Y nhờ thực hiện một số hữu hạn các phép toán hợp, giao, lấy phần bù, lấy thương trái và lấy thương phải.}\\
+\hspace{10mm} Mệnh đề sau đây được suy từ định nghĩa cho phép ta xây dựng toàn cấu $h$ trong hệ quả trên.\\
+\textbf{Mệnh đề 1.4}    \textit{Cho $X, Y \subseteq A^*$ là các ngôn ngữ chính quy $, f : A^* \to M và g : A^* \to N $ là các đồng cấu vị nhóm, f thoả X và g thoả Y. Giả sử $h : A^*to P \subseteq M \times N$ là một toàn cấu vị nhóm cho bởi: $\foralla \in A^*, h(a) = (f(a),g(a)$ và P là một vị nhóm con của $M \times N$ sinh bởi tập tất cả các phần tử $h(a), a \in A$. Khi đó h thoả đồng thời X và Y}.\\
+\begin{flushleft}
+\textit{Ví dụ 1.4}  Cho $\varphi : A^* \to M$ là một đồng cấu vị nhóm thoả $X, Y \subseteq A^*, A \ne \emptyset$ và cho $Y = \{ \varepsilon \}$. Ta xây dựng toàn cấu $h$ thoả cả X và Y theo một trong 2 cách sau.
+\hspace{10mm}Cách 1. Cho $Z_2 = \{ 0,1 \}$ là vị nhóm nhân modulo 2 của các số nguyên với đơn vị 1. Rỡ tàng, $Y = \{ \varepsilon \}$ thoả bởi đồng cấu $y : A^* \to Z_2$, được định nghĩa bởi $g(\varepsilon) = 1$ và với mọi $a \in A, g(a) = 0$. Ta có thể kiểm tra X và Y = {$\varepsilon$} cùng thoả bởi toàn cấu vị nhóm 
+\end{flushleft}
 \end{flushleft}
 %*************************************************************************
 %+ 1.3. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
