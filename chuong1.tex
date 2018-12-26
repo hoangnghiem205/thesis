@@ -363,12 +363,56 @@ $u^-1X$,
 \hspace{10mm}Từ bổ đề \hyperlink{page.17}{\textcolor{blue}{1.1}} và Mệnh đề \hyperlink{page.17}{\textcolor{blue}{1.3}}, ta có \\
 \textbf{Hệ quả 1.1} Cho $X, Y \subseteq A^*$ \textit{là các ngôn ngữ chính quy, P là một vị nhóm hữu hạn và $h : A^* \to P$ là một toàn cấu vị nhóm. Nếu $X$ và $Y$ cùng thoả bởi h, thì h thoả tất cả các ngôn ngữ $L \in \mathcal{A}(X, Y)$, với $\mathcal{A}(X, Y)$ là tập tất cả các ngôn ngữ sinh ra bởi X, Y nhờ thực hiện một số hữu hạn các phép toán hợp, giao, lấy phần bù, lấy thương trái và lấy thương phải.}\\
 \hspace{10mm} Mệnh đề sau đây được suy từ định nghĩa cho phép ta xây dựng toàn cấu $h$ trong hệ quả trên.\\
-\textbf{Mệnh đề 1.4}    \textit{Cho $X, Y \subseteq A^*$ là các ngôn ngữ chính quy $, f : A^* \to M và g : A^* \to N $ là các đồng cấu vị nhóm, f thoả X và g thoả Y. Giả sử $h : A^*to P \subseteq M \times N$ là một toàn cấu vị nhóm cho bởi: $\foralla \in A^*, h(a) = (f(a),g(a)$ và P là một vị nhóm con của $M \times N$ sinh bởi tập tất cả các phần tử $h(a), a \in A$. Khi đó h thoả đồng thời X và Y}.\\
+\textbf{Mệnh đề 1.4}    \textit{Cho $X, Y \subseteq A^*$ là các ngôn ngữ chính quy $, f : A^* \to M và g : A^* \to N $ là các đồng cấu vị nhóm, f thoả X và g thoả Y. Giả sử $h : A^* \to P \subseteq M \times N$ là một toàn cấu vị nhóm cho bởi: $\forall \in A^*, h(a) = (f(a),g(a)$ và P là một vị nhóm con của $M \times N$ sinh bởi tập tất cả các phần tử $h(a), a \in A$. Khi đó h thoả đồng thời X và Y}.\\
 \begin{flushleft}
-\textit{Ví dụ 1.4}  Cho $\varphi : A^* \to M$ là một đồng cấu vị nhóm thoả $X, Y \subseteq A^*, A \ne \emptyset$ và cho $Y = \{ \varepsilon \}$. Ta xây dựng toàn cấu $h$ thoả cả X và Y theo một trong 2 cách sau.
-\hspace{10mm}Cách 1. Cho $Z_2 = \{ 0,1 \}$ là vị nhóm nhân modulo 2 của các số nguyên với đơn vị 1. Rỡ tàng, $Y = \{ \varepsilon \}$ thoả bởi đồng cấu $y : A^* \to Z_2$, được định nghĩa bởi $g(\varepsilon) = 1$ và với mọi $a \in A, g(a) = 0$. Ta có thể kiểm tra X và Y = {$\varepsilon$} cùng thoả bởi toàn cấu vị nhóm 
+\textit{Ví dụ 1.4}  Cho $\varphi : A^* \to M$ là một đồng cấu vị nhóm thoả $X, Y \subseteq A^*, A \ne \emptyset$ và cho $Y = \{ \varepsilon \}$. Ta xây dựng toàn cấu $h$ thoả cả X và Y theo một trong 2 cách sau.\\
+\hspace{10mm}Cách 1. Cho $Z_2 = \{ 0,1 \}$ là vị nhóm nhân modulo 2 của các số nguyên với đơn vị 1. Rỡ tàng, $Y = \{ \varepsilon \}$ thoả bởi đồng cấu $y : A^* \to Z_2$, được định nghĩa bởi $g(\varepsilon) = 1$ và với mọi $a \in A, g(a) = 0$. Ta có thể kiểm tra X và Y = {$\varepsilon$} cùng thoả bởi toàn cấu vị nhóm\\
+$h : A^* \to P \subseteq M \times Z_2$ được cho bởi $\forall a \in A, h(a)$ = $(\varphi (a) , 0), 1_p$ = $h(\varepsilon)$ = $(1_M, 1)$.\\
+Đặt $\overline{K}$ = $h(A) \cup 1_P$ = $\{ (h(a), 0) | a \in A \cup 1_P \}$, tâ có $\overline{A}^*$ = $P$.
+\hspace{10mm}Cách 2. Mở rộng vị nhóm $M$ thành vị nhóm $M^1$ = $M \cup \{1\}$ với $1 \not\in M$ là phần tử đơn vị mới của $M^1$ bởi điều kiện ($\textbf{1}.x = x.\textbf{1} = x, \forall x \in M^1$).
+\hspace{10mm}Định nghĩa $h' : A^* \to M^1$ ta định nghĩa toàn cấu $h : A^* \to P$ = $h'(A)^* \subseteq M^1$ cho bởi $h' : h(a)$ = $h'(a), \forall a \in A, h(\varepsilon) = h'(\varepsilon) = 1$.
+\section{Mã của các từ hữu hạn}
+\subsection{Mã và các tính chất đại số của mã}
+Trong phần này ta xem xét định nghĩa và một số tính chất quan trọng của mã. Trước hết ta nhắc lại khái niệm tích không nhập nhằng là cơ sở để xây dựng khái niệm mã.\\
+\hspace{10mm}Cho A là một bảng chữ và $X, Y \subseteq A^*$ là các ngôn ngữ. Tích $XY$ là \textit{không nhập nhằng} nếu mỗi từ $w \in XY$ có duy nhất một phân tích $w = xy$ với $x \in X, y ư\in Y$.\\
+\textbf{Định nghĩa 1.1}     \textit{Giả sử A là một bảng chữ hữu hạn. Tập $X \subseteq A^+ $ là mã trên A nếu với mọi $n,m \ge 1$ và với mọi $x_1x_2,...,x_n,y_1y_2,...,y_m \in X$, nếu có} 
 \end{flushleft}
 \end{flushleft}
+$x_1x_2...x_n$ = $y_1y_2...y_m$
+\begin{flushleft}
+\textit{thì khi đó}
+\end{flushleft}
+$n = m$ và  $x_i = y_i$     với     $i = 1,...,n$.
+\begin{flushleft}
+Cho $X \subseteq A^*$ là một ngôn ngữ. Từ định nghĩa của mã ta suy ra các tính chất sau đây.\\
+\textbf{Tính chất 1.2}      X là mã nếu mỗi từ $x \ A^*$ (t.ư $w \in X^*$) có nhiều nhất (t.ư chỉ có duy nhất) một $X$-phân tích.\\
+\textbf{Tính chất 1.3}    X là mã khi và chỉ khi $X^{-1}X \cap X^*(X^*)^{-1}$ = $\{ \varepsilon \}$.
+\textit{Ví dụ 1.5}  Ngôn ngữ $X = \{ ab,abb,bb \}$ trên bảng chữ $A = \{ a,b \}$ là mã. Thật vậy, giả sử X không là mã. Khi đó tồn tại một từ $w \in X^+$ có độ dài tối tiểu thừa nhập hai X-phân tích khác nhau.
+\end{flushleft}
+$w = x_1x_2...x_n = y_1y_2...y_m$ với $x_1 \ne y_1$
+\begin{flushleft}
+$(n, m \le 1, x_i, y_i \in X )$. Từ đó $x_1 \ne y_1$ suy ra $x_1$ là khúc đầu của $y_1$ hoặc ngược lại. Giả sử $x_1$ là khúc đầu của $y_1$. Với $X$ như trên, ta có $x_1 = ab$ và $y_1 = abb$. Từ đó suy ra $x_2 = bb, y_2 = bb$. Vậy $y_1 = x_1b, y_1y_2 = x_1x_2b$. Thực hiện chứng minh quy nạp theo $k \le 1,$ ta có $x_{k+1} = bb$ và $y_{k+1} = bb$. Từ đó suy ra $y_1y_2...y_{k+1}$ = $x_1x_2...x_{k+1}b$ với mọi $k \le 1$. Điều này có nghĩa là không thể có từ $w$ hữu hạn thừa nhận hai X-phân tích khác nhau, trái với giả thiết. \\
+\begin{figure}[ht]
+    \includegraphics[scale=0.5]{1_3.png}
+    \caption{ \textit{Khởi đầu một phân tích kép của từ $w$} }
+\end{figure}
+\textit{Ví dụ 1.6}  Cho $A = \{ a.b \}$ và $X = \{ b, abb, abbba, bbba, baabb \}$. Ngôn ngữ X không là mã vì tồn tại $w = abbbabbbaabb, w$ có hai X-phân tích khác nhau,
+\end{flushleft}
+$w = (abbba)(bbba(abb)$ = $(abb)(b)(abb)(baabb)$.\\
+Định nghĩa mã theo cách sau đây cho phép ta diễn tả ý nghĩa của thuật ngữ \textit{mã}.
+\begin{flushleft}
+\textbf{Mệnh đề 1.5} (\hyperlink{page.80}{\textcolor{red}{5}})  \textit{Nếu $X \subset A^*$ là mã thì mỗi đồng cấu $\beta$ : $B^* \to A^*$ cảm sinh một song ánh từ bảng chữ B đến X là đơn cấu. Ngược lại, nếu tồn tại đơn cấu $\beta : B^* \to A^*$ sao cho X = $\beta(B)$, thì X là mã.}
+\hspace{10mm}Một đơn cấu $\beta : B^* \to A^*$ với $X = \beta(B)$ được gọi là một \textit{đồng cấu mã} đối với X. Mệnh đề \hyperlink{page.20}{\textcolor{blue}{1.5}} trình bày ý nghĩa gốc củ thuật ngữ \textit{mã} vì các từ của X mã hoá các chữ cái của bảng chữ B. Thủ tục mã kết hợp một \textit{từ bản rõ} $b_1b_2...b_n (b_i \in B)$ với một \textit{từ mã} $\beta(b_1)...\beta(b_n)$ bởi sử dụng đồng cấu mã $\beta$. Sự kiện $\beta$ là đơn cấu đảm bảo từ mã được giải mã theo một cách duy nhất thành từ bản rõ ban đầu.\\
+\hspace{10mm} Từ mệnh đề \hyperlink{page.20}{\textcolor{blue}{1.5}} ta có \\
+\textbf{Hệ quả 1.2} (\hyperlink{page.81}{\textcolor{red}{5}})  \textit{ Giả sử $\alpha : A^* \to C^*$ là một đơn cấu. Nếu X là mã trên A, thì $\alpha(X)$ là mã trên C. Nếu Y là mã trên C, thì $\alpha^{-1}(Y)$ là mã trên A.}\\
+\textbf{Hệ quả 1.3} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Nếu $X \subset A^*$ là mã, thì khi đó $X^N$ là mã với mọi n > 0.}\\
+\hspace{10mm} Ta nhắc lại rằng một vị nhóm con của $M$ của $A^*$ là \textit{tự do} khi và chỉ khi với mọi $m \in M - \{ \varepsilon \}$ co duy nhất một phân tích trong $X = (M - \{ \varepsilon \}) - (M - \{ \varepsilon \})^{2}$\hyperlink{page.81}{\textcolor{red}{18}}. Mã X cảm sinh vị nhóm con tự do $M$ của $A^*$ được gọi là cơ sở của $M$. Mối liên hệ giữa mã và vị nhóm con sinh bởi mã được thiết lập qua các tính chất sau đây.
+\textbf{Mệnh đề 1.6} (\hyperlink{page.80}{\textcolor{red}{5}}) \textit{Giả sử A là một bảng chữ. Khi đó, mỗi vị nhóm con M của $A^*$ có một tập sinh cực tiểu duy nhất X = (M - $\{ \varepsilon \}$) - (M - $\{ \varepsilon \}^{2}$)}.\\
+\textit{Ví dụ 1.7}  Tập M = $\{ a^i, i \in \mathbb{N}, i \not\in 1 \}$ là một vị nhóm con của $A^*$ với $A = \{ a,b \}$. Cơ sở của $M$ là $X = \{ a^2, a^3 \}$. Tuy nhiên, $M$ không phải là một vị nhóm con tự do vì $a^6 \in M$ có hai phân tích khác nhau trong $X, a^6 = a^2.a^2.a^2 = a^3.a^3.$ \\
+\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Nếu M là một vị nhóm con tự do của $A^*$, thì khi đó tập sinh cực tiểu của M là mã. Ngược lại nếu $X \subset A^*$ là mã, thì vị nhóm con của $X^*$ của $A^*$ là tự do có tập sinh cực tiểu $X$}.
+\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}})  \textit{Giả sử X và Y là các mã trên A. Nếu $X^* = Y^*$, thì khi đó X = Y.}
+\end{flushleft}
+
 %*************************************************************************
 %+ 1.3. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
 
