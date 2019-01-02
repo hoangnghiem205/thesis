@@ -409,10 +409,62 @@ $w = (abbba)(bbba(abb)$ = $(abb)(b)(abb)(baabb)$.\\
 \hspace{10mm} Ta nhắc lại rằng một vị nhóm con của $M$ của $A^*$ là \textit{tự do} khi và chỉ khi với mọi $m \in M - \{ \varepsilon \}$ co duy nhất một phân tích trong $X = (M - \{ \varepsilon \}) - (M - \{ \varepsilon \})^{2}$\hyperlink{page.81}{\textcolor{red}{18}}. Mã X cảm sinh vị nhóm con tự do $M$ của $A^*$ được gọi là cơ sở của $M$. Mối liên hệ giữa mã và vị nhóm con sinh bởi mã được thiết lập qua các tính chất sau đây.
 \textbf{Mệnh đề 1.6} (\hyperlink{page.80}{\textcolor{red}{5}}) \textit{Giả sử A là một bảng chữ. Khi đó, mỗi vị nhóm con M của $A^*$ có một tập sinh cực tiểu duy nhất X = (M - $\{ \varepsilon \}$) - (M - $\{ \varepsilon \}^{2}$)}.\\
 \textit{Ví dụ 1.7}  Tập M = $\{ a^i, i \in \mathbb{N}, i \not\in 1 \}$ là một vị nhóm con của $A^*$ với $A = \{ a,b \}$. Cơ sở của $M$ là $X = \{ a^2, a^3 \}$. Tuy nhiên, $M$ không phải là một vị nhóm con tự do vì $a^6 \in M$ có hai phân tích khác nhau trong $X, a^6 = a^2.a^2.a^2 = a^3.a^3.$ \\
-\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Nếu M là một vị nhóm con tự do của $A^*$, thì khi đó tập sinh cực tiểu của M là mã. Ngược lại nếu $X \subset A^*$ là mã, thì vị nhóm con của $X^*$ của $A^*$ là tự do có tập sinh cực tiểu $X$}.
-\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}})  \textit{Giả sử X và Y là các mã trên A. Nếu $X^* = Y^*$, thì khi đó X = Y.}
+\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Nếu M là một vị nhóm con tự do của $A^*$, thì khi đó tập sinh cực tiểu của M là mã. Ngược lại nếu $X \subset A^*$ là mã, thì vị nhóm con của $X^*$ của $A^*$ là tự do có tập sinh cực tiểu $X$}.\\
+\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}})  \textit{Giả sử X và Y là các mã trên A. Nếu $X^* = Y^*$, thì khi đó X = Y.} \\
+\subsection{Độ trễ của giả mã}
+Khái niệm độ trễ của giả mã được giới thiệu nhằm mở rộng các khái niệm của mã \textit{prefix} cho trường hợp mã thông thường. Ta biết rằng lớp mã prefix có độ trễ 0, do đó mã có độ trễ giải mã giới nội là trường hợp tổng quát của mã prefix. Ta nhắc lại ngôn ngữ $X \subset A^*$ là mã prefix khi và chỉ khi $X$ là mã và $X$ là tập prefix. khái niệm độ trễ của giải mã đươc định nghĩa như sau: \\
+\textbf{Định nghĩa 1.2}\text{   } \textit{Giả sử X là một tập con của $A^+$. Khi đó $X$ được gọi là có độ trễ giải mã hữu hạn nếu có một số nguyên $d \ge 0$ sao cho }  
 \end{flushleft}
+$\forall x, x' \in X , \forall y \in X^d , \forall u \in A^* , xyu \in x'X^* \rightarrow x = x'$. (1.1)
+\begin{flushleft}
+\hspace{10mm}Dễ thấy rằng nếu hệ thức (\hyperlink{page.21}{\textcolor{blue}{1.1}}) thoả mãn với $d$ nào đó thì nó cũng đúng với mọi $d' \ge d$. Nếu $X$ có độ trễ giải mã hữu hạn thì số nguyên nhỏ nhất thoả hệ thức (\hyperlink{page.21}{\textcolor{blue}{1.1}}) được gọi là \textit{độ trễ giải mã yếu} của X. 
+\textit{Ví dụ 1.8}  Cho $A = \{ a,b \}$. Khi đó tập $X = \{ ab, abb, baab \}$ có độ trễ giải mã $d = 1$. và tập $Y = \{ a, ab, b^2 \}$ có độ trễ giải mã vô hạn.\\
+\hspace{10mm}Ta có mệnh đề sau đây về mối quan hệ giữa mã và độ trễ giải mã. \\
+\textbf{Mệnh đề 1.8} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Cho $X \subset A^*$}. Nếu X có độ trễ giải mã hữu hạn thì X là mã.\\
+\textit{Ví dụ 1.9.} Cho tập $X$ như ví dụ \hyperlink{page.21}{\textcolor{blue}{1.8}}. Bằng định nghĩa, ta có thể kiểm tra tập X là mã. \\
+\subsection{Tiêu chuẩn kiểm định mã}
+Thuật toán kiểm định mã là một thuật toán cốt lõi và kinh điển trong lý thuyết mã. Cần thiết cho các nghiên cứu về mã truyền thống và các hình thức mã mới. Trong phần này, ta nhắc lại thuật toán kinh điển Sardinas-Patterson.\\
+\hspace{10mm}Cho một ngôn ngữ $X \subseteq A^+$, ta xem xét các tập phần dư $U_i$ kết hợp với $X$ được định nghĩa đệ quy như sau:
+\end{flushleft} 
+$
+    U_1 = X^{-1}X = \{ \varepsilon \}
+$ \\
+\begin{flushright}
+    (1.2)
+\end{flushright}
+$
+    U_{i+1} = (U_i)^{-1}X \cup X^{-1}U_i, i \ge 1. 
+$
+\begin{flushleft}
+\hspace{10mm}Định lý cơ bản sau đây của Sardinas-Patterson cung cấp một tiêu chuẩn kiểm định mã.
+\textbf{Định lý 1.2} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Tập $X \subseteq A^+$ là mã khi và chỉ khi các tập $U_i$ được định nghĩa theo công thức (\hyperlink{page.21}{\textcolor{blue}{1.2}}) không chứa từ rỗng.}
+\textit{Nhận xét 1.2}   Như một hệ quả của mệnh đề \hyperlink{page.18}{\textcolor{blue}{1.4}} Mục (\hyperlink{page.13}{\textcolor{blue}{1.3}}), trong trường hợp $X$ là ngôn ngữ chính quy, lấy $M$ là $M_x$ - vị nhóm cú pháp hữu hạn của $X$, ta suy nghĩa ra rằng tất cả các tập $U_i$ thuộc vào tập hữu hạn $\mathcal{A}(X,Y)$ sinh ra bởi $X,Y$ và đóng đối với các phép toán hợp, giao, lấy phần bù, lấy thương trái và lấy thương phải. $Card(\mathcal{A}(X,Y)) \le 2^{2.m}$, với $m$ là chỉ số của $X$.
+\textit{Nhận xét 1.3}   Cho một ngôn ngữ chính quy $X \subseteq A^*$ có chỉ số m, đặt $Y = \{ \varepsilon \}$. Từ đó vị nhóm P được xác định như Ví dụ \hyperlink{page.18}{\textcolor{blue}{1.4}} (Cách 1), cỡ của $P$ là $2.m$, khi đó cỡ của $\mathcal{A}(X,Y)$ là $2^{2.m}$ và từ tính chất $U_i \subseteq \mathcal{A}(X,Y), \forall i \ge 1$, ta suy ra rằng số bước tính toán trong tiêu chuẩn Sardinas-Patterson chính là số các tập $U_i$ khác nhau, tối đa là $2^{2.m}$.
+\hspace{10mm}Nhận xét \hyperlink{page.13}{\textcolor{blue}{1.3}} khẳng định Định lý \hyperlink{page.21}{\textcolor{blue}{1.2}} cung cấp cho ta một thuật toán kiểm định một ngôn ngữ chính quy cho trước có là mã không.
+\textit{Ví dụ 1.10}     Cho $A = \{ a,b \}$ và $X = \{ b, abb, abbba, bbba, baabb \}$. Tập X không là mã vì tồn tại từ $w = abbbabbbaabb, w$ có hai phân tích khác nhau trong X,    
+\end{flushleft}
+$w = (abbba)(bbba)(abb) = (abb)(b)(abb)(baabb)$.
+\begin{flushleft}
+\hspace{10mm}Sử dụng thuật toán kiểm tra mã, ta có 
+\end{flushleft}
+\hspace{10mm}$U_1 = \{ ba, aabb, ba \},$     $U_2 = \{ a, ba, abb \}$,   $U_3 \{ \varepsilon, a, ba, bb, bbba, abb \}$.
+\begin{flushleft}
+\hspace{10mm}Vì $\varepsilon \in U_3$, suy ra X không là mã.
+\textit{Nhận xét 1.4}   Giả sử $V_i$ ($i \ge 1$), $V_1 \subseteq V_2 \subseteq ... \subseteq A^*$ là một dãy tăng bất kỳ sao cho mọi tập $V_i$ cùng thoả bởi một toàn cấu vị nhóm $h : A^* \to P$, với $P$ là một vị nhóm hữu hạn. Khi đó tồn tại một dãy tăng $K_1 \subseteq K_2 \subseteq ... \subseteq P$ sao cho $V_i = h^{-1}(K_i)$ với $i = 1,2....$ Dãy tăng này là hữu hạn và tổng số phần tử của nó không vượt quá $Card(P)$. Nhận xét này cung cấp một kỹ thuật để ta xây dựng các tiêu chuẩn kiểm định mã mới.
+\end{flushleft}
+\begin{flushleft}
+\section{Mã luân phiên và mã của các từ định biên}
+\subsection{Mã luân phiên}
+Mã luân phiên có thể được xem là một sự mở rộng của biểu diễn mã, nó được định nghĩa trên một cặp ngôn ngữ thay vì một ngôn ngữ như mã truyền thống (xem [\hyperlink{page.81}{\textcolor{red}{14}}; \hyperlink{page.81}{\textcolor{red}{15}}; \hyperlink{page.81}{\textcolor{red}{23}}; \hyperlink{page.81}{\textcolor{red}{32}}; \hyperlink{page.81}{\textcolor{red}{35}}]). Từ một cặp ngôn ngữ $X, Y$ cho trước, khái niệm \textit{phân tích luân phiên mã luân phiên} theo X,Y được định nghĩa như sau: \\
+\textbf{Định nghĩa 1.3} (\hyperlink{page.81}{\textcolor{red}{32}}) \textit{Giả sử A là một bảng chữ, $X, Y \subseteq A^+ , w \in A^+$. Khi đó, \\
+\hspace{10mm}(i) từ $w$ có một phân tích luân phiên theo ($X, Y$) nếu $w = u_1u_2...u_n (n \ge 2)$, trong đó $ư_1 \in X$, nếu $u+i \in X$ thì $u_{i+1} \in Y$ và nếu $u_i \in Y thì u_{i+1} \in X $ với $ i = 1,....,n-1$.
+\hspace{10mm}(ii) từ $w$ có một phân tích luân phiên theo $\{ X, Y \}$ nếu $w$ có một phân tích luân phiên theo $(X, Y)$ hoặc $(Y, X)$.
+\hspace{10mm}(iii)hai phân tích luân phiên theo $\{ X, Y \}$ được gọi là cùng kiểu trái (t.ư. cùng kiểu phải) nếu chúng cùng bắt đầu (t.ư. kết thúc) với các từ trong $X$ hoặc trong $Y$.
+\hspace{10mm}(iv)  hai phân tích luân phiên theo $\{ X, Y \}$ được gọi là cùng kiểu nếu chúng là cùng kiểu trái và cùng kiểu phải.
+}
 
+
+\end{flushleft}
 %*************************************************************************
 %+ 1.3. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
 
