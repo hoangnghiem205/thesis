@@ -481,7 +481,36 @@ $w = 101011000011001101100001011101$
 \begin{flushleft}
 \hspace{10mm}Đặt $X = \{ 1 \}^+, Y = \{0\}^+$, khi đó $w$ là một phân tích luân phiên theo $\{ X,Y \}$. Nếu ta bổ sung một bit 1 vào đầu $w$ và một bit 0 vào cuối $w$ thì chuỗi kết quả luân là một chuỗi phân tích luân phiên theo (X, Y). Cụ thể, với $w$ ở trên, ta có 
 \end{flushleft}
-$w′ = 1w0 = 11010110000110011011000010111010.$
+$w' = 1w0 = 11010110000110011011000010111010.$
+\begin{flushleft}
+\subsection{Mã của các từ định biên}
+Khái niệm từ định biên ($\Diamond$ - từ) và ngôn ngữ từ định biên ($\Diamond$-ngôn ngữ) được đề xuất trong \hyperlink{page.81}{\textcolor{red}{34}} cho phép ta biển diễn các tích ghép truyền thống và tích phân phiên thông qua phép tích biên trên cấu trúc đại số mởi của các $\Diamond$-từ. Đây là cơ sở cho việc nghiên cứu và thiết lập các tính chất đại số của mã luân phiên trong mối liên hệ với mã truyền thống. Hơn nữa, mã của các từ định biên ($\Diamond$-mã) nhận được từ tích biên nói trên có thể xem là một sự mở rộng của biểu diễn mã.\\
+\hspace{10mm}Trước hết, ta nhắc lại một số khái niêm cơ sở (chi tiết xem trong \hyperlink{page.81}{\textcolor{red}{34}}).\\
+\hspace{10mm}Cho A là một bảng hữu hạn các chữ cái và tập $B = \{0,1\}$. Ta định nghĩa tập các từ định biên trên A như sau:\\
+\hspace{20mm}$A_\Diamond = \{ (i,a,j) | a \in A \text{hoặc} a = \varepsilon, i, j \in B \}$\\
+\hspace{20mm}$A^*_\Diamond = \{ (i,w,j) | w \in A^* i, j \in B \} \cup \{ \theta,e \}$ \\
+\hspace{20mm}$A^*_\vartriangleleft = \{ (0,w,1) | w \in A^*\} \cup \{ \theta ,e \} $ \\
+\hspace{20mm}$A^*_\vartriangleright = \{ (1,w,0) | w \in A^*\} \cup \{ \theta ,e \} $ \\
+\hspace{20mm}$A^*_\vartriangle = \{ (0,w,0) | w \in A^* i, j \in B \} \cup \{ \theta,e \}$ \\ 
+\hspace{20mm}$A^*_\triangledown = \{ (1,w,1) | w \in A^* i, j \in B \} \cup \{ \theta,e \}$ \\
+\hspace{10mm} Mỗi phần tử $(i,w,j), w \in A^*$ được gọi là một $\Diamond$-từ. Ta kí hiệu $A^*_\Diamond$ là $\Diamond$-vị nhóm được kết hợp với $A.A^+_\Diamond = A^*_\Diamond = \{ e \}. A^*_\Diamond$ có phần tử đơn vị $e$ và có phần tử không $\theta$. Với mọi $x = (i_1, w_1, j_1), y = (i_2, w_2, j_2) \in A^*_\Diamond$, ta có  \\
+\end{flushleft}
+$x.y= \begin{cases}
+    (i_1, w_1, w_2, j_2) \text{ nếu     } j_1 = j_2\\
+    \theta \text{       nếu         } j_1 \ne j_2
+\end{cases}
+$
+\begin{flushleft}
+\hspace{20mm}và với mọi $x \in A^*_\Diamond, x.\theta = \theta.x = \theta, x.e = e.x = x$.\\
+\hspace{10mm}Xét vị nhóm M bất kì với đơn vị là 1. Đặt $M_\Diamond = \{ (i,m,j) | m \in M, i,j \in B \}$, thì $M_\Diamond$ là một $\Diamond$-vị nhóm được mở rộng từ $M$. Với $M = A^*$, ta có $M_\Diamond = A^*_\Diamond$. Tổng quát, nếu M đẳng cấu với $M_\Diamond$, thì M được xem là một $\Diamond$-vị nhóm.\\
+\hspace{10mm}Cho $M$ là một vị nhóm tuỳ ý với đơn vị là 1. Xét một nửa vị nhóm $\mathcal{B} = \{ (0,0),(0,1),(1,0),(1,1),0 \}$ với phép toán $\forall (i,j),(i',j') \in \mathcal{B}$, $(i,j).(i'.j') = (i,j')$ nếu $j = i'$, ngược lại $(i,j).(i'j') = 0. 0.x = x.0 \ 0, \forall x \in B$. Ta xây dựng vị nhó $\mathcal{M}= M \times \mathcal{B} \cup \{e\}$, với $e \not\in M \times \mathcal{B}$ là đơn vị của $\mathcal{M}$ và phép toán hai ngôi được định nghĩa bởi $\forall (m,(i,j)), (n,(i',j')) \in \mathcal{M}$,
+\end{flushleft}
+$
+    (m,(i,j)).(n,(i',j')) = \begin{cases}
+        (mn, (i'j')) \text{     nếu     } j = i'\\
+        (mn, 0) \text{  nếu     }  j \ne i'
+    \end{cases}
+$
 %*************************************************************************
 %+ 1.3. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
 %**********************************************************
