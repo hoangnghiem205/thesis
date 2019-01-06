@@ -368,7 +368,7 @@ $u^-1X$,
 \textit{Ví dụ 1.4}  Cho $\varphi : A^* \to M$ là một đồng cấu vị nhóm thoả $X, Y \subseteq A^*, A \ne \emptyset$ và cho $Y = \{ \varepsilon \}$. Ta xây dựng toàn cấu $h$ thoả cả X và Y theo một trong 2 cách sau.\\
 \hspace{10mm}Cách 1. Cho $Z_2 = \{ 0,1 \}$ là vị nhóm nhân modulo 2 của các số nguyên với đơn vị 1. Rỡ tàng, $Y = \{ \varepsilon \}$ thoả bởi đồng cấu $y : A^* \to Z_2$, được định nghĩa bởi $g(\varepsilon) = 1$ và với mọi $a \in A, g(a) = 0$. Ta có thể kiểm tra X và Y = {$\varepsilon$} cùng thoả bởi toàn cấu vị nhóm\\
 $h : A^* \to P \subseteq M \times Z_2$ được cho bởi $\forall a \in A, h(a)$ = $(\varphi (a) , 0), 1_p$ = $h(\varepsilon)$ = $(1_M, 1)$.\\
-Đặt $\overline{K}$ = $h(A) \cup 1_P$ = $\{ (h(a), 0) | a \in A \cup 1_P \}$, tâ có $\overline{A}^*$ = $P$.
+Đặt $\overline{K}$ = $h(A) \cup 1_P$ = $\{ (h(a), 0) | a \in A \cup 1_P \}$, ta có $\overline{A}^*$ = $P$.
 \hspace{10mm}Cách 2. Mở rộng vị nhóm $M$ thành vị nhóm $M^1$ = $M \cup \{1\}$ với $1 \not\in M$ là phần tử đơn vị mới của $M^1$ bởi điều kiện ($\textbf{1}.x = x.\textbf{1} = x, \forall x \in M^1$).
 \hspace{10mm}Định nghĩa $h' : A^* \to M^1$ ta định nghĩa toàn cấu $h : A^* \to P$ = $h'(A)^* \subseteq M^1$ cho bởi $h' : h(a)$ = $h'(a), \forall a \in A, h(\varepsilon) = h'(\varepsilon) = 1$.
 \section{Mã của các từ hữu hạn}
@@ -511,6 +511,50 @@ $
         (mn, 0) \text{  nếu     }  j \ne i'
     \end{cases}
 $
+\begin{flushleft} 
+\hspace{20mm}và với mọi $i \in \mathcal{M}, u.0 = 0.u = u$ \\
+\hspace{10mm}Đặt $I = \{ (m,0) | m \in M \}$, thì $I$ là một ideal. Thương $Rees$ $\mathcal{M}/I$ đẳng cấu với $\Diamond$-vị nhóm $M_\Diamond$ qua tương ứng với $\overline{(m,(i,j))} \in \mathcal{M}/I \Leftrightarrow (i,m,j) \in M_\Diamond$, với $\theta = I$ đóng vai trò là phần tử không của $\mathcal{M}/I$. Vì vậy, nếu $M = A^*$ thì $\mathcal{M}/I$ đẳng cấu với $A^*_\Diamond$, với $I = \{ (w,0) | w \in A^* \}$.\\
+\hspace{10mm}Cho $M$ là một vị nhóm với phần tử đơn vị và phần tử không 0. Một $\Diamond$-\textit{đồng cấu vị nhóm} (viết tắt là $\Diamond$-đồng cấu) là một ánh xạ $\varphi \to M$ thoả ba điều kiện sau đây:\\
+\hspace{20mm}(a) $\forall x,y \in A^*_\Diamond,x,y \ne \theta$ thì $\varphi(x.y) = \varphi(x).\varphi(y) $.\\
+\hspace{20mm}(b) $\varphi(e) = 1$\\
+\hspace{20mm}(c) $\varphi(\theta) = 0$\\
+\hspace{10mm}Một $\Diamond$-đồng cấu vị nhóm $\varphi$ được gọi là $\Diamond$-\textit{đơn cấu} (t.ư. $\Diamond$-\textit{toàn cấu}, $\Diamond$-\textit{đẳng cấu}) nếu $\varphi$ là đồng cấu vị nhóm và là đơn ánh (t.ư. là toàn ánh, song ánh).
+\hspace{10mm}Một tập $X \subseteq A^*_\Diamond$ được gọi là một $\Diamond$-\textit{ngôn ngữ} trên A. Cho $X \subseteq A^*_\Diamond$, một từ $x \in A^*_\Diamond$ có một phân tích trong X nếu $x$ có thể biểu diễn dưới dạng $x = x_1.x_2...x_n$ với $n \le 1$, với $x_i \in X, i = 1,...,n$.\\
+\hspace{10mm}Cho $X,Y \subseteq A^*_\Diamond$, thương trái và thương phải của $X$ bởi $Y$ được định nghĩa lần lượt là $Y^{-1}X = \{ u \in A^*_\Diamond : \exists y \in Y , y.u \in X \}$ và $XY^{-1} = \{ w \in A^*_\Diamond : \exists y \in Y, u.y \in X \}$.\\
+\hspace{10mm}Cho $X \subseteq A$ ta nói X \textit{thoả bởi $\Diamond$ đồng cấu vị nhóm $\varphi : A^* \to M$} nếu tồn tại $B \subseteq M$ sao cho $X = varphi^{-1}(B)$.\\
+\hspace{10mm}Từ hệ quả 3.4 \hyperlink{page.81}{\textcolor{red}{33}}, ta có\\
+\textbf{Bổ đề 1.2} \textit{Cho $X \subseteq A^*_\Diamond$ là một $\Diamond$-ngôn ngữ. Các điều kiện sau đây tương đương\\
+\hspace{20mm}(i) X là $\Diamond$-ngôn ngữ chính quy \\
+\hspace{20mm}(ii) X đoán nhận được bởi một $\Diamond$-otomat hữu hạn (hay X là $\Diamond$-ngôn ngữ đoán nhận được).\\
+\hspace{20mm}(iii) X thoả bởi $\Diamond$-đồng cấu vị nhóm từ $A^*_\Diamond$ đến một vị nhóm hữu hạn.
+}
+Vì vậy, mọi $\Diamond$-ngôn ngữ chính quy ($\Diamond$-ngôn ngữ đoán nhận được) trong luận án được hiểu theo nghĩa là các $\Diamond$-ngôn ngữ thoả bởi một $\Diamond$-đồng cấu vị nhóm.\\
+\textbf{Định nghĩa 1.5} (\hyperlink{page.81}{\textcolor{red}{32}})  \textit{Tập $X \subseteq A^+_\Diamond$ là một $\Diamond$-mã nếu với mọi $\theta \ne x \in A^+\Diamond$, x có nhiều nhất một phân tích trong X}.\\
+\textit{Ví dụ 1.14}     Cho $A = \{ a,b \}$ và $B = \{ 0,1 \}$. Khi đó $X = \{ (0,a,1), (0,b,1), (1,abb,0) \}$ là $\Diamond$-mã. Ngược lại $Y = \{ (0,a,1), (1,b,0), (0,ab,0), (0, ba, 1) \}$ không là mã $\Diamond$-mã vì tồn tại một $\Diamond$-từ $x$ có hai phân tích khác nhau, $x = (0,ababab,0) = (0,ab,0), (0,ab,0), (0,ab,0) = (0,a,1)(1,b,0)(0,ab,0)(0,ab,0)$.\\
+\section{Mã của các từ vô hạn}
+\subsection{Bài toán quy hoạch tuyến tính gốc và đối ngẫu.}
+Giả sử A là một bảng chữ hữu hạn. Một $w$-\textit{từ bên trái} (t.ư. \textit{bên phải, hai phía}) là từ vô hạn phía bên trái (t.ư. phía bên phải, hai phía) có dạng $a_1a_2...$(t.ư. ... $a_1a_2$, ... $a_{-2}a_{-1}a_0a_1a_2$...), $a_i \in A$.\\
+\hspace{10mm}Đặt $^NA, A^N, A^Z$ lần lượt là các tập $w$-từ bên trái, bên phải và hai phía trên A. Với một ngôn ngữ X của $A^*$, ta ký hiệu $^wX, X^w$ và $^wX^w$ lần lượt là tích vô hạn phía bên trái, phía bên phải và hai phía các từ của $X - w$ vô hạn về phía bên trái, phía bên phải hoặc cả hai phía. Ví dụ
+\end{flushleft}
+$^wX = \{ ...u_2u_1 | i_i \in X - \varepsilon , i = 1,2,... \}$.
+\begin{flushleft}
+\hspace{10mm}Ta gọi mỗi tập con của $A^N$ (t.ư. $^NA, A^Z$) là một $w$-\textit{ngôn ngữ} của các $w$-từ bên phải (t.ư. bên trái, hai phía).\\
+\hspace{10mm}Một \textit{phân tích} của một từ $\alpha \in X^w$. (t.ư. $\alpha \in ^wX$) là một dãy vô hạn $\{ u_1, u_2, ... \}$ các từ của X sao cho $\alpha = u_1u_2...$ (t.ư. $\alpha = u_2u_1$).\\
+\hspace{10mm}Giả sử $w \in A^Z$ là $w$-từ vô hạn hai phía có dạng
+\end{flushleft}
+$w = ...a_{-2}a_{-1}a_0a_1a_2$...
+\begin{flushleft}
+với $a_i \in A$. Một \textit{phân tích} theo các phần tử X của một $w$-từ hai phía $w$ là một hàm tăng chặt $\mu : Z \to Z $ thoả mãn $x_i = a_{\mu(i)+1}$...$a_{\mu(i+1)} \in X$ với mọi $i \in Z$.\\
+\hspace{10mm}Hai phân tích $\mu$ và $\lambda$ được gọi là \textit{bằng nhau}, ký hiệu là $\mu = \lambda$ nếu có $t \in Z$ sao cho $\lambda(i+t) = \mu(i)$ với mọi $i \in Z$. Ngược lại, $\lambda$ và $\mu$ là khác nhau, ký hiệu là $\mu \ne \lambda$. \\
+Ta có thể kiểm tra điều kiện $\mu \ne \lambda$ khi và chỉ khi $\mu(Z) \ne \lambda(Z)$, hoặc tương đương, tồn tại một từ $u \in A^+$, hai dãy vô hạn các từ $X: ... , x_{-2}, x_{-1}, x_0, x_1, x_2, ...$ và $..., y_{-2}, y_{-1}, y_0, y_1, y_2$... sao cho 
+\end{flushleft}
+$...x_{-2}x_{-1}u = ...y_{-1}y_0, |u| \ge |x_0|
+x_0x_1... = uy_1y_2... , |u| \ge |y_0|
+$
+\begin{flushleft}
+với $u \ne x_0$ hoặc $u \ne y_)$.
+\end{flushleft}
+
 %*************************************************************************
 %+ 1.3. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
 %**********************************************************
