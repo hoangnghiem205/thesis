@@ -3,6 +3,55 @@
 %+ Modified: 17-05-2008
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{chapter}{1}
+\chapter{KIỂM ĐỊNH MÃ VÀ MÃ MỞ RỘNG}
+
+\begin{flushleft}
+Chương này, ta đề xuất các thuật toán mới kiểm định mã, $w$-mã, $w$-mã và Z-mã. Trong mỗi mục, từ \hyperlink{42}{\textcolor{blue}{2.1}} đến mục \hyperlink{page.52}{\textcolor{blue}{2.3}}, từng thuật toán được trình bày theo thứ tự chúng được thiết lập. Một tiêu chuẩn mới kiểm định mã mở rộng từ tiêu chuẩn kinh điển Sardinas-Patterson và thuật toán hiệu quả kiểm định mã được giới thiệu trong hai mục nhỏ, mục \hyperlink{page.42}{\textcolor{blue}{2.1.1}} và mục \hyperlink{page.32}{\textcolor{blue}{2.1.2}} của mục \hyperlink{page.42}{\textcolor{blue}{2.1}}. Trước hết trong mục \hyperlink{page.42}{\textcolor{blue}{2.1.1}}, ta xem xét thủ tục trên ngôn ngữ để nhận biết phương pháp của thuật toán. Tiếp theo, trong mục \hyperlink{page.42}{\textcolor{blue}{2.1.2}}, thuật toán dựa trên các vị nhóm hữu hạn được thiết lập với giả thiết đầu vào là một ngôn ngữ chính quy $X$ chơ bởi một bộ ba ($\varphi, M, B$), với $\varphi : A^* \to M$ là một đồng cấu vị nhóm thoả $X, M$ là một vị nhóm hữu hạn, $B \subseteq M, X = \varphi^{-1} (B)$ và $n = Card(M)$. Phương pháp của tiêu chuẩn mới kiểm định mã mở rộng cho $\Diamond$-mã và thuật toán kiểm định được trình bày trong mục \hyperlink{page.44}{\textcolor{blue}{2.1.3}}. \\
+\hspace{10mm}Trong hai mục đầu của mục \hyperlink{page.46}{\textcolor{blue}{2.2}}, ta đưa vào các tiêu chuẩn và thuật toán kiểm định kiểu Sardinas-Patterson thiết lập mã cho $w$-mã. Kết quả chính của phần này là một thuật toán hiệu quả dựa trên đồ thị có hướng với cung cấp có gán màu xem như một hệ quả của thuật toán dựa trên các vị nhóm hữu hạn. Các tiêu chuẩn và thuật toán kiểm định kiểu Sardinas-Patterson thiết lập cho Z-mã được trình bày theo các tương tự trong mục \hyperlink{page.52}{\textcolor{blue}{2.3}}.\\
+\hspace{10mm}Một số kết quả chính của chương trình được công bố trong các bài báo số 3, 4, 5-9, 13 (xem Danh mục các công trình đã công bố của luân án).\\
+\section{Thuật toán kiểm định mã và $\Diamond$-mã}
+\subsection{Tiêu chuẩn Sardinas-Patterson mở rộng}
+Dụa trên Nhận xét \hyperlink{page.18}{\textcolor{blue}{1.4}}, trong mục này ta đề xuất một thủ tục mới để kiểm tra một ngôn ngữu chính quy $X \subseteq A^+$ cho trước có là mã không. Bằng phương pháp tổ hợp mới, ta tính toán các tập phần tư $V_i$ kết hợp với $X$ dưới dạng công thức để quy như sau:
+\end{flushleft}
+$V_i = X^{-1}X - \{ \varepsilon \}$ \begin{flushright}
+        (2.1)
+\end{flushright}
+$V_{i+1} = V_i^{-1}X \cup X^{-1}V_i \cup V_i$, $i \ge 1$
+\begin{flushleft}
+\hspace{10mm}Phương pháp của thủ tục được minh hoạ trong Hình \hyperlink{page.43}{\textcolor{blue}{2.1}}. Các tập $V_i (i \ge 1)$ nhận được từ thủ tục theo phương pháp tổ hợp mới sẽ thoả tính chất bao hàm $V_i \subseteq V_{i+1}, \forall i$.
+\end{flushleft}
+\begin{figure}[ht]
+    \includegraphics[scale=0.5]{2_1.png}
+    \caption{ \textit{Một hướng cải tiến tiêu chuẩn kiểm định mã Sardinas-Patterson} }
+\end{figure}
+\begin{flushleft}
+\hspace{10mm}Tính đúng đắn của thủ tục dựa trên Định lý \hyperlink{page.43}{\textcolor{blue}{2.1}} và các bổ đề sau đây.\\
+\textbf{Bổ đề 2.1}      \textit{Cho $X \subseteq A^+$ và $V_i(i \ge 1)$ được định nghĩa theo công thức \hyperlink{page.42}{\textcolor{blue}{2.1}}Khi đó, với $z \in A^*$ tuỳ ý, $k \ge 1$, nếu $z \in V_k$ thì tồn tại $n,m \ge 1, x_1,x_2,...,x_n, y_1, y_2,...,y_m \in X$ sao cho}.
+\end{flushleft}
+$x_1x_2...x_n z = y_1y_2...y_m$ với $x_1 \ne y_1$.
+\begin{flushleft}
+\textit{Chứng minh}. Ta chứng minh quy nạp theo $k$ khẳng định trên.\\
+\hspace{10mm} Với $k = 1$, giả sử $z \in V_1$ ta phải chứng minh tồn tại $n,m \ge 1, x_1, x_2, ..., x_n, y_1, y_2, ...,y_m \in X$, sao cho $x_1x_2...x_nz = y_1y_2...y_m$ với $x_1 \ne y_1$.\\
+\hspace{10mm}Từ định nghĩa $V_1 = X^{-1}X - \{ \varepsilon \}, z\in V_1$, suy ra $z \in X^{-1}X = \{ \varepsilon \}$, nghĩa là tồn tại $x_1, y_1 \in X$ sao cho $x_1z \ y_1$. vì $\varepsilon \not\in V_1$ suy ra $x_1 \ne y_1$. \\
+\hspace{10mm}Vậy, điều khẳng định đúng với k = 1.\\
+\hspace{10mm}Giả sử điều khẳng định đã đúng với $k > 1$, ta chứng minh nó cũng đúng với trường hợp $k + 1$.\\
+\hspace{10mm}Giả sử $z \in V_{k+1}$, ta phải chứng minh tồn tại $n,m \ge 1, x_1, x_2, ... , x_n, y_1, y_2,...,y_m \in X$ sao cho $x_1x_2...x_n z = y_1y_2...y_m$với $x_1 \ne y_1$.\\
+\hspace{10mm}Theo định nghĩa $V_{k+1} = V^{-1}X \cup X^{-1}V_k \cup V_k$. Khi đó, từ $z \in V_{k+1}$, suy ra $z \in V_k$ (trường hợp 1) hoặc $z \in V_k^{-1}X$ (trường hợp 2) hoặc $z \in X^{-1}V_k$ (trường hợp 3). Ta xét các trường hợp sau.\\
+\hspace{10mm}Trường hợp 1: $z \in V_k$. Theo giả thiết quy nạp, điều khẳng định đúng.
+\hspace{10mm}Trường hợp 2: $z \in V^{-1}X$. Tồn tại $z' \in V_k$, theo giả thiết quy nạp, tồn tại $l,s \ge 1,x_1,x_2,...,x_l, y_1, y_2,...,y_s \in X$ sao cho
+\end{flushleft}
+$x_1x_2...x_1 z' = y_1y_2...y_s$ với $x_1 \ne y_1$.
+\begin{flushleft}
+Nhân $z$ vào hai vế của biểu thức trên, ta có
+\end{flushleft}
+$x_1_2...x_l z' z = y_1y_2...y_s z$ với $x_1 \ne y_1$.
+\begin{flushleft}
+Thay $z'z = x$ vào biểu thức trên ta nhận được
+\end{flushleft}
+$x_1x_2...x_lx = y_1y_2....y_sz$ với $x_1 \ne y_2$ 
+
+
+
 \chapter{Phương pháp phân rã Dantzig-Wolfe giải bài toán kích thước lớn}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
