@@ -44,11 +44,84 @@ $x_1x_2...x_1 z' = y_1y_2...y_s$ với $x_1 \ne y_1$.
 \begin{flushleft}
 Nhân $z$ vào hai vế của biểu thức trên, ta có
 \end{flushleft}
-$x_1_2...x_l z' z = y_1y_2...y_s z$ với $x_1 \ne y_1$.
+$x_1x_2...x_l z' z = y_1y_2...y_s z$ với $x_1 \ne y_1$.
 \begin{flushleft}
 Thay $z'z = x$ vào biểu thức trên ta nhận được
 \end{flushleft}
 $x_1x_2...x_lx = y_1y_2....y_sz$ với $x_1 \ne y_2$ 
+\begin{flushleft}
+\hspace{10mm}Vậy, điều khẳng định đúng với mọi $k \ge 1$.
+\hspace{10mm}Chứng minh được hoàn thành
+\textbf{Bổ đề 2.2}     \textit{Cho $X \subseteq A^+ $ và $V_i (i \ge 1)$ được định nghĩa theo công thức (2.1). Nếu có $n,m \ge 1, x_1, x_2,...,x_n, y_1, y_2, ... , y_m \in X$ và $z \in A^*$ tuỳ ý sao cho}
+\end{flushleft}
+$x_1x_2...x_nz = y_1y_2...y_m$ với $x_1 \ne y_1$ và $|z| \le |y_m|$
+\begin{flushleft}
+thì tồn tại $k \ge 1 $ sao cho $z \in V_k$.\\
+\textit{Chứng minh}. Ta chứng minh quy nạp theo $n + m$ điều khẳng định trên.\\
+\hspace{10mm}Với $n+m = 2 (n = 1, m = 1)$, từ dãy $x_1z = y_1$ với $x_1 \ne y_1$ và $|z| \le |y_1|$ ta có $\varepsilon \ne z = x_1^{-1}y_1 \in X^{-1}X = \{ \varepsilon \} = V_1$.\\
+\hspace{10mm}Vậy điều khẳng định đúng với n + m = 2.\\
+\hspace{10mm}Giả sử điều khẳng định đúng với $n + m -1 \ge 2$, ta chứng minh nó cũng đúng với $n + m$. Từ đẳng thức $x_1x_2...x_nz = y_1y_2...y_m$ với $x_1 \ne y_1$ và $|z| \le |y_m|$, ta phải chứng minh tồn tại $k \ge 1$ sao cho $z \in V_k$.\\
+\hspace{10mm}Ta xét ba khả năng sau có thể xảy ra khi so sánh độ dài của $x_nz$ và từ $y_m$.\\
+\hspace{10mm}Trường hợp 1: $|x_nz| < |y_m|$. Theo giả thiết quy nạp, tồn tại $k \ge 1$ sao cho $x_nz \in V_k$.
+Khi đó, $x_n^{-1}V_k = z \in V_{k+1}$.\\
+\hspace{10mm}Trường hợp 2: $x_nz = y_m$. Ta có $x_n^{-1}y_m = z$. Ta có $x_n^{-1}y_m = z$. Nếu $z \ne \varepsilon$ thì $z \in X^{-1}X = \{ \varepsilon \} = V_1$. Ngược lại, nếu $z = \varepsilon$ thì $\varepsilon \in V_k$ với $k > 1$ nào đó.\\
+\hspace{10mm} Thật vậy, theo giả thiết ta có 
+\end{flushleft}
+$x_1x_2...x_nz = y_1y_2...y_m$ với $x_1 \ne y_1$ và $|z| \le |y_m|$.
+\begin{flushleft}
+Vì $x_nz = y_m$, ta suy ra
+\end{flushleft} 
+$x_1x_2...x_{n-1} = y_1y_2...y_{m-1}$ với $x_1 \ne y_1$,
+\begin{flushleft}
+hoặc tương đương,
+\end{flushleft}
+$x_1x_2...x_{n-1}\varepsilon = y_1y_2...y_{m-1}$ với $x_1 \ne y_1$,
+\begin{flushleft}
+Theo giả thiết quy nạp, $\varepsilon \in V_k$ với $k \ge 1$ nào đó.\\
+\hspace{10mm}Trường hợp 3: $|x_nz| > |y_m|$. Theo giả thiết $|z| < |y_m|$, suy ra tồn tại $u \in A^+$ sao cho $y_m \ uz$. Từ $|x_nz| > |y_m|$ và $y_m = uz$, suy ra tồn tại $u' \in A^+$, $y_s \in X$, $1 \le s \le m - 1$, $|u'| \le |y_s|$ sao cho $x_n = u'y_{s+1}y_{s+1}...y_{m-1}u$.
+\hspace{10mm}Hơn nữa theo giả thiết, ta có 
+\end{flushleft}
+$x_1x_2...x_{n-1} = y_1y_2...y_{m-1}$ với $x_1 \ne y_1$ và $|z| \le |y_m|$.
+\begin{flushleft}
+Thay $y_m = uz$ và $x_n = u'y_{s+1}y_{s+2}...y_{m-1}u$ vào biểu thức trên ta nhận được 
+\end{flushleft}
+$x_1x_2...x_{n-1}u' = y_1y_2...y_s$ với $x_1 \ne y_1$ và $|u'| \le |y_s|$.
+\begin{flushleft}
+Theo giả thiết quy nạp, ta suy ra $u' \in V_k$ với $k \ge 1$ nào đó. Ta có 
+\end{flushleft}
+$u'^{-1}x_n = y_{s+1}y_{s+2}...y_{m-1}u \in V_{k+1} = V_k^{-1}X$ \\
+$\Rightarrow y_{s+1}^{-1}V_{k+1} = y_{s+2}...y_{m-1}u \in V_{k+2}$\\
+...\\
+$y_{m-1}^{-1}V_{k+m-1} = u \in V_{k+m} \Rightarrow u^{-1}y_m = z \in V_{k+m+1}$.
+\begin{flushleft}
+Vậy, điều khẳng đúng với mọi $n+m \le 2$.\\
+Chứng minh được hoàn thành.\\
+\hspace{10mm}Trong định lý \hyperlink{page.43}{\textcolor{blue}{2.1}} sau đây, ta thiết lập kết quả chính của mục này nhằm cung cấp một tiêu chuẩn mới kiểm định mã mà từ nay về sau trong luận án, ta sẽ gọi là tiêu chuẩn Sardinas-Patterson mở rộng.\\
+\textbf{Định lý 2.1}    \textit{Cho $X \subseteq A^+$ và $V_i(i \ge 1)$ sao cho $\varepsilon \in V_i$}. Khi đó, theo bổ đề \hyperlink{page.43}{\textcolor{blue}{2.1}} , tồn tại $n,m, \ge 1, x_1, x_2,..., x_n, y_1, y_2,...,y_m \in X$ sao cho
+\end{flushleft}
+$x_1x_2...x_{n-1}\varepsilon = y_1y_2...y_{m-1}$ với $x_1 \ne y_1$,
+\begin{flushleft}
+hoặc tương đương,
+\end{flushleft}
+$x_1x_2...x_{n-1} = y_1y_2...y_{m-1}$ với $x_1 \ne y_1$,
+\begin{flushleft}
+Đây là hai $X$-phân tích khác nhau của một từ $w \in A^*$. Suy ra X không là mã, mâu thuẫn.
+
+\textit{Chiều ngược}. Nếu $\varepsilon V_i$ với mọi $i \le 1$ thì X là mã.
+\hspace{10mm}Phản chứng, giả sử X không là mã. Khi đó, tồn tại $w \in A^*$ có hai phân tích khác nhau, 
+\end{flushleft}
+$w = x_1x_2...x_n = y_1y_2...y_m$
+\begin{flushleft}
+với $x_1 \ne y_1, x_i, y_j \in X$, $i = 1,...,n$, $j = 1,...,m$, hoặc tương đương,
+\end{flushleft}
+$w = x_1x_2...x_n\varepsilon = y_1y_2...y_m$ với $x_1 \ne y_1$
+\begin{flushleft}
+Theo bổ đề \hyperlink{page.43}{\textcolor{blue}{2.2}}, tồn tại $i \ge i$ sao cho $\varepsilon \in V_i$, mâu thuẫn.
+\hspace{10mm}Chứng minh được hoàn thành.
+\hspace{10mm}Từ định lý trên, ta nhận được các hệ quả sau đây
+\textbf{Hệ quả 2.1}     \textit{Cho $X \subseteq A^+$}
+
+\end{flushleft}
 
 
 
