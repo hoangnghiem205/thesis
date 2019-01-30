@@ -89,14 +89,14 @@ Ta có bảng chuyển trạng thái và đồ thị chuyển trạng thái củ
 \includegraphics[scale=0.5]{3_4.png}
 \caption{ \textit{Đồ thị chuyển trạng thái $A_1$} }
 \end{figure}
-Dãy trạng thái của otomat A1 trong quá trình đoán nhận xâu vào $\alpha = ababbab$ là:\\
+Dãy trạng thái của otomat A1 trong quá trình đoán nhận xâu vào $\delta = ababbab$ là:\\
 \begin{figure}[ht]
 \includegraphics[scale=0.5]{3_5.png}
-\caption{ \textit{Quá trình đóan nhận xâu $\alpha = ababbab$ của $A_1$} }
+\caption{ \textit{Quá trình đóan nhận xâu $\delta = ababbab$ của $A_1$} }
 \end{figure}
-Như vậy, xâu $\alpha$ được đoán nhận bởi otomat $A_1$.\\
-2/. $A_2 = <\{q_0,q_1,q_2,q_3\}, \{0,1\}, \alpha, q_0, \{q_0\}>$, \\
-trong đó $\alpha(q_0, 0) = q_2, \alpha(q_0, 2) = q_1, \alpha(q_1, 0) = q_3, \alpha(q_1, 1) = q_0, \alpha(q_2, 0) = q_0, \alpha(q_2, 1) = q_3, \alpha(q_3, 0) = q_1, \alpha(q_3, 1) = q_2$.
+Như vậy, xâu $\delta$ được đoán nhận bởi otomat $A_1$.\\
+2/. $A_2 = <\{q_0,q_1,q_2,q_3\}, \{0,1\}, \delta, q_0, \{q_0\}>$, \\
+trong đó $\delta(q_0, 0) = q_2, \delta(q_0, 2) = q_1, \delta(q_1, 0) = q_3, \delta(q_1, 1) = q_0, \delta(q_2, 0) = q_0, \delta(q_2, 1) = q_3, \delta(q_3, 0) = q_1, \delta(q_3, 1) = q_2$.
 Ta có bảng chuyển trạng thái và đồ thị chuyển trạng thái của otomat $A_2$ được cho trong hình 3.6 và 3.7: 
 \begin{figure}[ht]
 \includegraphics[scale=0.4]{3_6.png}
@@ -133,26 +133,26 @@ Begin\\
 \hspace{10mm} C:= ký hiệu tiếp theo;\\
 \hspace{10mm} While C < > eof do\\
 \hspace{20mm} begin\\
-\hspace{30mm} S:= $\alpha$(S, C);\\
+\hspace{30mm} S:= $\delta$(S, C);\\
 \hspace{30mm} C:= ký hiệu tiếp theo;\\
 \hspace{20mm} end;\\
 \hspace{10mm} if S in F return (True)\\
 \hspace{10mm} else return (False);\\
 End.\\
 \textbf{1.3 Ngôn ngữ được đoán nhận bởi otomat đơn định}\\
-Để mô tả hình thức quá trình đoán nhận một từ (xâu vào), người ta đưa vào ánh xạ mở rộng $\alpha'$ từ $D \subseteq q \times \sum^*$ vào Q như trong định nghĩa sau: \\
-\textbf{Định nghĩa 1.2} Cho otomat hữu hạn đơn định $A = <Q, \sum, \alpha, q_0, F>$. Mở rộng $\alpha$ của $\alpha$ là một ánh xạ từ $D \subseteq Q \times \sum^*$ vào Q được xác định như sau: \\
-1/. $\alpha(q, \varepsilon) = q, \exists q \in Q$,\\
-2/. $\alpha(q, wa) = \alpha(\alpha(q, w), a), \exists a \in \sum, \exists q\in Q, \exists w \in Q, \exists w \in \sum^*$ sao cho $\alpha(q, w)$ được xác định.\\
-Chú ý rằng, ánh xạ $\alpha$ chỉ khác ánh xạ $\alpha'$ khi ký hiệu vào là $\varepsilon$, hoặc là một xâu kí hiệu vào $w$, do điều kiện 2/. trên $Q \times \sum$ , ta có thể đồng nhất $\alpha'$ với $\alpha$. Nếu không cần phân biệt, từ đây về sau ta viết $\alpha$ thay cho $\alpha'$, và được hiểu là ánh xạ $\alpha$ trên miền $Q \times \sum$ , là ánh xạ $\alpha'$ trên miền $Q \times \sum^*$.\\
-\textbf{Định nghĩa 1.3} Cho otomat hữu hạn đơn định $A = <Q, \sum, \alpha, q_0, F>$, và một xâu $w \in \sum^*$. Ta nói:\\
-+ $w$ được đoán nhận bởi A nếu $\alpha(q_0, w) \in F$;\\
+Để mô tả hình thức quá trình đoán nhận một từ (xâu vào), người ta đưa vào ánh xạ mở rộng $\delta'$ từ $D \subseteq q \times \sum^*$ vào Q như trong định nghĩa sau: \\
+\textbf{Định nghĩa 1.2} Cho otomat hữu hạn đơn định $A = <Q, \sum, \delta, q_0, F>$. Mở rộng $\delta$ của $\delta$ là một ánh xạ từ $D \subseteq Q \times \sum^*$ vào Q được xác định như sau: \\
+1/. $\delta(q, \varepsilon) = q, \exists q \in Q$,\\
+2/. $\delta(q, wa) = \delta(\delta(q, w), a), \exists a \in \sum, \exists q\in Q, \exists w \in Q, \exists w \in \sum^*$ sao cho $\delta(q, w)$ được xác định.\\
+Chú ý rằng, ánh xạ $\delta$ chỉ khác ánh xạ $\delta'$ khi ký hiệu vào là $\varepsilon$, hoặc là một xâu kí hiệu vào $w$, do điều kiện 2/. trên $Q \times \sum$ , ta có thể đồng nhất $\delta'$ với $\delta$. Nếu không cần phân biệt, từ đây về sau ta viết $\delta$ thay cho $\delta'$, và được hiểu là ánh xạ $\delta$ trên miền $Q \times \sum$ , là ánh xạ $\delta'$ trên miền $Q \times \sum^*$.\\
+\textbf{Định nghĩa 1.3} Cho otomat hữu hạn đơn định $A = <Q, \sum, \delta, q_0, F>$, và một xâu $w \in \sum^*$. Ta nói:\\
++ $w$ được đoán nhận bởi A nếu $\delta(q_0, w) \in F$;\\
 + Ngôn ngữ được đoán nhận bởi otomat A và ký hiệu là T(A), là tập từ:\\
-$T(A) = {w \in sum^* | \alpha(q_0, w) \in F}$\\
+$T(A) = {w \in sum^* | \delta(q_0, w) \in F}$\\
 Lưu ý rằng trong đồ thị chuyển của A, $w \in \sum^*$ được đoán nhận bởi A khi và chỉ khi $w$ là xâu của các nhãn ứng với một đường đi từ đỉnh $q_0$ đến một trong các đỉnh kết thúc. Cụ thể, nếu $w= a_1a_2...a_n$ thì đường đi là $(q_0, q_1,..., q_k)$ với cung $(q_i-1, q_i)$ có nhãn $a_i$ (với $1 \le i \le k$) và $q_k \in F$.\\
 Như vậy, T(A) là tập hợp tất cả xâu ghi trên các đường đi từ $q_0$ đến các đỉnh kết thúc.\\
-\textbf{Định nghĩa 1.4} Hai otomat hữu hạn $A = <Q, \sum, \alpha, q_0, F> và A'= <Q', \sum', \alpha', q'_0, F'>$ được gọi là tương đương nếu $T(A) = T(A')$.\\
-\textbf{Thí dụ 1.2} Cho otomat hữu hạn: $A_3 = <{q_0, q_1, q_2, q_3, q_4},{0, 1}, \alpha, q_0, {q_1, q_2, q_4}>$ với $\alpha(q_0,0) = q_0, \alpha(q_0,1) = q_1, \alpha(q_1,0) = q_3, \alpha(q_1,1) = q_2, \alpha(q_2,0) = q_2, \alpha(q_2,1) = q_2, \alpha(q_3,1) = q_3, \alpha(q_4,0) = q_2, \alpha(q_4,1) = q_3.$.\\
+\textbf{Định nghĩa 1.4} Hai otomat hữu hạn $A = <Q, \sum, \delta, q_0, F> và A'= <Q', \sum', \delta', q'_0, F'>$ được gọi là tương đương nếu $T(A) = T(A')$.\\
+\textbf{Thí dụ 1.2} Cho otomat hữu hạn: $A_3 = <{q_0, q_1, q_2, q_3, q_4},{0, 1}, \delta, q_0, {q_1, q_2, q_4}>$ với $\delta(q_0,0) = q_0, \delta(q_0,1) = q_1, \delta(q_1,0) = q_3, \delta(q_1,1) = q_2, \delta(q_2,0) = q_2, \delta(q_2,1) = q_2, \delta(q_3,1) = q_3, \delta(q_4,0) = q_2, \delta(q_4,1) = q_3.$.\\
 \hspace{10mm}Đồ thị chuyển của A3 là:\\
 \begin{figure}[ht]
 \includegraphics[scale=0.5]{3_9.png}
@@ -160,8 +160,8 @@ Như vậy, T(A) là tập hợp tất cả xâu ghi trên các đường đi t�
 \end{figure}
 
 Trước hết, ta nhận thấy rằng không có đường đi từ $q_0$ đến đỉnh kết thúc $q_4$, tức là sẽ không có từ nào được đoán nhận bởi $A_3$ với đỉnh kết thúc $q_4$. Ngoài ra, cũng không có một đường đi nào từ $q_0$ đến đỉnh một đỉnh kết thúc mà đi qua $q_3$. Như vậy, ta có thể bỏ đi đỉnh $q_3$ và $q_4$ mà không ảnh hưởng đến việc đoán nhận các từ của otomat $A_3$. Do đó otomat $A_3$ tương đương với otomat $A_4$ sau: \\
-$A_4 = <{q_0, q_1, q_2}, {0, 1}, \alpha, q_0, {q_1, q_2}>,$\\
-trong đó $\alpha(q_0,0) = q_0, \alpha(q_0,1) = q_1, \alpha\alpha(q_1,1) = q_2, \alpha(q_2,0) = q_2, \alpha(q_2,1) = q_2.$.\\
+$A_4 = <{q_0, q_1, q_2}, {0, 1}, \delta, q_0, {q_1, q_2}>,$\\
+trong đó $\delta(q_0,0) = q_0, \delta(q_0,1) = q_1, \delta\delta(q_1,1) = q_2, \delta(q_2,0) = q_2, \delta(q_2,1) = q_2.$.\\
 Đồ thị chuyển của $A_4$ được cho trong hình 3.10:\\
 \begin{figure}[ht]
 \includegraphics[scale=0.5]{3_10.png}
@@ -169,19 +169,19 @@ trong đó $\alpha(q_0,0) = q_0, \alpha(q_0,1) = q_1, \alpha\alpha(q_1,1) = q_2,
 \end{figure}
 Các đường đi từ q0 đến đỉnh kết thúc q1 ứng với các xâu $0^n1, n \le 0$. Các đường đi từ $q_0$ đến đỉnh kết thúc q2 ứng với các xâu $0^n11w, n \le 0, w \in {0, 1}^*$. Vậy ngôn ngữ được đoán nhận bởi các otomat trên là: \\
 $T(A_3) = T(A_4) = {0^n1, 0^n11w / n \le 0, w \in {0, 1}^*}.$ \\
-\textbf{Bổ đề 1.1} Cho otomat hữu hạn đơn định $A = <Q, \sum, \alpha, q_0, F>.$  Khi đó $\exists w_1, w_2 \in \sum^*, \exists q in Q$ sao cho $\alpha(q, w_1w_2)$ xác định, ta có:\\
+\textbf{Bổ đề 1.1} Cho otomat hữu hạn đơn định $A = <Q, \sum, \delta, q_0, F>.$  Khi đó $\exists w_1, w_2 \in \sum^*, \exists q in Q$ sao cho $\delta(q, w_1w_2)$ xác định, ta có:\\
 \end{flushleft}
-$\alpha(q, w1w2) = \alpha(\alpha(q, w_1), w_2)$\\
+$\delta(q, w1w2) = \delta(\delta(q, w_1), w_2)$\\
 \begin{flushleft}
 Chứng minh: Ta chứng minh đẳng thức trên bằng quy nạp theo độ dài của $w_2$.\\
-+ Khi $|w_2| = 1$ hay $w_2 = a, a \in \sum$, ta có $\alpha(q, w_1a) = \alpha(\alpha(q, w_1),a)$. Đẳng thức (1) đúng.\\
-+ Giả sử đẳng thức (1) đúng với mọi $w_2$ có độ dài $\|w_2\| \le n$. Ta cần chứng minh nó cũng đúng với $w_2$ có độ dài $\|w_2\| = n + 1$.  Đặt $w_2 = w_2'a$, với $w_2' \in \sum^*, |w_2'| = n, a \in \sum. $Ta có $\alpha(q, w_1w_2)$
++ Khi $|w_2| = 1$ hay $w_2 = a, a \in \sum$, ta có $\delta(q, w_1a) = \delta(\delta(q, w_1),a)$. Đẳng thức (1) đúng.\\
++ Giả sử đẳng thức (1) đúng với mọi $w_2$ có độ dài $\|w_2\| \le n$. Ta cần chứng minh nó cũng đúng với $w_2$ có độ dài $\|w_2\| = n + 1$.  Đặt $w_2 = w_2'a$, với $w_2' \in \sum^*, |w_2'| = n, a \in \sum. $Ta có $\delta(q, w_1w_2)$
 
 
 Do đó đẳng thức (1) đúng với $w_2$ có độ dài n + 1.\\
 Bổ đề được chứng minh.\\
-\textbf{Chú ý: } Với otomat hữu hạn đơn định $A = <Q, \sum, \alpha, q_0, F>$ bất kỳ, ta luôn có thể xây dựng một otomat hữu hạn đơn định đầy đủ A’ tương đương với A. \\
-Thật vậy, lấy $S \not \in Q$ (do đó $S \not \in F$), đặt $Q'= Q \cup \{S\}$ và $\alpha': Q' \times \sum \to Q'$ xác định bởi: $\exists q \in Q, \exists a \in \sum, \alpha'(q, a) = \alpha(q, a)$ nếu $\alpha(q, a)$ được xác định, $\alpha'(q, a) = S$ nếu $\alpha(q, a)$ không được xác định và $\alpha'(S, a) = S$. Khi đó A' là otomat hữu hạn đơn định đầy đủ mà T(A') = T(A). \\
+\textbf{Chú ý: } Với otomat hữu hạn đơn định $A = <Q, \sum, \delta, q_0, F>$ bất kỳ, ta luôn có thể xây dựng một otomat hữu hạn đơn định đầy đủ A’ tương đương với A. \\
+Thật vậy, lấy $S \not \in Q$ (do đó $S \not \in F$), đặt $Q'= Q \cup \{S\}$ và $\delta': Q' \times \sum \to Q'$ xác định bởi: $\exists q \in Q, \exists a \in \sum, \delta'(q, a) = \delta(q, a)$ nếu $\delta(q, a)$ được xác định, $\delta'(q, a) = S$ nếu $\delta(q, a)$ không được xác định và $\delta'(S, a) = S$. Khi đó A' là otomat hữu hạn đơn định đầy đủ mà T(A') = T(A). \\
 Ta thường chọn S = $\O$, và không cần bổ xung S vào Q.\\
 
 \section{Otomat hữu hạn không đơn định}
@@ -189,15 +189,205 @@ Ta thường chọn S = $\O$, và không cần bổ xung S vào Q.\\
 \textbf{Định nghĩa 2.1}\\
 Một otomat hữu hạn không đơn định (Nondeterministic Finite AutomataNFA) là một bộ năm:\\
 \end{flushleft}
-$A = <Q, \sum, \alpha, q_0, F>$\\
+$A = <Q, \sum, \delta, q_0, F>$\\
 \begin{flushleft}
-trong đó $Q, \sum, q_0, F$ như trong định nghĩa 1.1 và $\alpha: Q \times \sum \to 2Q$, ở đây $2Q (hay P(Q)$, là ký hiệu tập hợp các tập con của Q) gọi là ánh xạ chuyển.\\
-Rõ ràng ở đây ánh xạ $\alpha$ là một hàm đa trị (hàm không đơn định), vì vậy otomat A trong định nghĩa trên đây được gọi là không đơn định.\\
-Trong trường hợp $\alpha(q, a)$ xác định $\exists q \in Q, \exists a \in \sum$, ta nói ôtômát A là đầy đủ.\\
-\hspace{10mm}Nếu $\alpha(q, a) = {p_1, p_2,..., p_k}$ thì ta nói rằng otomat A ở trạng thái q gặp ký hiệu a thì có thể chuyển đến một trong các trạng thái $p_1, p_2,..., p_k$. Nếu $\alpha(q, a) = {p}$ thì ở trạng thái q gặp ký hiệu a, otomat A chỉ chuyển đến một trạng thái duy nhất p. Nếu $\alpha$(q, a) khô ng xác định (ta thường viết $\alpha(q, a) = \o $) thì ở trạng thái q gặp ký hiệu a, otomat A không thể chuyển đến trạng thái nào, cũng tương tự như với otomat hữu hạn đơn định.\\
-\hspace{10mm}Khi bắt đầu làm việc, otomat ở trạng thái đầu $q_0$ và đầu đọc đang nhìn vào ô có ký hiệu $a_1$. Từ trạng thái $q_0$, dưới tác động của ký hiệu vào $a_1$, $\alpha$(q0, a1) = {$p_1,..., p_k$}, otomat xác định các trạng thái có thể tiếp theo là $p_1,..., p_k$ và đầu đọc chuyển sang phải một ô, tức là nhìn vào ô có ký hiệu $a_2$. Tiếp tục với mỗi $p_i (1 \le i \le k)$ và ký hiệu tiếp theo là $a_2$, các trạng thái tiếp theo có thể đến được là $\alpha(p_1, a_2)\cup...\cup \alpha(p_k, a_2)$. Quá trình đó sẽ tiếp tục cho tới khi gặp một trong các tình huống sau:\\
+trong đó $Q, \sum, q_0, F$ như trong định nghĩa 1.1 và $\delta: Q \times \sum \to 2Q$, ở đây $2Q (hay P(Q)$, là ký hiệu tập hợp các tập con của Q) gọi là ánh xạ chuyển.\\
+Rõ ràng ở đây ánh xạ $\delta$ là một hàm đa trị (hàm không đơn định), vì vậy otomat A trong định nghĩa trên đây được gọi là không đơn định.\\
+Trong trường hợp $\delta(q, a)$ xác định $\exists q \in Q, \exists a \in \sum$, ta nói ôtômát A là đầy đủ.\\
+\hspace{10mm}Nếu $\delta(q, a) = {p_1, p_2,..., p_k}$ thì ta nói rằng otomat A ở trạng thái q gặp ký hiệu a thì có thể chuyển đến một trong các trạng thái $p_1, p_2,..., p_k$. Nếu $\delta(q, a) = {p}$ thì ở trạng thái q gặp ký hiệu a, otomat A chỉ chuyển đến một trạng thái duy nhất p. Nếu $\delta$(q, a) khô ng xác định (ta thường viết $\delta(q, a) = \o $) thì ở trạng thái q gặp ký hiệu a, otomat A không thể chuyển đến trạng thái nào, cũng tương tự như với otomat hữu hạn đơn định.\\
+\hspace{10mm}Khi bắt đầu làm việc, otomat ở trạng thái đầu $q_0$ và đầu đọc đang nhìn vào ô có ký hiệu $a_1$. Từ trạng thái $q_0$, dưới tác động của ký hiệu vào $a_1$, $\delta$(q0, a1) = {$p_1,..., p_k$}, otomat xác định các trạng thái có thể tiếp theo là $p_1,..., p_k$ và đầu đọc chuyển sang phải một ô, tức là nhìn vào ô có ký hiệu $a_2$. Tiếp tục với mỗi $p_i (1 \le i \le k)$ và ký hiệu tiếp theo là $a_2$, các trạng thái tiếp theo có thể đến được là $\delta(p_1, a_2)\cup...\cup \delta(p_k, a_2)$. Quá trình đó sẽ tiếp tục cho tới khi gặp một trong các tình huống sau:\\
++ Trong trường hợp tập trạng thái tiếp theo sau khi đọc $a_j$ nào đó là rỗng hoặc sau khi đọc ký hiệu an là Q' mà $Q' \cap F = \o$, ta nói rằng A không đoán nhận $w$.\\
++ Trường hợp tập trạng thái tiếp theo sau khi đọc ký hiệu an là Q' mà $Q' \cap F \ne \o$, ta nói rằng otomat A đoán nhận $w$.\\
+Một otomat hữu hạn không đơn định có thể biểu diễn dưới dạng bảng chuyển hoặc đồ thị chuyển như trong trường hợp otomat hữu hạn đơn định. Nếu $\delta(q, a) = \{p_1, p_2, ..., p_k\}$ thì trong đồ thị chuyển có k cung từ q sang $p_1, ..., p_k$ được ghi cùng một nhãn a. \\
+\textbf{Thí dụ 2.1} Cho otomat hữu hạn không đơn định:\\
+$A = <{q_0, q_1, q_2, q_3, q_4}, {0, 1}, \delta, q_0, {q_2, q_4}>,$\\
+Với $\delta(q_0,0) = \{q_0,q_3\},\delta(q_0, 1) = \{q_0,q_1\}, \delta(q_1, 0) = \O, \delta(q_1, 1) = \{q_2\}, \delta(q_2, 0) = \{q_2\},$\\
+$\delta(q_2, 1) = \{q_2\}, \delta(q_3, 0) = \{q_4\}, \delta(q_3,1) = \O, \delta(q_4, 0) = \{q_4\}, \delta(q_4, 1) = \{q_4\}.$\\
+Bảng chuyển trạng thái và đồ thị chuyển trạng thái của otomat A cho trong hình 3.11 và 3.12:\\
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_11.png}
+\caption{ \textit{Bảng chuyển của otomat không đơn định A}}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_12.png}
+\caption{ \textit{Đồ thị chuyển của otomat không đơn định A}}
+\end{figure}
+
+\textbf{2.2 Ngôn ngữ được đoán nhận bởi otomat hữu hạn không đơn định}\\
+\textbf{Định nghĩa 2.2} Cho otomat hữu hạn không đơn định $A = <Q, \sum, \delta, q_0, F>$. Mở rộng của $\delta$ là ánh xạ $\delta'$ từ tập $Q \times \sum^*$ vào 2Q được xác định như sau:\\
+1) $\delta'(q, \varepsilon) = \{q\}, \exists q \in \in Q,$\\
+2) $\delta'(q, wa) = \sometext_{p \in \delta(q,a)}^{\bigcup}$ $\delta ' ( p, w ) , \exists q\in Q, \exists a \in \sum, \exists w \in \sum^*$ sao cho $\delta'(q, w)$ được xác định.\\
+Ta có $\delta'(q, a) = \delta'(q , \varepsilon a) = \sometext_{p \in \delta(q,a)}^{\bigcup} \delta ' ( p, w ) = \sometext_{p \in \delta(q,a)}^{\bigcup} p = \delta(q,a), \exists q \in Q, \exists a \in \sum$, tức là trên $Q \times \sum$ ta có thể đồng nhất $\delta'$ với $\delta$. Vì vậy, cũng như trường hợp otomat hữu hạn đơn định, ta có thể sử dụng ký kiệu $\alpha$ thay cho $\delta'$ và được hiểu là ánh xạ $\delta$ trên miền $Q \times \sum$, là ánh xạ $\delta'$ trên $Q \times \sum^*$.\\
+\textbf{Định nghĩa 2.3} Cho otomat hữu hạn không đơn định $A = <Q, \sum, \delta, q_0, F>, w \in \sum^*$ và L là một ngôn ngữ trên $\sum$. Ta nói:\\
+- $w$ được đoán nhận bởi A nếu $\delta(q_0, w) \cap F \ne \O$;\\
+- L được đoán nhận bởi A nếu $L = \{w \in \sum^* | \delta(q_0, w) \cap F \ne \O\}$ và ký hiệu L là T(A). \\
+\textbf{Thí dụ 2.2} Cho otomat hữu hạn không đơn định:\\
+$A = <\{q_0, q_1, q_2\}, \{a, b\}, \delta, q_0, \{q_2\}>,$\\
+trong đó $\delta(q_0, a) = \{q_0\}, \delta(q_0, b) = \{q_0, q_1\}, \delta(q_1, a) = \{q_1\}, \delta(q_1, b) = \{q_1, q_2\},$\\
+\hspace{10mm}$\delta(q2, a) = \{q2\}, \delta(q2, b) = \{q_2\}.$\\
+Bảng chuyển và đồ thị chuyển của otomat A được cho trong hình 3.13 và 3.14:\\
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_13.png}
+\caption{ \textit{Bảng chuyển của otomat A trong thí dụ 2.2}}
+\end{figure}
+
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_14.png}
+\caption{ \textit{Đồ thị chuyển của otomat A trong thí dụ 2.2}}
+\end{figure}
+Có thể kiểm tra được rằng từ $w = a^nb^n \in T(A)$, tuy nhiên otomat A không đoán nhận ngôn ngữ $L = \{ a^nb^n | \exists n \ge 1\}.$\\
+Ngôn ngữ được đoán nhận bởi otomat A là:\\
+$T(A) = \{w_1bw_2bw_3 | w_1, w_2, w_3 \in \{a, b\}^*\}.$\\
+\textbf{2.3 Đơn định hóa các otomat}\\
+Trước hết ta cần nhắc lại rằng hai ôtômát hữu hạn A và A'(đơn định hay không đơn định) được gọi là tương đương nếu chúng cùng đoán nhận một ngôn ngữ, tức là T(A) = T(A').\\
+Giả sử $A = <Q, \sum, \delta, q_0, F>$ là một otomat không đơn định, khi đó ta có thể xây dựng otomat đơn định và đầy đủ M tương đương với otomat A (theo nghĩa cùng đoán nhận một ngôn ngữ). Việc xây dựng M được thực hiện theo thuật toán sau đây, được gọi là thuật toán đơn định hóa otomat.\\
+\textbf{Thuật toán đơn định hóa:}\\
+\textbf{Input}: Otomat hữu hạn không đơn định $A = <Q, \sum, \delta, q_0, F>$ \\
+\textbf{Output:} Otomat hữu hạn đơn định $M = <Q', \sum, \delta', s_0, F'>$\\
+\textbf{Phương pháp:} \\
+\textit{Bước 1:} Xây dựng hàm hai biến $T: 2^Q \times \sum \to 2^Q$ thỏa mãn các điều kiện:\\
+\hspace{10mm} 1/. $\exists q \in Q, \exists a \in \sum $ thì $ T(q, a) = \{q' \in Q | q' = \delta(q, a) \}$\\
+\hspace{10mm}2/. $\exists B \subseteq Q mà \delta(q, a) = B, \exists a \in \sum thì T(B, a) = \sometext_{p \in B}^{\bigcup} T(p,a)$\\
+\textit{Bước 2:} Xác định tập trạng thái mới $Q' = \{s_0, s_1,..., s_k | k \le 2^{| Q |} -1\}:$\\
+\hspace{10mm} 1/. Đặt $s_0 = \{q_0\}, s_1 = \{q_1\},... s_i = \{q_i\} \exists \{q_0\}, \{q_1\},..., \{q_i\} \in Q,$\\
+\hspace{10mm}2/. Đặt $s_i+1 = B_1, s_i+2 = B_2,... \exists B_1, B_2 ... \subseteq Q mà \delta(q_j, a) = B_j.$\\
+\hspace{10mm}3/. Nếu otomat A là không đầy đủ, đặt $s_k = \O$ và thêm vào hàm chuyển $\delta'$ các giá trị $\delta'(s_k, a)$ = $s_k \exists a \in \sum$ để otomat M là otomat đầy đủ.\\
+\hspace{10mm} 4/. Trạng thái khởi đầu của otomat M là $s_0$.\\
+\hspace{10mm} 5/. Tập trạng thái kết thúc của otomat M là $F' = \{s \in Q' | s \cap F \ne \O \}$.\\
+\textit{Bước 3:} Xác định hàm chuyển $\delta': Q' \times \sum \to Q'$ của otomat M:\\
+\end{flushleft}
+$\exists s \in Q', \exists a \in \sum $ thì $ \delta'(s, a) = T(s, a)$\\
+\begin{flushleft}
+Việc chứng minh T(A) = T(M) là khá dễ dàng, dành cho sinh viên như là bài tập.\\
+\textbf{Thí dụ 2.3}\\
+Cho otomat $A = <{p_0, p_1, p_2}, \{a, b, c\}, \delta , p_0, \{p_1, p_2\}> $với hàm chuyển $\delta$ cho bởi bảng sau:\\
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_15.png}
+\caption{ \textit{Bảng chuyển của otomat A trong thí dụ 2.3}}
+\end{figure}
+Hãy xây dựng otomat $M = <Q', \{a, b, c\}, \delta', s_0, F'>$ đơn định và đầy đủ, tương đương với otomat A.\\
+\hspace{10mm}1/. Xây dựng hàm $T: 2Q \times \sum \to 2Q$\\
++ $T(p_0, a) = \{p_1\}, T(p_0, b) = \{p_1, p_2\}, T(p_0, c) = \{p_2\},$\\
++ $T(p_1, a) = \{p_2\}, T(p_1, b) = \O , T(p_1, c) = \{p_0, p_2\},$\\
++ $T(p_2, a) = \{p_1\}, T(p_2, b) = \{p_1\}, T(p_2, c) = \{p_2\},$\\
++ $T(\{p_1, p_2\}, a) = T(p_1,a) \cup T(p_2,a) = \{p_2\} \cup\{p1\} = \{p_1, p_2\}, T(\{p_1, p_2\}, b) = \O \cup \{p_1\} = =\{p_1\}, T(\{p_1, p_2\}, c) = \{p_0, p_2\} \cup \{p_2\} = \{p_0, p_2\},$\\
++ $T(\{p_0, p_2\}, a) = \{p_1\}, T(\{p_0, p_2\}, b) = \{p_1, p_2\}, T(\{p_0, p_2\}, c) = \{p_2\}$\\
+\hspace{10mm} 2/. Đặt $s_0 = \{p_0\}, s_1 = \{p_1\}, s2 = \{p_2\}, s_3 = \{p_1, p_2\}, s_4 = \{p_0, p_2\}, s_5 = \O$ ta có:\\
++ Tập trạng thái mới $Q’ = \{s_0, s_1, s_2, s_3, s_4, s_5\}.$\\
++ Trạng thái khởi đầu của M là $s_0$,\\
++ Tập trạng thái kết mới: $F' = \{s_1, s_2, s_3, s_4\}.$\\
+\hspace{10mm}3/. Hàm chuyển mới $\delta': Q' \times \sum \to Q'$ được xác định như sau:\\
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_16.png}
+\caption{ \textit{Bảng chuyển của otomat đơn định M trong thí dụ 2.3}}
+\end{figure}
+Rõ ràng otomat $M = <{s_0, s_1, s_2, s_3, s_4, s_5}, \{a, b, c\}, \delta', s_0, \{s_1, s_2, s_3, s_4\}>$ với hàm chuyển $\delta'$ cho bởi bảng trên là otomat hữu hạn đơn định và đầy đủ. Có thể thây rằng otomat M là tương đương với otomat A.\\
+\textbf{Thí dụ 2.4} Cho otomat không đơn định: $A = <\{q_0, q_1\}, \{a, b\}, delta, q_0, \{q_1\}>, $ trong đó $ delta(q_0, a) = \{q_0\}, \delta(q_0, b) = \{q_0, q_1\}, \delta(q_1, a) = \{q_0, q_1\}, \delta(q_1, b) = \O.$ Đồ thị chuyển của A là:
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_17.png}
+\caption{ \textit{Đồ thị chuyển của otomat đơn định M trong thí dụ 2.4}}
+\end{figure}
+Ta xây dựng otomat $M = <Q', \{a, b\}, \delta', t_0, F'>$ tương đương với A theo thuật toán đơn định hóa, ta có:\\
++ $Q' = \{t_0, t_1, t_2, t_3\}, với t_0 = \{q_0\}, t_1 = \{q_1\}, t_2 = \{q_0, q_1\}, t_3 = \O.$\\
++ $\delta'(t_0, a) = t_0, \delta'(t_0, b) = t_2, \delta'(t_1, a) = t_2, \delta'(t_1, b) = t_3, \delta'(t_2, a) = \{q_0\}\cup \{q_0, q_1\} = t_2, \delta'(t_2, b) = \{q_0, q_1\} \cup \O = t_2, \delta'(t_3, a) = t_3, \delta'(t_3, b) = t_3.$\\
+Ta có bảng chuyển của M:
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_18.png}
+\caption{ \textit{Bảng chuyển của otomat đơn định M trong thí dụ 2.4}}
+\end{figure}
++ Do $t1 \cap F = \{q_1\} \ne \O , t_2 \cap F = \{q1\} \ne \O nên F' = \{t_1, t_2\}.$\\
+Rõ ràng otomat M là đơn định và có đồ thị chuyển như sau:\\
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_19.png}
+\caption{ \textit{Đồ thị chuyển của otomat đơn định M trong thí dụ 2.4}}
+\end{figure}
+Nhìn vào bảng chuyển và đồ thị chuyển của M, ta thấy ngay rằng không có đường đi nào từ $t_0$ đến được đỉnh kết thúc $t_1$, vì vậy otomat M sẽ tương đương với otomat M' có đồ thị chuyển như sau:
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{3_20.png}
+\caption{ \textit{Đồ thị chuyển của otomat M' trong thí dụ 2.4}}
+\end{figure}
+và ta có $T(A) = T(M) = T(M') = \{a^nbw | n \le 0, w \in \{a, b\}^*\}.$\\
+\textbf{2.4 Sự tương đương giữa otomat đơn định và otomat không đơn định}\\
+Các định lý dưới đây sẽ cho ta thấy sự tương đương giữa otomat hữu hạn đơn định và không đơn định.\\
+\textbf{Định lý 2.1} Nếu ngôn ngữ L được đoán nhận bởi một otomat hữu hạn không đơn định thì tồn tại một otomat hữu hạn đơn định đoán nhận L.\\
+Việc chứng minh định lý này được suy từ thuật toán đơn định hóa các otomat.\\
+\textbf{Định lý 2.2} 
+Lớp ngôn ngữ được sinh bởi otomat hữu hạn đơn định là trùng với lớp ngôn ngữ được sinh bởi otomat hữu hạn không đơn định.\\
+\textit{Chứng minh:} Ta gọi LN là lớp ngôn ngữ sinh bởi các otomat hữu hạn không đơn định, LD là lớp ngôn ngữ sinh bởi các otomat hữu hạn đơn định, ta cần chứng minh LN = LD. Ta sẽ chứng minh hai bao hàm thức:\\
+\hspace{10mm}$\bullet$ LN $\subseteq$ LD. Giả sử L là một ngôn ngữ tùy ý thuộc lớp LN, tức là tồn tại một otomat không đơn định A đoán nhận L, tức là ta có T(A) = L. Theo định lý 2.1, tồn tại một otomat đơn định M sao cho L = T(M), vậy L thuộc lớp LD, hay LN $\subseteq$ LD.\\
+\hspace{10mm}$\bullet$ LD $\subseteq$ LN. Giả sử L là một ngôn ngữ tùy ý thuộc lớp LD, tức là tồn tại một otomat đơn định M đoán nhận L, ta có T(M) = L. Tuy nhiên, ta luôn luôn có thể xem hàm chuyển đơn định $\delta(q, a) = p \in Q$ trong otomat đơn định như là một trường hợp đơn giản của hàm chuyển không đơn định $\delta(q, a) = \{p\} \in 2^Q$ trong otomat không đơn định. Như vậy, một otomat đơn định có thể được xem là một trường hợp đặc biệt của otomat không đơn định. Và vì thế, ngôn ngữ L nói trên có thể xem là được đoán nhận bởi otomat không đơn định. Do đó LD $\subseteq$ LN. \\
+\hspace{10mm}Từ đó ta có LD = LN.\\
+Định lý được chứng minh.\\
+\section{Ngôn ngữ chính quy và biểu thức chính quy}
+\hspace{10mm}Trong chương trước, ta đã định nghĩa các ngôn ngữ chính quy thông qua các văn phạm chính quy. Trong phần này, ta sẽ định nghĩa các ngôn ngữ chính quy trực tiếp từ các khái niệm về ngôn ngữ, ta cũng sẽ chỉ ra rằng các định nghĩa này là tương đương. Đồng thời với các ngôn ngữ chính quy, chúng ta đưa ra các khái niệm về biểu thức chính quy, là công cụ để biểu diễn các ngôn ngữ chính quy.\\
+\subsection{Ngôn ngữ chính quy và biểu thức chính quy}
+\textbf{Định nghĩa 3.1} Cho bảng chữ cái $\sum = \{a_1, a_2,..., a_n\}$, khi đó ngôn ngữ chính quy (regular languages) được định nghĩa đệ quy như sau:\\
+\hspace{10mm} 1/. Các ngôn ngữ $\subseteq$ và $\{a_i\} ( i = 1, 2,..., n) $được gọi là các ngôn ngữ chính quy trên bảng chữ cái $\sum$.\\
+\hspace{10mm} 2/. Nếu R và S là hai ngôn ngữ chính quy trên bảng chữ cái $\sum$ thì $R \cap S; R.S; R+$ (hay S+) là các ngôn ngữ chính quy trên bảng chữ cái $\sum$.\\
+\hspace{10mm}3/. Không có các ngôn ngữ chính quy nào khác trên bảng chữ cái $\sum$ ngoài các ngôn ngữ chính quy được định nghĩa như trên.\\
+Có thể thấy rằng định ngghĩa 3.1 trên đây là tương đương với định nghĩa ngôn ngữ chính quy thông qua các văn phạm chính quy. Thật vậy, có thể chỉ ra các văn phạm chính quy sinh ra các ngôn ngữ $\O$ và ngôn ngữ $\{a\}$ (xem thí dụ 4.7, $\S$4, Ch. 1). Ngoài ra, trong chương 1 cũng đã chỉ ra rằng lớp các ngôn ngữ chính quy là đóng đối với các phép toán hợp, nhân ghép và lặp trên các ngôn ngữ. Như vậy lớp ngôn ngữ chính quy được định nghĩa theo định nghĩa trên đây là trùng với lớp ngôn ngữ chính quy đã được định nghĩa theo văn phạm.\\
+Như vậy, từ định nghĩa 3.1, ta có định lý sau:\\
+\textbf{Định lý 3.1} Mọi ngôn ngữ chính quy trên bảng chữ cái $\sum$ đều nhận được từ các ngôn ngữ hữu hạn bằng cách áp dụng một số hữu hạn lần các phép toán hợp, nhân ghép và phép lặp.\\
+\textbf{Chú ý:} \\
+1/. Các văn phạm chính quy không chứa các quy tắc sinh từ rỗng (còn gọi là các quy tắc rỗng, là các quy tắc có dạng $A \to \varepsilon$, với A là ký hiệu phụ), vì vậy các ngôn ngữ chính quy cũng không chứa từ rỗng $\varepsilon$.\\
+2/. Ngôn ngữ chính quy suy rộng là các ngôn ngữ chính quy có chứa từ rỗng $\varepsilon$, văn phạm chính quy có chứa quy tắc rỗng được gọi là văn phạm chính quy suy rộng\\
+Để diễn đạt các ngôn ngữ chính quy, ta đưa vào khái niệm biểu thức chính quy, được định nghĩa như sau:\\
+1/. $\O$ và a (với $a \in \sum$) là các biểu thức chính quy trên bảng chữ cái $\sum$ biểu diễn ngôn ngữ $\O$ và ngôn ngữ $\{a\}$\\
+2/. Nếu r và s là hai biểu thức chính quy biểu diễn các ngôn ngữ chính quy R và S trên bảng chữ cái $\sum$ thì:\\
+\hspace{10mm}$\bullet$ r + s là biểu thức chính quy trên bảng chữ cái $\sum$ biểu diễn ngôn ngữ $R \cup S$\\
+\hspace{10mm}$\bullet$ r.s là biểu thức chính quy trên bảng chữ cái $\sum$ biểu diễn ngôn ngữ R.S\\
+\hspace{10mm}$\bullet$r+ (hay s+) là biểu thức chính quy trên bảng chữ cái $\sum$ biểu diễn ngôn ngữ R+ (hay S+)\\
+3/. Không có các biểu thức chính quy nào khác trên bảng chữ cái $\sum$ ngoài các biểu thức chính quy được định nghĩa như trên.\\
+Từ định nghĩa ngôn ngữ chính quy và biểu thức chính quy, ta có các kết quả sau về các ngôn ngữ chính quy:\\
+\textbf{Định lý 3.2 }Một ngôn ngữ trên bảng chữ cái $\sum$ là chính quy khi và chỉ khi nó được biểu diễn được bằng một biểu thức chính quy.\\
+\textbf{Chú ý:} \\
+1/. Biểu thức chính quy suy rộng chấp nhận $\varepsilon$ là biểu thức chính quy biểu diễn ngôn ngữ $\{\varepsilon\}$, và chấp nhận phép toán lặp (*), tức là nếu r là biểu thức chính quy biểu diễn ngôn ngữ chính quy R thì $r^*$ là biểu thức chính quy suy rộng biểu diễn ngôn ngữ chính quy suy rộng $R^*$. Trong hầu hết các trường hợp, khi không cần phân biệt, ta dùng khái niệm "biểu thức chính quy" chung cho cả "biểu thức chính quy" và "biểu thức chính quy suy rộng".\\
+2/. Trong các biểu thức chính quy ta có thể bỏ qua các dấu ngoặc và quy ước thứ tự các phép toán là phép lặp, phép nhân ghép và cuối cùng là các phép hợp.\\
+Nếu r, s, t là các biểu thức chính quy thì ta có các kết quả sau:\\
+\hspace{10mm}$\bullet$r+s = s+r,\\
+\hspace{10mm}$\bullet$(r+s)+t = r+(s+t),\\
+\hspace{10mm}$\bullet$r+r = r,\\
+\hspace{10mm}$\bullet$(rs)t = r(st),\\
+\hspace{10mm}$\bullet$r(s+t) = rs+rt, (s+t)r = sr+tr,\\
+\hspace{10mm}$\bullet$$\O^* = \varepsilon,$\\
+\hspace{10mm}$\bullet$$(r^*)^* = r^*, (r^+)^+ = r^+$\\
+Có thể chứng minh các kết quả trên bằng cách chỉ ra rằng hai biểu thức chính quy ở hai vế của mỗi đẳng thức đều biểu diễn cùng một ngôn ngữ chính quy. Xin dành việc chứng minh này cho sinh viên như là bài tập.\\
+\textbf{Thí dụ 3.1} Xác định ngôn ngữ chính quy được biểu diễn bởi biểu thức r = $(01^*+02)1.$\\
+Ta có:\\
+\end{flushleft}
+$r = (01^*+02)1 = 01^*1+021,$
+\begin{flushleft}
+vậy ngôn ngữ chính quy biểu diễn bởi r là: \\
+$L (r) = L(01^*1+021) = L(01^*1) \cup L(021) = {01^n , 021 | n \le 1}$\\
+\textbf{3.2 Sự liên hệ giữa otomat hữu hạn và ngôn ngữ chính quy}\\
+Trong chương trước ta đã thấy rằng với mọi ngôn ngữ chính quy đều tồn tại một văn phạm chính quy sinh ra nó, và ngược lại ngôn ngữ sinh bởi văn phạm chính quy là ngôn ngữ chính quy.\\
+Trong phần này, ta sẽ thấy có một sự liên hệ tương tự như vậy giữa otomat hữu hạn và ngôn ngữ chính quy\\
+\textbf{Định lý 3.3} Nếu L là một ngôn ngữ chính quy thì tồn tại một otomat hữu hạn không đơn định A đoán nhận L, tức là L = T(A).\\
+\textit{Chứng minh:} Giả sử L là ngôn ngữ bởi văn pham chính quy $G = <\sum, \triangle, S, P>, tức là L = L(G).$ Xét otomat hữu hạn không đơn định $A = < Q, \sum, \delta, q_0, F>$, trong đó:\\
++ $Q = \triangle \cup \{E\}$, với E là ký hiệu mới và $E \not \in \sum \cup \triangle$,\\
++$ q_0 = S$;\\
++ $F = \{E\}$ nếu quy tắc $S \to \varepsilon \not \in P $ và $ F = \{E, S\}$ nếu $S \to \varepsilon \in P$,\\
++ $\exists A\ in \triangle, \exists a \in \sum $ ta đặt $ \delta(A, a) = \{B \in \triangle | A\ to aB \in P\} \cup \{E | A \to a \in P\} và \delta(E, a) = \O$\\
+Ta chứng minh L = T(A).\\
+1/. Lấy $w \in L:$\\
+\hspace{10mm}$\bullet$ nếu $w = \varepsilon$: trong văn phạm G có quy tắc S$\to \varepsilon \to P$, do đó $S\ to F$. Trong trường hợp này $\delta(S, \varepsilon)=\{S\} nên \varepsilon \in T(A)$.\\
+\hspace{10mm}$\bullet$ nếu $w = a_1a_2...a_n \ne \varepsilon$: Ta có suy dẫn $S \vdash a_1A_1 \vdash a_1a_2A_2 \vdash...\vdash a_1a_2...a_{n-1}A{n-1}\vdash a_1...a_{n-1}a_n$\\
+Do đó tồn tại dãy quy tắc $S \to a_1A_1, A_1\ to a_2A_2,..., A_{n-1} \to a_n$ trong P. Từ định nghĩa của $\varepsilon$, ta có $A_1 \in \delta(S, a_1), A_2 \in \delta(A_1, a_2),..., A_{n-1} \in \delta(A_{n-2}, a_{n-1}), E \in \varepsilon(A_{n-1}, a_n)$ . Như vậy, $E \in \delta(S, a_1a_2...a_n) hay w \in T(A)$. Vậy L $\subseteq$ T(A)
+
+
 
 \end{flushleft}
+
+
+
+
+
+
+
+
+
+
+
 \chapter{KIỂM ĐỊNH MÃ VÀ MÃ MỞ RỘNG}
 
 \begin{flushleft}
