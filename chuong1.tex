@@ -7,7 +7,8 @@
 \chapter{CƠ SỞ LÝ THUYẾT MÃ}
 
 Trong chương này, chỉ những khái niệm cơ bản liên quan được sử dụng trong luận án mới được đề cập. Nội dung kiến thức về đại số, ngôn ngữ và mã của các từ hữu hạn trình bày trong các mục,
-từ Mục 1.1 đến Mục 1.4, được tham khảo và trích dẫn từ các tài liệu [].
+từ Mục \hyperlink{page.6}{\textcolor{blue}{1.1}} đến Mục \hyperlink{page.16}{\textcolor{blue}{1.4}}, được tham khảo và trích dẫn từ các tài liệu [\textcolor{red}{4; 5; 6; 7; 9; 13; 16; 18; 21; 27; 28}].. Bên cạnh đó, luân án còn giới thiệu một số lớp mã dựa trên các hình thức tích mới, hiệu quả của các lớp mã này trong các chương tiếp theo. Nội dung kiến thức về mã luân phiên và mã của các từ định biên trong trình bày trong Mục \textcolor{blue}{1.5} là một hướng nghiên cứu mới trong lý thuyết mã, được đề xuất gần đây trong các công trình [\textcolor{red}{14; 15; 23; 32; 33; 34; 35}]. Kiến thức về ngôn ngữ và mã của các từ vô hạn xem như một sự mở rộng các khái niệm trong lý thuyết mã truyền thống trường hợp vô hạn được tổng hợp từ các tài liệu [\textcolor{red}{3; 10; 11; 13; 19; 20; 24; 29; 31}], là nội dung của mục \textcolor{blue}{1.6}.
+Trong luận án tập các số tự nhiên được ký hiệu là $\mathbb{N}$. Lực lượng của 1 tập hợp $X$ được ký hiện là Card($X$). Các bảng chữ đều được giả thiết là hữu hạn nếu không nói gì khác.
 %*************************************************************************
 %+ 1.1. Nua nhom va vi nhom
 %************************************************************************
@@ -18,18 +19,17 @@ của S cùng với phép toán cảm sinh là cho T trở thành nửa nhóm (t
 Một vị nhóm con của vị nhóm S là một nửa nhóm con có chứa đơn vị của S.
 
 
-\begin{example}\label{ex.1.1} 
-    $M={0,1}$ là vị nhóm nhân với phần tử đơn vị là 1.
-\end{example}
-\begin{example}\label{ex.1.2} 
-    Với vị nhóm $M$ bất kỳ, ta trang bị cấu trúc vị nhóm cho tập tất cả các tập con $\mathcal{P}(M)$ của M bằng cách định nghĩa, với $X, Y \subset M$
+\textit{Ví dụ 1.1.} $M = \{0,1\}$ là vị nhóm nhân với phần tử đơn vị là 1.
+
+\textit{Ví dụ 1.2.}
+    Với vị nhóm $M$ bất kỳ, ta trang bị cấu trúc vị nhóm cho tập tất cả các tập con $\mathcal{P}(M)$ của M bằng cách định nghĩa, với $X, Y \subset M$,
     $$
         XY = \{ xy | x \in X, y \in Y \}
     $$
-    Phần tử đơn vị là {1}
-\end{example}
-\begin{example}\label{ex.1.3} 
-    Từ các vị nhóm $M, N$ ta có vị nhóm $M \times N$ là tích trực tiếp của $M$ và $N, M^{n}$ là tích trực tiếp của $n$ lần vị nhóm $M$.
+    Phần tử đơn vị là $\{1\}$.
+1.1 Nửa nhóm và vị nhóm
+\textit{Ví dụ 1.3.} 
+    Từ các vị nhóm $M, N$ ta có vị nhóm $M \times N$ là tích trực tiếp của $M$ và $N, M^{(n)}$ là tích trực tiếp của $n$ lần vị nhóm $M$.
 
     Cho các nửa nhóm (vị nhóm) $S$ và $T$. Ánh xạ $\varphi : S \rightarrow T$ được gọi là một {\it đồng cấu nửa nhóm} (t.ư. {\it vị nhóm}) nếu với mọi $a, b \in S$,
     $$
@@ -39,7 +39,33 @@ Một vị nhóm con của vị nhóm S là một nửa nhóm con có chứa đ�
 
     Đồng cấu $\varphi$ được gọi là {\it đơn cấu} (t.ư {\it toàn cấu, đẳng cấu}) nếu $\varphi$ là đơn ánh (t.ư. toàn ánh, song ánh). 
     Một đồng cấu từ vị nhóm $S$ vào chính nó thì được gọi là một {\it tự đồng cấu}.
-\end{example}
+    Một {\it tương đẳng} trên một vị nhóm $M$ là một quan hệ tương đương ${\theta}$ trên $M$ sao cho với mọi $m,m' \in M, u,v \in M$
+    $$
+    m \equiv m'mod\theta \Rightarrow umv \equiv um'vmod\theta 
+    $$
+    \hspace{10mm} Nếu $\varphi : M \to N$ là một đồng cấu vị nhóm thì {\it quan hệ} ({\it hạt nhân}) $\equiv_\varphi$ trên $\theta$, cho bởi $m \equiv_\varphi m'mod\theta {\Leftrightarrow}$ $\varphi(m) = \varphi(m')$ là một tương đẳng trên $M$. Ngược lại nếu $\theta$ là một tương đẳng trên vị nhóm $M$, tập thương $M/\theta$ với phép toán $[x]_\theta[y]_\theta = [xy]_\theta$, ở đó $[x]_\theta$ kí hiệu tương đương theo $\theta$ chưa $x$, là một {\it vị nhóm thương} của $M$ với tương đẳng $\theta$ và ta có {\it đồng cấu tự nhiên} $\theta^\aleph : M \to M/\theta$ cho bởi $\theta^\aleph(m) = [m]_\theta$ với mọi $m \in M$.\\
+    Cho $M$ là một vị nhóm. Với $x, y \in M$, ta có: 
+    \center{    
+        $x^{-1}y = \{z \in M | x.z = y\} $ và $ xy^{-1} = \{z \in M | x= z.y \}.$
+    }\\
+    \begin{flushleft}
+    \hspace{10mm} Với $S, T \subseteq M$, ta định nghĩa các phép cắt trái, phải của $S$ bởi $T$
+    \end{flushleft}
+    $
+    T^{-1}S = \{u \in M \exists \in T : t.u \in S \}$ và $ST^{-1} = \{ u \in M \exists \in T : u.t \in S \}
+    $
+    \begin{flushleft}
+    \hspace{10mm}Ta có tính chất cơ bản sau
+    \end{flushleft}
+\begin{flushleft}
+    \textbf{Tính chất 1.1}  Cho $M$ là một vị nhóm , $P,K \subseteq M, P = K^*$ và $m \in M$. Khi đó $P^{-1}(m^{-1})K = (m.P)^{-1}K$.\\
+    {\it Chứng minh.} Chứng minh $P^{-1}(m^{-1})K \subseteq (m.P)^{-1}K$. Ta có\\
+    \hspace{10mm} $\omega \in P^{-1}(m^{-1})K \Leftrightarrow (\exists p \in P, k \in K : \omega = p^{-1}( m^{-1}k ) \Leftrightarrow k = m.p.\omega).$ \\
+    Vi vậy $\omega = (m.p^{-1}k \in (m.P)^{-1}K.$ \\
+    \hspace{10mm}Chứng minh $P^{-1}(m^{-1})K \subseteq P^{-1}( m^{-1}K )$. Ta có \\
+    \hspace{20mm} $\omega \in ( m.P )^{-1}K \Leftrightarrow ( \exists p \in P , k \in K : \omega = ( m.p )^{-1}k \Leftrightarrow k = m.p.\omega ).$ \\
+    Vì vậy $\omega = p^{-1}( m^{-1}k ) \in P^{-1}( m^{-1}K )$
+\end{flushleft}
 %+ Dinh nghia 1.1.1
 \begin{definition}\label{de.1.1.1} 
 Giả sử $C\subseteq R^n$ là một tập hợp khác rỗng.
@@ -93,7 +119,9 @@ Chú ý rằng, tập lồi đa diện đóng, bị chặn thì không có hư�
 
 %+ -------------------------------------------------------------------------------------------
 %+ 1.1.2. Mot so dinh ly quan trong.
+\begin{flushleft}
 \subsection{Một số kết quả trong giải tích lồi}
+\end{flushleft}
 Phần này trình bày một số kết quả đã được đề cập trong giải tích lồi có liên quan đến khóa luận. Trước hết, cần nhắc lại một trong những định lý quan trọng là định lý biểu diễn tập lồi đa diện.
 %+ Dinh ly 1.1.1. (Ve bieu dien tap loi da dien)
 \begin{theorem}\label{th.1.1.1} 
@@ -121,11 +149,427 @@ J_+(x^0):=\set{j\in\set{1,\dots, n}\;:\; x^0_j>0}.
 \end{equation}
 \end{theorem}
 
+%%%%%%%%%%%
+% 1.2 Từ và ngôn ngữ 
+%%%%%%%%%%
+\begin{flushleft}
+    \section{Từ và ngôn ngữ}
+\end{flushleft}
+\begin{flushleft}
+Cho $A$ là một \textit{bảng chữ} . Một từ $\omega$ trên bảng chữ $A$ là một dãy hữu hạn các phần tử của $A$
+$$
+    \omega = (a_1, a_2, a_3, ... , a_n), a_i \in A
+$$
+\hspace{10mm}Tập tất cả các từ trên bảng chữ $A$ được ký hiệu là $A^*$ và được trang bị phép nhân (tích) ghép có tính chất kết hợp 
+$$
+(a_1, a_2, ... , a_n)(b_1, b_2, ... , b_n) = (a_1, a_2, ... , a_n,b_1, b_2, ... , b_n).
+$$
+Vì vậy để thuận lợi ta viết 
+$$
+    \omega = a_1a_2...a_n
+$$
+thay cho $\omega = ( a_1, a_2, ... , a_n )$. Một phần tử $a \in A$ được gọi là một \textit{chữ cái. Từ rỗng} được ký hiệu là $\varepsilon$ đóng vai trò là phần tử đơn vị trong phép nhân ghép. Do đó, tập $A^*$ có cấu trúc vị nhóm và $A^*$ được gọi là vị nhóm tự do trên $A$. Tập tất cả các từ khác rỗng trên $A$ được ký hiệu là $A^+$ . Ta có $A^+$ . Ta có $A^+ = A^* - \{{\varepsilon}\}$ 
+\hspace{10mm}Độ dài $|\omega|$ của từ $\omega = a_1a_2...a_n$ với $a_i \in A$ là $n.$ Quy ước $|\varepsilon|$ = 0. Ánh xạ $\omega \to |\omega|$ là một đồng cấu từ $A^*$ đến vị nhóm cộng $\mathbb{N}$. Với $n \ge 0$, ta ký hiệu 
+$$
+    A^{<n} = \{ \omega \in A | |\omega| \le n - 1 \}
+$$
+và 
+$$
+    A^{<n} = \{ \omega \in A | |\omega| \le n \}
+$$
+Đặc biệt $A^{<0} = \theta $ và $A^{<0} = \{ \varepsilon \}$. \\
+\hspace{10mm}Một từ $\omega \in A^*$ là một \textit{khúc con} của một từ $ x \in A^*$ nếu tồn tại $u, v \in A^*$ sao cho $x = u\omega v$ Quan hệ \textit{"là một khúc con của"} là quan hệ thứ tự bộ phận trên $A^*$. Một khúc con $\omega$ của $x$ là \textit{khúc con thật sự} nếu $\omega \ne x$. Một từ $\omega \in A^*$ là một \textit{khúc đầu} (t.ư. \textit{khúc đuôi}) của một từ $\omega \in A^*$ nếu tồn tại một từ $u \in A^*$ sao cho $x = \omega u$ (t.ư. $x = u\omega$). Quan hệ \textit{"là một khúc con của"} (t.ư. \textit{"là một khúc đuôi của"} ) cũng là một quan hệ thứ tự bộ phận trên $A^*$. Ta viết $\omega \le_p x$ (t.ư. $\omega \le_s x$) khi $\omega$ là một khúc đầu (t.ư. khúc cuối) của $x$ và $\omega <_p x$ (t.ư. $\omega <_{s} x$ ) khi $\omega \le_{p}$ và $\omega \ne x$ ( t.ư $\omega \le_s x$ và $\omega \ne x$ ). Thứ tự này có tính chất cơ bản sau đây. Nếu có từ x,
+
+\end{flushleft}
+$\omega \le_p x, \omega' \le_p x, ($ t.ư $ \omega \le_s x, \omega' \le_s x ),$
+\begin{flushleft}
+thì $\omega$ và $\omega'$ so sánh được với nhau, tức là
+\end{flushleft}
+$\omega \le_p \omega'$ hoặc $\omega' \le_p \omega $ (t.ư $\omega \le_s \omega'$ hoặc $\omega' \le_s \omega $)
+\begin{flushleft}
+    1.2 Từ và ngôn ngữ\\
+    \hspace{10mm} Tập con $X$ của $A^*$ được gọi là tập $prefix$ nếu không có từ nào của $X$ là khúc đầu thực sự của một từ khác trong $X$ .
+    \hspace{10mm} Hai từ $x, y \in A^*$ được gọi là \textit{liên hợp} nếu tồn tại các từ $u, v$ sao cho $x = uv$, $y = vu$. Xem hình \hyperlink{page.12}{\textcolor{blue}{1.1}}. Khi đó ta cũng gọi $v$ là một $overlap$ của $x$ và $y$
+    
+\end{flushleft}
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{1_1.png}
+\caption{\textbf{Hình 1.1} \textit{Một overlap của hai từ liên hợp x và y}}
+\end{figure}
+\begin{flushleft}
+Một tập con của $A^*$ được gọi là một \textit{ngôn ngữ} trên $A$.
+Với một ngôn ngữ $X$ thuộc $A^*$, ta kí hiệp $X^*$ vị nhóm con sinh bởi $X$,
+\end{flushleft}
+$X^* = \{ x_1x_2...x_n | n \ge 0, x_i \in X\}$
+\begin{flushleft}
+Tương tự, ta kí hiệu $X^+$ nửa nhóm con sinh bởi $X$,
+\end{flushleft}
+$X^+ = \{ x_1x_2...x_n | n \ge 1, x_i \in X\}$
+\begin{flushleft}
+Ta có
+\end{flushleft}
+$$
+\begin{cases}
+    X^* - \{ \theta \} & \textit{nếu } \theta \not\in X, \\
+    X^* & \textit{nếu } \theta \not\in X, \\
+\end{cases}
+$$
+\begin{flushleft}
+\hspace{10mm}Một \textit{phân tích} của một từ $\omega \in A^*$ theo các từ của $X$ cho bởi đẳng thức $\omega = x_1x_2...x_n, x_i \in X, i \ge 1$. Khi đó, ta cũng nói $\omega$ có một $X$-\textit{phân tích}. Theo định nghĩa, mỗi từ $\omega \in X^*$ có ít nhất một $X$-\textit{phân tích}. Để dễ hình dung, ta thường biểu diễn một $X$-\textit{phân tích} $\omega = x_1x_2...x_n, x_i \in X, i \ge 1$ bằng hình sau: \\
+\end{flushleft}
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{1_2.png}
+\caption{\textbf{Hình 1.2} \textit{Một X - phân tích từ} $\omega$}
+\end{figure}
+\begin{flushleft}
+hspace{10mm}Cho $X, Y \subseteq A^*$ là các ngôn ngữ. \textit{Tích} của $X$ và $Y$, \textit{thương trái, thương phải} của $X$ bởi $Y$ là các ngôn ngữ được định nghĩa ở mục trước với vị nhóm $M = A^*$. với $\omega, v \in M$, ta sẽ viết $uv$ thay cho $u.v$. Khi đó:
+\end{flushleft}
+$XY = \{ xy|x \in X , y \in Y\}$,\\
+$Y^{-1}X = \{ \omega \in A^* | y\omega \in X , y \in Y\}$,\\
+$XY^{-1} = \{ \omega \in A^* | y\omega \in X , y \in Y\}$
+\begin{flushleft}
+Ký hiêu $u^{-1}X, Xu^{-1}$ được sử dụng khi tập $Y$ chỉ có một phần tử $Y = \{ u \}$.
+\end{flushleft}
 %*************************************************************************
-%+ 1.2. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
+%+ 1.3. Otomat và ngôn ngữ chính quy 
+%**********************************************************
+\begin{flushleft}
+\section{Otomat và ngôn ngữ chính quy}
+Cho A là một bảng chữ, một \textit{otomat} trên A là một bộ $\mathcal{A}$ = $(\mathcal{Q},A, \mathcal{F})$ gồm một tập hữu hạn các trạng thái Q và các tập $\mathcal{F} \subseteq Q \times A \times Q$, mỗi cung có dạng \textit{p,a,q} với \textit{p} là đỉnh đầu, $q$ là đỉnh cuối và $a$ là nhãn của cung. Ta còn biểu diễn một Otomat với \textit{tập trạng thái khởi đầu} $I \subseteq Q$ và \textit{tập trạng thái kết thúc} $T \subseteq Q$ bởi $( Q, A, \mathcal{F}, I, T )$ hoặc ngắn gọn $(Q, I, T)$ khi $A$ và $\mathcal{F}$ cố định.
+\end{flushleft}
+\hspace{10mm}Otomat $\mathcal{A}$ = $(Q, A, \mathcal{F})$ là \textit{hữu hạn} nếu tập trạng thái $Q$ hữu hạn.\\
+\hspace{10mm}Một \textit{đường đi} trong otomat $A$ là một dãy $c$ = $(f_1, f_2, ... ,f_n)$ các cung liền nhau \\
+$f_i$ = $(q_i, a_i, q_{i+1})$,  $1 \le i \le n.$
+\begin{flushleft}
+    \hspace{10mm}Số $n$ được gọi là \textit{độ dài} của đường đi $c$. Từ $w$ = $a_1a_2...a_n$ là \textit{nhãn} của đường đi $c$. Trạng thái $q_1$ là \textit{điểm đầu} và trạng thái $q_{n+1}$ là \textit{điểm cuối} của $c$. Để thuận tiện khi tham chiếu đến đường đi $c$, ta sử dụng ký hiệu
+\end{flushleft}
+$c$ : $q_1$ $\xrightarrow{w} q_{n+1}.$
+\begin{flushleft}
+    Quy ước, với mỗi trạng thái $q \in Q$ , có một đường đi độ dài 0, nhãn $\varepsilon$, từ $q$ đến $q$. 
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Một đường đi $c : i \to t$ là \textit{đường đi thành công} nếu $i \in I$ và $t \in T$. Ngôn ngữ \textit{đoán nhận được} bởi $\mathcal{A}$ ký hiệu là $L(\mathcal{A})$, được định nghĩa là tập các nhãn của các đường đi thành công. $L(\mathcal{A})$ = $\{ w \in A^* $ | $ \exists c : i \xrightarrow{w} t, i \in I, t\in T \}$.
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Một Otomat $\mathcal{A}$ = $(Q, I, T)$ là \textit{đơn định} nếu $Card(I)=1$ và nếu  
+\end{flushleft}
+$(p,a,q),(p,a,r) \in \mathcal{F} \Rightarrow q = r$.
+\begin{flushleft}
+\hspace{10mm}Vì vậy, với mỗi $P \in Q$ và $a \in A$ có nhiều nhất một trạng thái $q \in Q$ sao cho $p \xrightarrow{a} q$. Với $p \in Q$ và $a \in A$, ta định nghia 
+\end{flushleft}
+$p.a$ = $\begin{cases}
+    q \text{  nếu  } (p,a,q ) \in \mathcal{F},\\
+    \emptyset \text{  nếu  } (p,a,q) \not\in \mathcal{F}.\\ 
+\end{cases}$
+\begin{flushleft}
+    Hàm bộ phận
+\end{flushleft}
+$Q \times A \to Q$
+\begin{flushleft}
+định nghĩa như trên được mở rộng cho từ bằng cách đặt, với mọi $q \in Q$,
+\end{flushleft}
+$p.\varepsilon$ = $P$,
+\begin{flushleft}
+và, với $w \in A^*$ và $a \in A$, 
+\end{flushleft}
+$p.wa$ = $(p.w).a$
+\begin{flushleft}
+Hàm định nghĩa như trên được gọi là \textit{hàm chuyển} của $\mathcal{A}$. Khi đó, với $I$ = $\{ i \}$ ta có
+\end{flushleft}
+$L(\mathcal{A})$ = $\{ w \in A^* \text{ | } i.w \in T \}$.
+\begin{flushleft}
+\hspace{10mm}Cho $X \subseteq A^*$ là một ngôn ngữ chính quy. Ta định nghĩa một otomat hữu hạn đặc biệt $\mathcal{A}(X)$ = $(Q, i, T)$ như sau. Các trạng thái của $\mathcal{A(X)}$ là các tập khác rỗng 
+\end{flushleft}
+$u^{-1}X$
+\begin{flushleft}
+Với $u \in A^*$. Trạng thái khởi đầu là $X$ = $\varepsilon^{-1} X$, và các trạng thái kết thúc có chứa từ rỗng. Hàm chuyển cho một trạng thái $Y$ = $u^{-1} X$ và một chữ cái $a \in A$ được cho bởi  
+\end{flushleft}
+$Y \xrightarrow{a} a^{-1} Y$.
+\begin{flushleft}
+Đây là một hàm bộ phận và ta có 
+\end{flushleft}
+$L(\mathcal{A(X)})$ = X.
+\begin{flushleft}
+\hspace{10mm}Ta biết rằng theo \hyperlink{page.78}{\textcolor{red}{5}}, otomat $\mathcal{A} (X)$ được gọi là \textit{otomat tối tiểu} của X theo nghĩa đơn định, có số trạng thái ít nhất mà đoán nhận X. 
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Cho $\mathcal{A}$ = $(Q, i, T)$ là một Otomat đơn định. Ta xét tập $\mathcal{F}$ của các hàm bộ phận từ $Q$ đến Q. Các hàm này được viết về phía bên phải: nếu $q \in Q$ và $m \in \mathcal{F}$ khi đó ảnh của $q$ bởi $m$ được ký hiệu là $qm$. Hàm hợp được định nghĩa bởi 
+\end{flushleft}
+$q (mn) = (qm) n $
+\begin{flushleft}
+\hspace{10mm}Vì vậy $\mathcal{F}$ có cấu trúc vị nhóm 
+\end{flushleft}
+\begin{flushleft}
+\hspace{10mm}Xét $\varphi$ là một ánh xạ cho tương ứng mỗi từ $w \in A^*$ một hàm bộ phận từ $Q$ đến $Q$ định nghĩa bởi 
+\end{flushleft}
+$q \varphi (w) $ = $q.w.$
+\begin{flushleft}
+    \hspace{10mm}Khi đó, ánh xạ $\varphi$ là một đồng cấu từ $A^*$ đến vị nhóm $\mathcal{F}$, và vị nhóm $\varphi (A^*) $ của $\mathcal{F}$ được gọi là \textit{vị nhóm các phép chuyển dịch} của otomat $\mathcal{A}$.\\
+    \hspace{10mm}Một đồng cấu $\varphi$ từ $A^*$ đến một vị nhóm $M$ được gọi là thoả mãn ngôn ngữ $X \subseteq A^*$ nếu tồn tại $B \subseteq M$, $B$ = $\varphi(X)$ sao cho 
+\end{flushleft}
+$\varphi^{-1}(B)$ = $X$.
+\begin{flushleft}
+    \hspace{10mm}Khi đó, ta cũng nói $X$ \textit{thoả bởi} $M$ và $X$ cho bởi một bộ ba $(\varphi, M, B)$.
+    \hspace{10mm}Cho $X, Y \subseteq A^*$ là các ngôn ngữ. Ta thiết lập bổ đề kỹ thuật sau đây về tính thoả được làm cơ sở xây dựng các thuật toán trên vị nhóm trong các chương trình tiếp theo.
+\end{flushleft}
+\begin{flushleft}
+\textbf{Bổ đề 1.1} \hspace{10mm} \textit{Giả sử h:} $A^* \to M$ \textit{là một toàn cấu vị nhóm thoả X và Y và gỉa sử} $X$ = $h^{-1}(K)$, $Y$ = $h^{-1}(L)$, $h(X^+)$ = $T$ \textit{với} $K, L, T \subseteq M$. Khi đó
+\end{flushleft}
+$X \cup Y$ = $h^{-1}(L \cup L)$, $X \cap Y$ = $h^{-1}(K \cap L)$, $X - Y$ = $h^{-1}(K - L)$,\\
+$X^{-1}Y$ = $h^{-1}(K^{-1}L)$, $XY^{-1}$ = $h^{-1}(KL^{-1})$, $(X^+)^{-1}Y$ = $h^{-1}T^{-1}L$,\\
+$Y(X^+)^{-1}$ = $h^{-1}(LT^{-1})$.
+\begin{flushleft}
+\textit{Chứng minh}. Giả sử $X$ = $h^{-1}(K)$, $Y$ = $h^{-1}(L)$, $K, L, \subseteq P$, ta chứng mình $X \cup Y$ = $h^{-1}(K \cup L)$. \\
+\hspace{10mm}Trước hết, ta chứng minh $X \cup Y \subseteq h^{-1}(K \cup L)$. Thật vậy, với mọi $w \in X \cup Y$, ta có $h(w) \in K$ hoặc $h(w) \in L$. Vậy $X \cup Y \subseteq h^{-1}(K \cup L)$. \\
+\hspace{10mm}Ngược lại, ta chứng minh $h^{-1}(K \cup L) \subseteq X \cup Y$. Thật vâtj, với mọi $w \in h^{-1}(K \cup L)$, ta có $h(w) \in K \cup L$. Nghĩa là $w \in X \cup Y$. Vậy $h^{-1}(K \cup L) \subseteq X \cup Y$. \\
+\hspace{10mm}Ta chứng minh tương tự cho các quan hệ $X \cap Y$ = $h^{-1}(K \cap L)$, $X - Y$ = $h^{-1}(K - L)$, $X^{-1}Y = h^{-1}(K - L)$, $X^{-1}Y$ = $h^{-1}(K^{-1}L)$ và $XY^{-1}$ = $h^{-1}(KL^{-1})$. \\
+\hspace{10mm}Từ giả thiết $h(X^+)$ =$T$ và $X = h^{-1}(K)$ ta có $K^+$ = $T$. Để chứng minh $(X^+)^{-1}Y$ = $h^{-1}(T^{-1}L)$, ta chứng minh $(X^+)^{-1}Y \subseteq h^{-1}(T^{-1}L) \subseteq (X^+)^{-1}Y$.
+\hspace{10mm}Trước hết, ta chứng minh $(X^+)^{-1}Y$ = $h^{-1}(T^{-1}L)$. Thật vậy, với mọi $w \in (X^+)^{-1}Y$, tồn tại $x_1, x_2, ..., x_n \in X, y \in Y$ sao cho $x_1x_2...x_nw = y$. Từ đó suy ra $h(x_1).h(x_2)...h(x_n) = h(y) \in L$. Hơn nữa, từ $h(x_i) \in K$ suy ra $h(w) \in (K^+)^{-1}L$. Vậy $w \in h^{-1}(T^{-1}L)$. \\
+\end{flushleft}
+Ngược lại ta chứng minh $h^{-1}(T^{-1}L) \subseteq (X^+)^{-1}$. Đặt $w \in h^{-1}(T^{-1}L)$, ta có \\
+$h(w) \in T^{-1}L$ = $(K^+)^{-1}L \Leftrightarrow \exists \alpha \in K^+ : \alpha.h(w) \in L$. 
+\begin{flushleft}
+Từ $\alpha \in K^+$ suy ra $\alpha$ = $\alpha_1\alpha_2...\alpha_p, \alpha_i \in K, i = 1,...,o$. Từ giả thiết h là toàn cấu và $X = h^{-1}(K)$ suy ra tồn tại $x_i \in X, i = 1,...,p$ sao cho $\alpha_i$ = $h(x_i)$. Ta có $\alpha = h(x1x_2...x_p)$, khi đó $\alpha.h(w)$ = $h(x_1x_2...x_pw)$. Từ đó suy ra $x_1x_2...x_pw \in h^{-1}(L)$ = $Y$ và ta có $ư \in (X^+)^{-1}Y$. \\
+\hspace{10mm}Chứng minh $Y(X^+)^{-1}$ = $h^{-1}(LT^{-1})$ tương tự.\\
+Vậy chứng minh được hoàn thành.\\
+\hspace{10mm}Cho $X \subseteq A^*$ là một ngôn ngữ. Với $w \in A^*$, ta định nghĩa \textit{tập ngữ cảnh}
+\end{flushleft}
+Context($w$) = $\{ (u,v) \in A^* \times A^* | uwv \in X \}$.
+\begin{flushleft}
+\hspace{10mm}\textit{Tương đẳng cú pháp} của $X$ là một quan hệ tương đương $\equiv_X$ trên $A^*$ được định nghĩa bởi 
+\end{flushleft}
+$w \equiv_x w' \Leftrightarrow Context(w) = Context(w')$.
+\begin{flushleft}
+\hspace{10mm}Tập thương của $A^*/ \equiv_x được gọi là$ \textit{Vị nhóm cú pháp} của $X$. Ta ký hiệu vị nhóm cú pháp của $X$ là $M_x$ và kí hiệu $\varphi_x$ là đồng cấu chính tắc từ $A^*$ đến $M_x$, gọi là \textit{đồng cấu cú pháp} của X.\\
+\hspace{10mm}Cho $X \subseteq A^*$ là một ngôn ngữ, ta có các kết quả sau đây về tính thoả thuận theo $\varphi_x$, mối liên hệ giữa vị nhóm cú pháp của $X$ và otomat tối tiểu của $\mathcal{A}(X)$ \\
+\textbf{Mệnh đề 1.1} (\hyperlink{page.80}{\textcolor{red}{5}})  Cho $X \subseteq A^*$ \textit{là một ngôn ngữ và cho} $\varphi : A^* \to M$ \textit{là một toàn cấu vị nhóm. Nếu $\varphi$ thoả mãn X thì tồn tại một đồng cấu $\psi$ từ M đến vị nhóm cú pháp $M_x$ sao cho $\varphi_x = \psi \circ \varphi$}. \\
+\textbf{Mệnh đề 1.2} (\hyperlink{page.80}{\textcolor{red}{5}})  Cho $X \subseteq A^*$ \textit{là một ngôn ngữ. Vị nhóm cú pháp của X đẳng cấu với vị nhóm các phép chuyển dịch của otomat tối tiểu $\mathcal{A}(X)$}.\\
+\hspace{10mm}Lớp các \textit{ngôn ngữ chính quy} trên $A^*$(trên $A^+$) được ký hiệu là $RecA^*(RecA^+)$. Ta biết rằng $RecA^*$ là lớp các ngôn ngữ sinh bởi các ngôn ngữ {$a$}, với $a$ là một chữ cái thuộc A, các phép toán Boole($\cup, \cap, - $), phép nhân và phép lặp *, và cũng là lớp các ngôn ngữ đoán nhận được bởi otomat hữu hạn, $RecA^+$ = $\{ L \in RecA^* | L \subseteq A^+ \}$. \\
+Ta có\\
+\textbf{Mệnh đề 1.3} (\hyperlink{page.80}{\textcolor{red}{5}})  \textit{Lớp các ngôn ngữ chính quy trên $A^*$ đóng đối với phép toán Boole: phép hợp ($\cup$), phép giao ($\cap$), phép lấy phần bù ($-$)}.\\
+\hspace{10mm}Định lý sau đây đặc trưng các tính chất của otomat hữu hạn \\
+\textbf{Định lý 1.1} (\hyperlink{page.80}{\textcolor{red}{5}})  Cho $X \subseteq A^*$ \textit{là một ngôn ngữ. Các mệnh đề sau đây tương đương}\\
+\hspace{10mm}\textit{(i)    X là chính quy}.\\
+\hspace{10mm}\textit{(ii)    X là đoán nhận bởi một otomat hữu hạn (hoặc X là đoán nhận được)}.\\
+\hspace{10mm}\textit{(iii)    Otomat tối tiểu $\mathcal{A}(X)$ là hữu hạn}.\\
+\hspace{10mm}\textit{(i$v$)    Họ các tập}.\\
+\end{flushleft}
+$u^-1X$,
+\begin{flushleft}
+\hspace{20mm} với $u \in A^*$, là hữu hạn.\\
+\hspace{10mm}\textit{($v$)    Vị nhóm cú phép $M_x$ là hữu hạn}.\\
+\hspace{10mm}\textit{($vi$)   X thoả bởi một đồng cấu từ $A^*$ đến một vị nhóm hữu hạn M}.\\
+\textit{Nhận xét 1.1}   Giả sử $X \subseteq A^+ $thoả bởi một đồng cấu vị nhóm $\varphi : A^* \to M$ từ $A^*$ đến một vị nhóm hữu hạn M. Nếu X là ngôn ngữ chính quy, ta có thể chọn M là vị nhóm các phép chuyển dịch của otomat tối tiểu đoán nhận X, hoặc vị nhóm cú pháp $M_x$ hữu hạn của X. Ta gọi $m = Card(M_x)$ \textit{là chỉ số tương đẳng cú pháp} của X, hay đơn giản, \textit{m là chỉ số} của X, hoặc X có chỉ số $m$.\\
+\hspace{10mm}Từ bổ đề \hyperlink{page.17}{\textcolor{blue}{1.1}} và Mệnh đề \hyperlink{page.17}{\textcolor{blue}{1.3}}, ta có \\
+\textbf{Hệ quả 1.1} Cho $X, Y \subseteq A^*$ \textit{là các ngôn ngữ chính quy, P là một vị nhóm hữu hạn và $h : A^* \to P$ là một toàn cấu vị nhóm. Nếu $X$ và $Y$ cùng thoả bởi h, thì h thoả tất cả các ngôn ngữ $L \in \mathcal{A}(X, Y)$, với $\mathcal{A}(X, Y)$ là tập tất cả các ngôn ngữ sinh ra bởi X, Y nhờ thực hiện một số hữu hạn các phép toán hợp, giao, lấy phần bù, lấy thương trái và lấy thương phải.}\\
+\hspace{10mm} Mệnh đề sau đây được suy từ định nghĩa cho phép ta xây dựng toàn cấu $h$ trong hệ quả trên.\\
+\textbf{Mệnh đề 1.4}    \textit{Cho $X, Y \subseteq A^*$ là các ngôn ngữ chính quy $, f : A^* \to M và g : A^* \to N $ là các đồng cấu vị nhóm, f thoả X và g thoả Y. Giả sử $h : A^* \to P \subseteq M \times N$ là một toàn cấu vị nhóm cho bởi: $\forall \in A^*, h(a) = (f(a),g(a)$ và P là một vị nhóm con của $M \times N$ sinh bởi tập tất cả các phần tử $h(a), a \in A$. Khi đó h thoả đồng thời X và Y}.\\
+\begin{flushleft}
+\textit{Ví dụ 1.4}  Cho $\varphi : A^* \to M$ là một đồng cấu vị nhóm thoả $X, Y \subseteq A^*, A \ne \emptyset$ và cho $Y = \{ \varepsilon \}$. Ta xây dựng toàn cấu $h$ thoả cả X và Y theo một trong 2 cách sau.\\
+\hspace{10mm}Cách 1. Cho $Z_2 = \{ 0,1 \}$ là vị nhóm nhân modulo 2 của các số nguyên với đơn vị 1. Rỡ tàng, $Y = \{ \varepsilon \}$ thoả bởi đồng cấu $y : A^* \to Z_2$, được định nghĩa bởi $g(\varepsilon) = 1$ và với mọi $a \in A, g(a) = 0$. Ta có thể kiểm tra X và Y = {$\varepsilon$} cùng thoả bởi toàn cấu vị nhóm\\
+$h : A^* \to P \subseteq M \times Z_2$ được cho bởi $\forall a \in A, h(a)$ = $(\varphi (a) , 0), 1_p$ = $h(\varepsilon)$ = $(1_M, 1)$.\\
+Đặt $\overline{K}$ = $h(A) \cup 1_P$ = $\{ (h(a), 0) | a \in A \cup 1_P \}$, ta có $\overline{A}^*$ = $P$.
+\hspace{10mm}Cách 2. Mở rộng vị nhóm $M$ thành vị nhóm $M^1$ = $M \cup \{1\}$ với $1 \not\in M$ là phần tử đơn vị mới của $M^1$ bởi điều kiện ($\textbf{1}.x = x.\textbf{1} = x, \forall x \in M^1$).
+\hspace{10mm}Định nghĩa $h' : A^* \to M^1$ ta định nghĩa toàn cấu $h : A^* \to P$ = $h'(A)^* \subseteq M^1$ cho bởi $h' : h(a)$ = $h'(a), \forall a \in A, h(\varepsilon) = h'(\varepsilon) = 1$.
+\section{Mã của các từ hữu hạn}
+\subsection{Mã và các tính chất đại số của mã}
+Trong phần này ta xem xét định nghĩa và một số tính chất quan trọng của mã. Trước hết ta nhắc lại khái niệm tích không nhập nhằng là cơ sở để xây dựng khái niệm mã.\\
+\hspace{10mm}Cho A là một bảng chữ và $X, Y \subseteq A^*$ là các ngôn ngữ. Tích $XY$ là \textit{không nhập nhằng} nếu mỗi từ $w \in XY$ có duy nhất một phân tích $w = xy$ với $x \in X, y ư\in Y$.\\
+\textbf{Định nghĩa 1.1}     \textit{Giả sử A là một bảng chữ hữu hạn. Tập $X \subseteq A^+ $ là mã trên A nếu với mọi $n,m \ge 1$ và với mọi $x_1x_2,...,x_n,y_1y_2,...,y_m \in X$, nếu có} 
+\end{flushleft}
+\end{flushleft}
+$x_1x_2...x_n$ = $y_1y_2...y_m$
+\begin{flushleft}
+\textit{thì khi đó}
+\end{flushleft}
+$n = m$ và  $x_i = y_i$     với     $i = 1,...,n$.
+\begin{flushleft}
+Cho $X \subseteq A^*$ là một ngôn ngữ. Từ định nghĩa của mã ta suy ra các tính chất sau đây.\\
+\textbf{Tính chất 1.2}      X là mã nếu mỗi từ $x \ A^*$ (t.ư $w \in X^*$) có nhiều nhất (t.ư chỉ có duy nhất) một $X$-phân tích.\\
+\textbf{Tính chất 1.3}    X là mã khi và chỉ khi $X^{-1}X \cap X^*(X^*)^{-1}$ = $\{ \varepsilon \}$.
+\textit{Ví dụ 1.5}  Ngôn ngữ $X = \{ ab,abb,bb \}$ trên bảng chữ $A = \{ a,b \}$ là mã. Thật vậy, giả sử X không là mã. Khi đó tồn tại một từ $w \in X^+$ có độ dài tối tiểu thừa nhập hai X-phân tích khác nhau.
+\end{flushleft}
+$w = x_1x_2...x_n = y_1y_2...y_m$ với $x_1 \ne y_1$
+\begin{flushleft}
+$(n, m \le 1, x_i, y_i \in X )$. Từ đó $x_1 \ne y_1$ suy ra $x_1$ là khúc đầu của $y_1$ hoặc ngược lại. Giả sử $x_1$ là khúc đầu của $y_1$. Với $X$ như trên, ta có $x_1 = ab$ và $y_1 = abb$. Từ đó suy ra $x_2 = bb, y_2 = bb$. Vậy $y_1 = x_1b, y_1y_2 = x_1x_2b$. Thực hiện chứng minh quy nạp theo $k \le 1,$ ta có $x_{k+1} = bb$ và $y_{k+1} = bb$. Từ đó suy ra $y_1y_2...y_{k+1}$ = $x_1x_2...x_{k+1}b$ với mọi $k \le 1$. Điều này có nghĩa là không thể có từ $w$ hữu hạn thừa nhận hai X-phân tích khác nhau, trái với giả thiết. \\
+\begin{figure}[ht]
+    \includegraphics[scale=0.5]{1_3.png}
+    \caption{ \textit{Khởi đầu một phân tích kép của từ $w$} }
+\end{figure}
+\textit{Ví dụ 1.6}  Cho $A = \{ a.b \}$ và $X = \{ b, abb, abbba, bbba, baabb \}$. Ngôn ngữ X không là mã vì tồn tại $w = abbbabbbaabb, w$ có hai X-phân tích khác nhau,
+\end{flushleft}
+$w = (abbba)(bbba(abb)$ = $(abb)(b)(abb)(baabb)$.\\
+Định nghĩa mã theo cách sau đây cho phép ta diễn tả ý nghĩa của thuật ngữ \textit{mã}.
+\begin{flushleft}
+\textbf{Mệnh đề 1.5} (\hyperlink{page.80}{\textcolor{red}{5}})  \textit{Nếu $X \subset A^*$ là mã thì mỗi đồng cấu $\beta$ : $B^* \to A^*$ cảm sinh một song ánh từ bảng chữ B đến X là đơn cấu. Ngược lại, nếu tồn tại đơn cấu $\beta : B^* \to A^*$ sao cho X = $\beta(B)$, thì X là mã.}
+\hspace{10mm}Một đơn cấu $\beta : B^* \to A^*$ với $X = \beta(B)$ được gọi là một \textit{đồng cấu mã} đối với X. Mệnh đề \hyperlink{page.20}{\textcolor{blue}{1.5}} trình bày ý nghĩa gốc củ thuật ngữ \textit{mã} vì các từ của X mã hoá các chữ cái của bảng chữ B. Thủ tục mã kết hợp một \textit{từ bản rõ} $b_1b_2...b_n (b_i \in B)$ với một \textit{từ mã} $\beta(b_1)...\beta(b_n)$ bởi sử dụng đồng cấu mã $\beta$. Sự kiện $\beta$ là đơn cấu đảm bảo từ mã được giải mã theo một cách duy nhất thành từ bản rõ ban đầu.\\
+\hspace{10mm} Từ mệnh đề \hyperlink{page.20}{\textcolor{blue}{1.5}} ta có \\
+\textbf{Hệ quả 1.2} (\hyperlink{page.81}{\textcolor{red}{5}})  \textit{ Giả sử $\alpha : A^* \to C^*$ là một đơn cấu. Nếu X là mã trên A, thì $\alpha(X)$ là mã trên C. Nếu Y là mã trên C, thì $\alpha^{-1}(Y)$ là mã trên A.}\\
+\textbf{Hệ quả 1.3} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Nếu $X \subset A^*$ là mã, thì khi đó $X^N$ là mã với mọi n > 0.}\\
+\hspace{10mm} Ta nhắc lại rằng một vị nhóm con của $M$ của $A^*$ là \textit{tự do} khi và chỉ khi với mọi $m \in M - \{ \varepsilon \}$ co duy nhất một phân tích trong $X = (M - \{ \varepsilon \}) - (M - \{ \varepsilon \})^{2}$\hyperlink{page.81}{\textcolor{red}{18}}. Mã X cảm sinh vị nhóm con tự do $M$ của $A^*$ được gọi là cơ sở của $M$. Mối liên hệ giữa mã và vị nhóm con sinh bởi mã được thiết lập qua các tính chất sau đây.
+\textbf{Mệnh đề 1.6} (\hyperlink{page.80}{\textcolor{red}{5}}) \textit{Giả sử A là một bảng chữ. Khi đó, mỗi vị nhóm con M của $A^*$ có một tập sinh cực tiểu duy nhất X = (M - $\{ \varepsilon \}$) - (M - $\{ \varepsilon \}^{2}$)}.\\
+\textit{Ví dụ 1.7}  Tập M = $\{ a^i, i \in \mathbb{N}, i \not\in 1 \}$ là một vị nhóm con của $A^*$ với $A = \{ a,b \}$. Cơ sở của $M$ là $X = \{ a^2, a^3 \}$. Tuy nhiên, $M$ không phải là một vị nhóm con tự do vì $a^6 \in M$ có hai phân tích khác nhau trong $X, a^6 = a^2.a^2.a^2 = a^3.a^3.$ \\
+\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Nếu M là một vị nhóm con tự do của $A^*$, thì khi đó tập sinh cực tiểu của M là mã. Ngược lại nếu $X \subset A^*$ là mã, thì vị nhóm con của $X^*$ của $A^*$ là tự do có tập sinh cực tiểu $X$}.\\
+\textbf{Mệnh đề 1.7} (\hyperlink{page.81}{\textcolor{red}{5}})  \textit{Giả sử X và Y là các mã trên A. Nếu $X^* = Y^*$, thì khi đó X = Y.} \\
+\subsection{Độ trễ của giả mã}
+Khái niệm độ trễ của giả mã được giới thiệu nhằm mở rộng các khái niệm của mã \textit{prefix} cho trường hợp mã thông thường. Ta biết rằng lớp mã prefix có độ trễ 0, do đó mã có độ trễ giải mã giới nội là trường hợp tổng quát của mã prefix. Ta nhắc lại ngôn ngữ $X \subset A^*$ là mã prefix khi và chỉ khi $X$ là mã và $X$ là tập prefix. khái niệm độ trễ của giải mã đươc định nghĩa như sau: \\
+\textbf{Định nghĩa 1.2}\text{   } \textit{Giả sử X là một tập con của $A^+$. Khi đó $X$ được gọi là có độ trễ giải mã hữu hạn nếu có một số nguyên $d \ge 0$ sao cho }  
+\end{flushleft}
+$\forall x, x' \in X , \forall y \in X^d , \forall u \in A^* , xyu \in x'X^* \rightarrow x = x'$. (1.1)
+\begin{flushleft}
+\hspace{10mm}Dễ thấy rằng nếu hệ thức (\hyperlink{page.21}{\textcolor{blue}{1.1}}) thoả mãn với $d$ nào đó thì nó cũng đúng với mọi $d' \ge d$. Nếu $X$ có độ trễ giải mã hữu hạn thì số nguyên nhỏ nhất thoả hệ thức (\hyperlink{page.21}{\textcolor{blue}{1.1}}) được gọi là \textit{độ trễ giải mã yếu} của X. 
+\textit{Ví dụ 1.8}  Cho $A = \{ a,b \}$. Khi đó tập $X = \{ ab, abb, baab \}$ có độ trễ giải mã $d = 1$. và tập $Y = \{ a, ab, b^2 \}$ có độ trễ giải mã vô hạn.\\
+\hspace{10mm}Ta có mệnh đề sau đây về mối quan hệ giữa mã và độ trễ giải mã. \\
+\textbf{Mệnh đề 1.8} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Cho $X \subset A^*$}. Nếu X có độ trễ giải mã hữu hạn thì X là mã.\\
+\textit{Ví dụ 1.9.} Cho tập $X$ như ví dụ \hyperlink{page.21}{\textcolor{blue}{1.8}}. Bằng định nghĩa, ta có thể kiểm tra tập X là mã. \\
+\subsection{Tiêu chuẩn kiểm định mã}
+Thuật toán kiểm định mã là một thuật toán cốt lõi và kinh điển trong lý thuyết mã. Cần thiết cho các nghiên cứu về mã truyền thống và các hình thức mã mới. Trong phần này, ta nhắc lại thuật toán kinh điển Sardinas-Patterson.\\
+\hspace{10mm}Cho một ngôn ngữ $X \subseteq A^+$, ta xem xét các tập phần dư $U_i$ kết hợp với $X$ được định nghĩa đệ quy như sau:
+\end{flushleft} 
+$
+    U_1 = X^{-1}X = \{ \varepsilon \}
+$ \\
+\begin{flushright}
+    (1.2)
+\end{flushright}
+$
+    U_{i+1} = (U_i)^{-1}X \cup X^{-1}U_i, i \ge 1. 
+$
+\begin{flushleft}
+\hspace{10mm}Định lý cơ bản sau đây của Sardinas-Patterson cung cấp một tiêu chuẩn kiểm định mã.
+\textbf{Định lý 1.2} (\hyperlink{page.81}{\textcolor{red}{5}}) \textit{Tập $X \subseteq A^+$ là mã khi và chỉ khi các tập $U_i$ được định nghĩa theo công thức (\hyperlink{page.21}{\textcolor{blue}{1.2}}) không chứa từ rỗng.}
+\textit{Nhận xét 1.2}   Như một hệ quả của mệnh đề \hyperlink{page.18}{\textcolor{blue}{1.4}} Mục (\hyperlink{page.13}{\textcolor{blue}{1.3}}), trong trường hợp $X$ là ngôn ngữ chính quy, lấy $M$ là $M_x$ - vị nhóm cú pháp hữu hạn của $X$, ta suy nghĩa ra rằng tất cả các tập $U_i$ thuộc vào tập hữu hạn $\mathcal{A}(X,Y)$ sinh ra bởi $X,Y$ và đóng đối với các phép toán hợp, giao, lấy phần bù, lấy thương trái và lấy thương phải. $Card(\mathcal{A}(X,Y)) \le 2^{2.m}$, với $m$ là chỉ số của $X$.
+\textit{Nhận xét 1.3}   Cho một ngôn ngữ chính quy $X \subseteq A^*$ có chỉ số m, đặt $Y = \{ \varepsilon \}$. Từ đó vị nhóm P được xác định như Ví dụ \hyperlink{page.18}{\textcolor{blue}{1.4}} (Cách 1), cỡ của $P$ là $2.m$, khi đó cỡ của $\mathcal{A}(X,Y)$ là $2^{2.m}$ và từ tính chất $U_i \subseteq \mathcal{A}(X,Y), \forall i \ge 1$, ta suy ra rằng số bước tính toán trong tiêu chuẩn Sardinas-Patterson chính là số các tập $U_i$ khác nhau, tối đa là $2^{2.m}$.
+\hspace{10mm}Nhận xét \hyperlink{page.13}{\textcolor{blue}{1.3}} khẳng định Định lý \hyperlink{page.21}{\textcolor{blue}{1.2}} cung cấp cho ta một thuật toán kiểm định một ngôn ngữ chính quy cho trước có là mã không.
+\textit{Ví dụ 1.10}     Cho $A = \{ a,b \}$ và $X = \{ b, abb, abbba, bbba, baabb \}$. Tập X không là mã vì tồn tại từ $w = abbbabbbaabb, w$ có hai phân tích khác nhau trong X,    
+\end{flushleft}
+$w = (abbba)(bbba)(abb) = (abb)(b)(abb)(baabb)$.
+\begin{flushleft}
+\hspace{10mm}Sử dụng thuật toán kiểm tra mã, ta có 
+\end{flushleft}
+\hspace{10mm}$U_1 = \{ ba, aabb, ba \},$     $U_2 = \{ a, ba, abb \}$,   $U_3 \{ \varepsilon, a, ba, bb, bbba, abb \}$.
+\begin{flushleft}
+\hspace{10mm}Vì $\varepsilon \in U_3$, suy ra X không là mã.
+\textit{Nhận xét 1.4}   Giả sử $V_i$ ($i \ge 1$), $V_1 \subseteq V_2 \subseteq ... \subseteq A^*$ là một dãy tăng bất kỳ sao cho mọi tập $V_i$ cùng thoả bởi một toàn cấu vị nhóm $h : A^* \to P$, với $P$ là một vị nhóm hữu hạn. Khi đó tồn tại một dãy tăng $K_1 \subseteq K_2 \subseteq ... \subseteq P$ sao cho $V_i = h^{-1}(K_i)$ với $i = 1,2....$ Dãy tăng này là hữu hạn và tổng số phần tử của nó không vượt quá $Card(P)$. Nhận xét này cung cấp một kỹ thuật để ta xây dựng các tiêu chuẩn kiểm định mã mới.
+\end{flushleft}
+\begin{flushleft}
+\section{Mã luân phiên và mã của các từ định biên}
+\subsection{Mã luân phiên}
+Mã luân phiên có thể được xem là một sự mở rộng của biểu diễn mã, nó được định nghĩa trên một cặp ngôn ngữ thay vì một ngôn ngữ như mã truyền thống (xem [\hyperlink{page.81}{\textcolor{red}{14}}; \hyperlink{page.81}{\textcolor{red}{15}}; \hyperlink{page.81}{\textcolor{red}{23}}; \hyperlink{page.81}{\textcolor{red}{32}}; \hyperlink{page.81}{\textcolor{red}{35}}]). Từ một cặp ngôn ngữ $X, Y$ cho trước, khái niệm \textit{phân tích luân phiên mã luân phiên} theo X,Y được định nghĩa như sau: \\
+\textbf{Định nghĩa 1.3} (\hyperlink{page.81}{\textcolor{red}{32}}) \textit{Giả sử A là một bảng chữ, $X, Y \subseteq A^+ , w \in A^+$. Khi đó, \\
+\hspace{10mm}(i) từ $w$ có một phân tích luân phiên theo ($X, Y$) nếu $w = u_1u_2...u_n (n \ge 2)$, trong đó $ư_1 \in X$, nếu $u+i \in X$ thì $u_{i+1} \in Y$ và nếu $u_i \in Y thì u_{i+1} \in X $ với $ i = 1,....,n-1$.
+\hspace{10mm}(ii) từ $w$ có một phân tích luân phiên theo $\{ X, Y \}$ nếu $w$ có một phân tích luân phiên theo $(X, Y)$ hoặc $(Y, X)$.
+\hspace{10mm}(iii)hai phân tích luân phiên theo $\{ X, Y \}$ được gọi là cùng kiểu trái (t.ư. cùng kiểu phải) nếu chúng cùng bắt đầu (t.ư. kết thúc) với các từ trong $X$ hoặc trong $Y$.
+\hspace{10mm}(iv)  hai phân tích luân phiên theo $\{ X, Y \}$ được gọi là cùng kiểu nếu chúng là cùng kiểu trái và cùng kiểu phải.
+}
+\textbf{Định nghĩa 1.4} (\hyperlink{page.81}{\textcolor{red}{32}}) \textit{Gỉả sử A là một bảng chữ, $X, Y \subseteq A^+, w \in A^+$. Khi đó \\
+\hspace{10mm}(i) cặp $\{ X,Y \}$ được gọi là mã luân phiên nếu mỗi từ $w \in A^+$ có nhiều nhất một phân tích luân phiên theo $\{ X,Y \}$.
+\hspace{10mm}(ii) cặp $\{ X,Y \}$ được gọi là mã luân phiên chẵn hay mã luân phiên cùng kiểu nếu không tồn tại từ nào của $A^+$ có hai phân tích luân phiên cùng kiểu khác nhau theo $\{X,Y\}$.
+}
+
+\end{flushleft}
+$w = u_1u_2...u_n = u'_1u'_2...u'_m, u_1 \ne u'_1$
+\begin{flushleft}
+Giả sử $|u_1| < |u_2|$, có nghĩa $u_1$ là khúc đầu thực sự của $u'_1$, với $X,Y$ ở trên, chỉ có khả năng $u_1 = aa$ và $u'_1 = aaa$. Từ đó ta có $u_2 \in Y$ bắt đầu bằng chữ cái $a$, đó chỉ có thể là $u_2 = ab$. Từ kết quả $u_2 = ab$ ta có $u'_2 = bb$ hoặc $u'_2 = bbb$, đo đó $u_3 \in X$, bắt đầu bằng chữ cái $b$. Điều này không thể xảy ra vì $X$ không chứa từ bắt đầu bằng chữ cái $b$.
+\textit{Ví dụ 1.12}     Cho $X = \{x\}$ và $Y = \{x^2\}$. Cặp $\{ X,Y \}$ không là mã luân phiên vì tồn tại từ $w = x^3 = (x)(x^2) = (x^2)(x)$. Cặp $\{ X,Y \}$ là mx luân phiên chẵn vì X và Y cùng chỉ có một phần tử duy nhất, do đó không tồn tại từ nào của $A^+$ có hai phân tích luân phiên cùng kiểu khác nhau theo $\{ X,Y \}$.
+
+\hspace{10mm} Ví dụ sau thể hiện tính phổ dụng của mã luân phiên, mã luân phiên chẵn đối với biểu diễn thôn tin trong máy tính.
+
+\hspace{10mm}\textit{Ví dụ 1.13}    Trong máy tính điệ ntwr, mỗi tập nhị phân có thể được biểu diễn như một chuỗi các bit 0,1. Chẳng hạn.
+\end{flushleft}
+$w = 101011000011001101100001011101$
+\begin{flushleft}
+\hspace{10mm}Đặt $X = \{ 1 \}^+, Y = \{0\}^+$, khi đó $w$ là một phân tích luân phiên theo $\{ X,Y \}$. Nếu ta bổ sung một bit 1 vào đầu $w$ và một bit 0 vào cuối $w$ thì chuỗi kết quả luân là một chuỗi phân tích luân phiên theo (X, Y). Cụ thể, với $w$ ở trên, ta có 
+\end{flushleft}
+$w' = 1w0 = 11010110000110011011000010111010.$
+\begin{flushleft}
+\subsection{Mã của các từ định biên}
+Khái niệm từ định biên ($\Diamond$ - từ) và ngôn ngữ từ định biên ($\Diamond$-ngôn ngữ) được đề xuất trong \hyperlink{page.81}{\textcolor{red}{34}} cho phép ta biển diễn các tích ghép truyền thống và tích phân phiên thông qua phép tích biên trên cấu trúc đại số mởi của các $\Diamond$-từ. Đây là cơ sở cho việc nghiên cứu và thiết lập các tính chất đại số của mã luân phiên trong mối liên hệ với mã truyền thống. Hơn nữa, mã của các từ định biên ($\Diamond$-mã) nhận được từ tích biên nói trên có thể xem là một sự mở rộng của biểu diễn mã.\\
+\hspace{10mm}Trước hết, ta nhắc lại một số khái niêm cơ sở (chi tiết xem trong \hyperlink{page.81}{\textcolor{red}{34}}).\\
+\hspace{10mm}Cho A là một bảng hữu hạn các chữ cái và tập $B = \{0,1\}$. Ta định nghĩa tập các từ định biên trên A như sau:\\
+\hspace{20mm}$A_\Diamond = \{ (i,a,j) | a \in A \text{hoặc} a = \varepsilon, i, j \in B \}$\\
+\hspace{20mm}$A^*_\Diamond = \{ (i,w,j) | w \in A^* i, j \in B \} \cup \{ \theta,e \}$ \\
+\hspace{20mm}$A^*_\vartriangleleft = \{ (0,w,1) | w \in A^*\} \cup \{ \theta ,e \} $ \\
+\hspace{20mm}$A^*_\vartriangleright = \{ (1,w,0) | w \in A^*\} \cup \{ \theta ,e \} $ \\
+\hspace{20mm}$A^*_\vartriangle = \{ (0,w,0) | w \in A^* i, j \in B \} \cup \{ \theta,e \}$ \\ 
+\hspace{20mm}$A^*_\triangledown = \{ (1,w,1) | w \in A^* i, j \in B \} \cup \{ \theta,e \}$ \\
+\hspace{10mm} Mỗi phần tử $(i,w,j), w \in A^*$ được gọi là một $\Diamond$-từ. Ta kí hiệu $A^*_\Diamond$ là $\Diamond$-vị nhóm được kết hợp với $A.A^+_\Diamond = A^*_\Diamond = \{ e \}. A^*_\Diamond$ có phần tử đơn vị $e$ và có phần tử không $\theta$. Với mọi $x = (i_1, w_1, j_1), y = (i_2, w_2, j_2) \in A^*_\Diamond$, ta có  \\
+\end{flushleft}
+$x.y= \begin{cases}
+    (i_1, w_1, w_2, j_2) \text{ nếu     } j_1 = j_2\\
+    \theta \text{       nếu         } j_1 \ne j_2
+\end{cases}
+$
+\begin{flushleft}
+\hspace{20mm}và với mọi $x \in A^*_\Diamond, x.\theta = \theta.x = \theta, x.e = e.x = x$.\\
+\hspace{10mm}Xét vị nhóm M bất kì với đơn vị là 1. Đặt $M_\Diamond = \{ (i,m,j) | m \in M, i,j \in B \}$, thì $M_\Diamond$ là một $\Diamond$-vị nhóm được mở rộng từ $M$. Với $M = A^*$, ta có $M_\Diamond = A^*_\Diamond$. Tổng quát, nếu M đẳng cấu với $M_\Diamond$, thì M được xem là một $\Diamond$-vị nhóm.\\
+\hspace{10mm}Cho $M$ là một vị nhóm tuỳ ý với đơn vị là 1. Xét một nửa vị nhóm $\mathcal{B} = \{ (0,0),(0,1),(1,0),(1,1),0 \}$ với phép toán $\forall (i,j),(i',j') \in \mathcal{B}$, $(i,j).(i'.j') = (i,j')$ nếu $j = i'$, ngược lại $(i,j).(i'j') = 0. 0.x = x.0 \ 0, \forall x \in B$. Ta xây dựng vị nhó $\mathcal{M}= M \times \mathcal{B} \cup \{e\}$, với $e \not\in M \times \mathcal{B}$ là đơn vị của $\mathcal{M}$ và phép toán hai ngôi được định nghĩa bởi $\forall (m,(i,j)), (n,(i',j')) \in \mathcal{M}$,
+\end{flushleft}
+$
+    (m,(i,j)).(n,(i',j')) = \begin{cases}
+        (mn, (i'j')) \text{     nếu     } j = i'\\
+        (mn, 0) \text{  nếu     }  j \ne i'
+    \end{cases}
+$
+\begin{flushleft} 
+\hspace{20mm}và với mọi $i \in \mathcal{M}, u.0 = 0.u = u$ \\
+\hspace{10mm}Đặt $I = \{ (m,0) | m \in M \}$, thì $I$ là một ideal. Thương $Rees$ $\mathcal{M}/I$ đẳng cấu với $\Diamond$-vị nhóm $M_\Diamond$ qua tương ứng với $\overline{(m,(i,j))} \in \mathcal{M}/I \Leftrightarrow (i,m,j) \in M_\Diamond$, với $\theta = I$ đóng vai trò là phần tử không của $\mathcal{M}/I$. Vì vậy, nếu $M = A^*$ thì $\mathcal{M}/I$ đẳng cấu với $A^*_\Diamond$, với $I = \{ (w,0) | w \in A^* \}$.\\
+\hspace{10mm}Cho $M$ là một vị nhóm với phần tử đơn vị và phần tử không 0. Một $\Diamond$-\textit{đồng cấu vị nhóm} (viết tắt là $\Diamond$-đồng cấu) là một ánh xạ $\varphi \to M$ thoả ba điều kiện sau đây:\\
+\hspace{20mm}(a) $\forall x,y \in A^*_\Diamond,x,y \ne \theta$ thì $\varphi(x.y) = \varphi(x).\varphi(y) $.\\
+\hspace{20mm}(b) $\varphi(e) = 1$\\
+\hspace{20mm}(c) $\varphi(\theta) = 0$\\
+\hspace{10mm}Một $\Diamond$-đồng cấu vị nhóm $\varphi$ được gọi là $\Diamond$-\textit{đơn cấu} (t.ư. $\Diamond$-\textit{toàn cấu}, $\Diamond$-\textit{đẳng cấu}) nếu $\varphi$ là đồng cấu vị nhóm và là đơn ánh (t.ư. là toàn ánh, song ánh).
+\hspace{10mm}Một tập $X \subseteq A^*_\Diamond$ được gọi là một $\Diamond$-\textit{ngôn ngữ} trên A. Cho $X \subseteq A^*_\Diamond$, một từ $x \in A^*_\Diamond$ có một phân tích trong X nếu $x$ có thể biểu diễn dưới dạng $x = x_1.x_2...x_n$ với $n \le 1$, với $x_i \in X, i = 1,...,n$.\\
+\hspace{10mm}Cho $X,Y \subseteq A^*_\Diamond$, thương trái và thương phải của $X$ bởi $Y$ được định nghĩa lần lượt là $Y^{-1}X = \{ u \in A^*_\Diamond : \exists y \in Y , y.u \in X \}$ và $XY^{-1} = \{ w \in A^*_\Diamond : \exists y \in Y, u.y \in X \}$.\\
+\hspace{10mm}Cho $X \subseteq A$ ta nói X \textit{thoả bởi $\Diamond$ đồng cấu vị nhóm $\varphi : A^* \to M$} nếu tồn tại $B \subseteq M$ sao cho $X = varphi^{-1}(B)$.\\
+\hspace{10mm}Từ hệ quả 3.4 \hyperlink{page.81}{\textcolor{red}{33}}, ta có\\
+\textbf{Bổ đề 1.2} \textit{Cho $X \subseteq A^*_\Diamond$ là một $\Diamond$-ngôn ngữ. Các điều kiện sau đây tương đương\\
+\hspace{20mm}(i) X là $\Diamond$-ngôn ngữ chính quy \\
+\hspace{20mm}(ii) X đoán nhận được bởi một $\Diamond$-otomat hữu hạn (hay X là $\Diamond$-ngôn ngữ đoán nhận được).\\
+\hspace{20mm}(iii) X thoả bởi $\Diamond$-đồng cấu vị nhóm từ $A^*_\Diamond$ đến một vị nhóm hữu hạn.
+}
+Vì vậy, mọi $\Diamond$-ngôn ngữ chính quy ($\Diamond$-ngôn ngữ đoán nhận được) trong luận án được hiểu theo nghĩa là các $\Diamond$-ngôn ngữ thoả bởi một $\Diamond$-đồng cấu vị nhóm.\\
+\textbf{Định nghĩa 1.5} (\hyperlink{page.81}{\textcolor{red}{32}})  \textit{Tập $X \subseteq A^+_\Diamond$ là một $\Diamond$-mã nếu với mọi $\theta \ne x \in A^+\Diamond$, x có nhiều nhất một phân tích trong X}.\\
+\textit{Ví dụ 1.14}     Cho $A = \{ a,b \}$ và $B = \{ 0,1 \}$. Khi đó $X = \{ (0,a,1), (0,b,1), (1,abb,0) \}$ là $\Diamond$-mã. Ngược lại $Y = \{ (0,a,1), (1,b,0), (0,ab,0), (0, ba, 1) \}$ không là mã $\Diamond$-mã vì tồn tại một $\Diamond$-từ $x$ có hai phân tích khác nhau, $x = (0,ababab,0) = (0,ab,0), (0,ab,0), (0,ab,0) = (0,a,1)(1,b,0)(0,ab,0)(0,ab,0)$.\\
+\section{Mã của các từ vô hạn}
+\subsection{Bài toán quy hoạch tuyến tính gốc và đối ngẫu.}
+Giả sử A là một bảng chữ hữu hạn. Một $w$-\textit{từ bên trái} (t.ư. \textit{bên phải, hai phía}) là từ vô hạn phía bên trái (t.ư. phía bên phải, hai phía) có dạng $a_1a_2...$(t.ư. ... $a_1a_2$, ... $a_{-2}a_{-1}a_0a_1a_2$...), $a_i \in A$.\\
+\hspace{10mm}Đặt $^NA, A^N, A^Z$ lần lượt là các tập $w$-từ bên trái, bên phải và hai phía trên A. Với một ngôn ngữ X của $A^*$, ta ký hiệu $^wX, X^w$ và $^wX^w$ lần lượt là tích vô hạn phía bên trái, phía bên phải và hai phía các từ của $X - w$ vô hạn về phía bên trái, phía bên phải hoặc cả hai phía. Ví dụ
+\end{flushleft}
+$^wX = \{ ...u_2u_1 | i_i \in X - \varepsilon , i = 1,2,... \}$.
+\begin{flushleft}
+\hspace{10mm}Ta gọi mỗi tập con của $A^N$ (t.ư. $^NA, A^Z$) là một $w$-\textit{ngôn ngữ} của các $w$-từ bên phải (t.ư. bên trái, hai phía).\\
+\hspace{10mm}Một \textit{phân tích} của một từ $\alpha \in X^w$. (t.ư. $\alpha \in ^wX$) là một dãy vô hạn $\{ u_1, u_2, ... \}$ các từ của X sao cho $\alpha = u_1u_2...$ (t.ư. $\alpha = u_2u_1$).\\
+\hspace{10mm}Giả sử $w \in A^Z$ là $w$-từ vô hạn hai phía có dạng
+\end{flushleft}
+$w = ...a_{-2}a_{-1}a_0a_1a_2$...
+\begin{flushleft}
+với $a_i \in A$. Một \textit{phân tích} theo các phần tử X của một $w$-từ hai phía $w$ là một hàm tăng chặt $\mu : Z \to Z $ thoả mãn $x_i = a_{\mu(i)+1}$...$a_{\mu(i+1)} \in X$ với mọi $i \in Z$.\\
+\hspace{10mm}Hai phân tích $\mu$ và $\lambda$ được gọi là \textit{bằng nhau}, ký hiệu là $\mu = \lambda$ nếu có $t \in Z$ sao cho $\lambda(i+t) = \mu(i)$ với mọi $i \in Z$. Ngược lại, $\lambda$ và $\mu$ là khác nhau, ký hiệu là $\mu \ne \lambda$. \\
+Ta có thể kiểm tra điều kiện $\mu \ne \lambda$ khi và chỉ khi $\mu(Z) \ne \lambda(Z)$, hoặc tương đương, tồn tại một từ $u \in A^+$, hai dãy vô hạn các từ $X: ... , x_{-2}, x_{-1}, x_0, x_1, x_2, ...$ và $..., y_{-2}, y_{-1}, y_0, y_1, y_2$... sao cho 
+\end{flushleft}
+$...x_{-2}x_{-1}u = ...y_{-1}y_0, |u| \ge |x_0|
+x_0x_1... = uy_1y_2... , |u| \ge |y_0|
+$
+\begin{flushleft}
+với $u \ne x_0$ hoặc $u \ne y_0$.
+\subsection{$w$-mã}
+Khái niệm mã của các từ vô hạn được đề xuất bởi Staiger (1986) \hyperlink{page.81}{\textcolor{red}{29}} với tên gọi bna đầu là \textit{ìl-mã}, sau đó thay bởi thuật ngữ \textit{$w$-mã} trong các công trình gần đây [\hyperlink{page.81}{\textcolor{red}{3}}; \hyperlink{page.81}{\textcolor{red}{8}}; \hyperlink{page.81}{\textcolor{red}{13}}; \hyperlink{page.81}{\textcolor{red}{17}}]. Trong luận án, ta mở rộng khái niệm khái niệm $w$-mã đã biết cho trường $w$-từ bên trái và $w$-từ bên phải, từ đó ta có các khái niệm $w$-mã bên trái và $w$-mã bên phải được định nghĩa như sau: \\
+\textbf{Định nghĩa 1.6}     \textit{Giả sử A là một bảng chữ. Tập $X \subseteq A^+$ là $w$-mã bên trái (t.ư. bên phải) trên A nếu mọi từ $w$ thuộc $^wX$ (t.ư. $X^w$) chỉ có duy nhất một X - phân tích}.\\
+\textit{Ví dụ 1.15}     Cho $A=\{ a,b \}$. Ngôn ngữ $Y = \{ a,b \}$ là $w$-mã bên phải và đồng thời là $w$-mã bên trái. Tuy nhiên, ngôn ngữ $X = \{ aa,baa,ba \}$ là $w$-mã bên trái nhưng không là $w$-mã bên phải vì từ vô hạn $\alpha = baaa$... có hai $X$-phân tích khác nhau.\\
+\hspace{10mm}Từ nay về sau, nếu không sợ nhầm lẫn, ta sẽ dùng thuật ngữ $w$-từ (t.ư. $w$-ngôn ngữ, $w$-mã) thay cho thuật ngữ $w$-từ bên phải (t.ư. $w$-ngôn ngữ của các $w$-từ bên phải, $w$-mã bên phải).\\
+\subsection{$Z$-mã}
+Trong phần này, ta giới thiệu khái niệm Z-mã được đề xuất trong \hyperlink{page.81}{\textcolor{red}{31}}. Họ các Z-mã có liên quan mật thiết tới một lớp mã đặc biệt, gọi là $circular$-mã \hyperlink{page.81}{\textcolor{red}{5}}. Các mã này có đặc điểm chung là chúng định nghĩa phân tích duy nấht của các từ trong một chu kỳ. Đây là lớp mã có nhiều tính chất thú vị tham gia vào nhiều bài toán tổ hợp trên từ.
+\end{flushleft}
+\begin{flushleft}
+    \textbf{Định nghĩa 1.7} (\hyperlink{page.81}{\textcolor{red}{31}}). Giả sử A là một bảng chữ. Tập $X \subseteq A^+$ là Z-mã trên A nếu tất cả các phân tích theo X của mọi từ vô hạn hai phía bằng nhau.\\
+    \textit{Ví dụ 1.16}     Mọi tập chỉ có duy nhất một phần tử $\{ u \}$ là $w$-mã bên trái và là $w$-mã bên phải nhưng nó là $Z$-mã khi và chỉ khi $u$ là không là luỹ thừa của một từ bất kỳ nào khác. Ngôn ngữ X = $\{ ab,ba \}$ là $w$-mã bên phải và đồng thời là $w$-mã bên trái. Tuy nhiên, X không là Z-mã vì từ $^w(ab)^w$ có hai phân tích khác nhau ...(ab)(ab)(ab)... và ...(ba)(ba)(ba)...
+\end{flushleft}
+
+%*************************************************************************
+%+ 1.3. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
 %**********************************************************
 \section{Bài toán quy hoạch tuyến tính gốc và đối ngẫu}
-
 %+ -------------------------------------------------------------------------------------------
 %+ 1.2.1. Bai toan quy hoach tuyen tinh va bai toan doi ngau.
 \subsection{Bài toán quy hoạch tuyến tính gốc và đối ngẫu.}
